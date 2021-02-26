@@ -1,0 +1,1 @@
+alert('I should be copied without any changes');

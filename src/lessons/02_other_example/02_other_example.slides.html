@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Second slides example</title>
+    <meta name="date" content="2021-02-28">
+    <meta name="description" content="
+      - Iframes
+      - Full screen iframes
+      - Vertical slides
+      - Has class resources
+      - Terminal example
+    ">
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <h1>This is another example</h1>
+        </section>
+        
+        <section>
+          <section>
+            <h2>Button</h2>
+            
+            <pre><code data-trim class="html" data-line-numbers="1-11 | 2,5 | 1,6 | 5,8,10 | 6,9">
+              <input type="text" id="theText">
+              <button type="button" id="theButton">Click me</button>
+              
+              <script>
+                const myButton = document.querySelector('#theButton');
+                const myInput = document.querySelector('#theText');
+
+                myButton.addEventListener('click', () => {
+                  alert('Hello ' + myInput.value);
+                });
+              </script>
+            </code></pre>
+          </section>
+          
+          <section>
+            <h3>Let's see it in action!</h3>
+            <preview-window
+              window-title="Button Example"
+              address="http://localhost/button-example.html"
+              icon-class="fa-globe-europe"
+              class="r-stretch">
+              <iframe data-src="button-example.html"></iframe>
+          </preview-window>
+          </section>
+        </section>
+        
+        <section data-markdown>
+          <textarea data-template>
+            ## What happened here
+
+            - `document.querySelector`
+            - `addEventListener`
+            - `alert`
+          </textarea>
+        </section>
+        
+        <section data-background-iframe="fullscreen-example.html" data-background-interactive data-background-color="white">
+        </section>
+        
+        <section>
+          <h2>Console example</h2>
+          
+          <preview-window
+            window-title="Terminal"
+            icon-class="fa-terminal">
+            <pre><code data-trim data-noescape class="plaintext" data-line-numbers="1,8,9,16" style="user-select:none">
+              user@host:~$ <strong style="user-select:text">git clone user@server.com:repo.git</strong>
+              Cloning into 'repo'...
+              remote: Enumerating objects: 209, done.
+              remote: Counting objects: 100% (209/209), done.
+              remote: Compressing objects: 100% (144/144), done.
+              Receiving objects: 100% (209/209), 422.92 KiB | 1.12 MiB/s, done.
+              Resolving deltas: 100% (115/115), done.
+              user@host:~$ <strong style="user-select:text">cd repo</strong>
+              user@host:~/repo$ <strong style="user-select:text">npm install</strong>
+              added 110 packages from 64 contributors and audited 110 packages in 1.751s
+              
+              9 packages are looking for funding
+                run `npm fund` for details
+              
+              found 0 vulnerabilities
+              user@host:~/repo$
+            </code></pre>
+          </preview-window>
+        </section>
+        
+        <section data-visibility="uncounted">
+          <h2>Questions?</h2>
+        </section>
+      </div>
+    </div>
+  </body>
+</html>

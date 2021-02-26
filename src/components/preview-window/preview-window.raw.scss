@@ -1,0 +1,119 @@
+@import 'style/font-awesome';
+
+* {
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+$frame-color: #acacac;
+$frame-background-color: #262626;
+$frame-accent-background-color: #181818;
+$window-action-size: .9rem;
+
+#frame {
+  color: $frame-color;
+  border: 1px solid $frame-color;
+  background-color: $frame-background-color;
+
+  border-radius: .4rem;
+  overflow: hidden;
+  
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  
+  .fa {
+    font-size: .8rem;
+  }
+  
+  #title-bar, #address-bar {
+    text-align: left;
+    padding: .3rem .4rem;
+    white-space: nowrap;
+    
+    #title, #address {
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+  
+  #title-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 0;
+
+    #title { 
+      &::before{ 
+        @extend %fa-icon;
+        @extend .fa;
+
+        margin-left: .3rem;
+        margin-right: .5rem;
+      }
+      
+      display: flex;
+      align-items: center;
+    }
+    
+    #window-actions{ 
+      display: flex;
+      flex-direction: row;
+      align-items: baseline;
+
+      span {
+        height: $window-action-size;
+        width: $window-action-size;
+        background: #f0ca30;
+        border-radius: 0.5 * $window-action-size;
+        margin-left: 0.35 * $window-action-size;
+        
+        &:first-child {
+          background: #26fc51
+        }
+        
+        &:last-child {
+          background: #fa5141
+        }
+      }
+    }
+  }
+  
+  #address-bar {
+    &::before, &::after {
+      @extend %fa-icon;
+      @extend .fa;
+      margin: 0 .3rem;
+    }
+
+    &::before {
+      content: fa-content($fa-var-file);
+    }
+    
+    &::after {
+      content: fa-content($fa-var-sync);
+    }
+    
+    background-color: $frame-accent-background-color;
+    
+    margin: .5rem .8rem;
+    
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    
+    border: 1px solid $frame-color;
+    border-radius: .25rem;
+
+    #address {
+      flex-grow: 1;
+      margin: 0 .3rem;
+    }
+  }
+  
+  #content{
+    margin-top: .3rem;
+    flex-grow: 1;
+  }
+}

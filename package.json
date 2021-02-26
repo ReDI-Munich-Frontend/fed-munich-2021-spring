@@ -1,0 +1,41 @@
+{
+  "name": "fed-munich-2021-spring",
+  "version": "1.0.0",
+  "description": "Slides and material for the Frontend-Development course at ReDI School Munich, Spring 2021",
+  "scripts": {
+    "build": "webpack --config webpack.prod.js",
+    "start": "webpack serve --config webpack.dev.js",
+    "watch": "webpack --watch --config webpack.dev.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ReDI-Munich-Frontend/fed-munich-2021-spring.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ReDI-Munich-Frontend/fed-munich-2021-spring/issues"
+  },
+  "homepage": "https://github.com/ReDI-Munich-Frontend/fed-munich-2021-spring#readme",
+  "dependencies": {
+    "reveal.js": "^4.1.0"
+  },
+  "devDependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.2",
+    "copy-webpack-plugin": "^7.0.0",
+    "css-loader": "^5.1.0",
+    "file-loader": "^6.2.0",
+    "glob": "^7.1.6",
+    "html-loader": "^2.1.1",
+    "html-webpack-plugin": "^5.2.0",
+    "jsdom": "^16.4.0",
+    "node-sass": "^5.0.0",
+    "raw-loader": "^4.0.2",
+    "sass-loader": "^11.0.1",
+    "style-loader": "^2.0.0",
+    "webpack": "^5.24.2",
+    "webpack-cli": "^4.5.0",
+    "webpack-dev-server": "^3.11.2",
+    "webpack-merge": "^5.7.3"
+  }
+}
