@@ -1,1 +1,0 @@
-Files inside the class-resources directory won't be published in the Slides bundle
