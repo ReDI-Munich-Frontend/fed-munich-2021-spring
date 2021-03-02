@@ -6,8 +6,7 @@
     padding: 0;
     
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-flow: row wrap;
     justify-content: center;
     
     max-width: 70%;
@@ -50,6 +49,66 @@
             margin-right: .4em;
           }
         }
+      }
+    }
+  }
+  
+  .git-github-comparison {
+    display: inline-block;
+    --square-size: 300px;
+
+    & > div {
+      display: grid;
+      grid-template-columns: [start] var(--square-size) 100px var(--square-size) [end];
+      grid-template-rows: var(--square-size) auto var(--square-size);
+      
+      & > div {
+        box-sizing: border-box;
+      }
+      
+      .is-to {
+        align-self: center;
+      }
+      
+      .what {
+        grid-column-start: start;
+        grid-column-end: span end;
+      }
+      
+      .git, .github, .film, .netflix {
+        border-radius: .5em;
+        background-size: cover;
+        background-position: 50% 50%;
+        
+        display: flex;
+        align-items: center;
+        
+        div {
+          margin: 0 .2em;
+          text-shadow: 0 0 .6em black;
+        }
+      }
+      
+      .git, .film {
+        justify-content: right;
+      }
+      
+      .git {
+        background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url(../lessons/01_getting_started/images/git.jpg);
+      }
+      
+      .github {
+        background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(../lessons/01_getting_started/images/github.png);
+        background-position-x: 0%;
+      }
+      
+      .film {
+        background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(../lessons/01_getting_started/images/film.jpg);
+        background-position-x: 100%;
+      }
+      
+      .netflix {
+        background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(../lessons/01_getting_started/images/netflix.jpg);
       }
     }
   }
