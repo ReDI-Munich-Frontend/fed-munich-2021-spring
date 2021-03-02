@@ -201,14 +201,14 @@
                 <h2>Our first website</h2>
                 <ul>
                   <li>On Gitbub, create a new repository</li>
-                  <li class="fragment" data-fragment-index="3">In your project directory, open a terminal window and type <code>git init</code></li>
+                  <li class="fragment" data-fragment-index="3">In your project directory, open a terminal window and type <a href="https://git-scm.com/docs/git-init"><code>git init</code></a></li>
                   <li class="fragment" data-fragment-index="5">Then, make your github repository known to your local one</li>
                 </ul>
               </div>
               
-              <img data-src="images/new-repository-1.png" class="fragment current-visible" data-fragment-index="0">
-              <img data-src="images/new-repository-2.png" class="fragment current-visible" data-fragment-index="1">
-              <img data-src="images/new-repository-3.png" class="fragment current-visible" data-fragment-index="2">
+              <img data-src="images/new-repository-1.png" class="fragment current-visible r-frame" data-fragment-index="0">
+              <img data-src="images/new-repository-2.png" class="fragment current-visible r-frame" data-fragment-index="1">
+              <img data-src="images/new-repository-3.png" class="fragment current-visible r-frame" data-fragment-index="2">
 
               <preview-window window-title="Terminal"
                               icon-class="fa-terminal"
@@ -307,9 +307,9 @@
                 
                 <ul>
                   <li>Open the terminal again and type <code>git status</code></li>
-                  <li class="fragment" data-fragment-index="1">Now, add the newly created file to your commit with <code>git add</code></li>
-                  <li class="fragment" data-fragment-index="3">Commit the file with <code>git commit</code></li>
-                  <li class="fragment" data-fragment-index="5">Push the commit to Github with <code>git push</code></li>
+                  <li class="fragment" data-fragment-index="1">Now, add the newly created file to your commit with <a href="https://git-scm.com/docs/git-add"><code>git add</code></a></li>
+                  <li class="fragment" data-fragment-index="3">Commit the file with <a href="https://git-scm.com/docs/git-commit"><code>git commit</code></a></li>
+                  <li class="fragment" data-fragment-index="5">Push the commit to Github with <a href="https://git-scm.com/docs/git-push"><code>git push</code></a></li>
                 </ul>
                 
                 <p class="fragment" data-fragment-index="7">When viewing your repository on Github now, you should see yor newly committed file "index.html"</p>
@@ -319,7 +319,7 @@
                               icon-class="fa-terminal"
                               class="fragment current-visible"
                               data-fragment-index="0">
-                <pre><code data-trim data-noescape class="plaintext">
+                <pre><code data-trim data-noescape class="plaintext no-select">
                   C:\Users\redi-user\my-first-website> <strong>git status</strong>
                   On branch master
                   
@@ -338,7 +338,7 @@
                               icon-class="fa-terminal"
                               class="fragment current-visible"
                               data-fragment-index="2">
-                <pre><code data-trim data-noescape class="plaintext">
+                <pre><code data-trim data-noescape class="plaintext no-select">
                   C:\Users\redi-user\my-first-website> <strong>git add index.html</strong>
                   C:\Users\redi-user\my-first-website> <strong>git status</strong>
                   On branch master
@@ -356,7 +356,7 @@
                               icon-class="fa-terminal"
                               class="fragment current-visible"
                               data-fragment-index="4">
-                <pre><code data-trim data-noescape class="plaintext">
+                <pre><code data-trim data-noescape class="plaintext no-select">
                   C:\Users\redi-user\my-first-website> <strong>git commit -m 'initial commit'</strong>
                   [master (root-commit) c84dc34] initial commit
                    1 file changed, 10 insertions(+)
@@ -369,7 +369,7 @@
                               icon-class="fa-terminal"
                               class="fragment current-visible"
                               data-fragment-index="6">
-                <pre><code data-trim data-noescape class="plaintext">
+                <pre><code data-trim data-noescape class="plaintext no-select">
                   C:\Users\redi-user\my-first-website> <strong>git push -u origin master</strong>
                   Enumerating objects: 3, done.
                   Counting objects: 100% (3/3), done.
@@ -377,20 +377,95 @@
                   Compressing objects: 100% (2/2), done.
                   Writing objects: 100% (3/3), 986 bytes | 986.00 KiB/s, done.
                   Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
-                  To github.com:oktupol/my-first-website.git
+                  To github.com:redi-user/my-first-website.git
                    * [new branch]      master -> master
                   Branch 'master' set up to track remote branch 'master' from 'origin'.
                   C:\Users\redi-user\my-first-website>
                 </code></pre>
               </preview-window>
               
-              <img data-src="images/git-repo-after-push.png" alt="Git repository on Github after push" class="fragment" data-fragment-index="8">
+              <img data-src="images/git-repo-after-push.png" alt="Git repository on Github after push" class="fragment r-frame" data-fragment-index="8">
+            </div>
+          </section>
+        </section>
+        
+        <section>
+          <section>
+            <h2>Homework workflow</h2>
+            
+            <p>All homework assignments will be located in the Git-Repository <a href="https://github.com/ReDI-Munich-Frontend/fed-munich-2021-spring-homework" style="white-space: nowrap">ReDI-Munich-Frontend/fed-munich-2021-spring-homework</a>.</p>
+            <p class="fragment">You will also submit your results in this repository.</p>
+          </section>
+          
+          <section>
+            <div class="r-stack">
+              <div>
+                <h3>Homework submission process</h3>
+                <ul>
+                  <li>Create a fork of the homework repository<br>
+                    <small>A fork of a repsoitory is a personal copy where you can make your own changes.</small></li>
+                  <li class="fragment" data-fragment-index="1">Clone your fork onto your computer<br>
+                    <small><a href="https://git-scm.com/docs/git-clone"><code>git clone</code></a> creates a new directory and copies an existing repository into it.</small></li>
+                  <li class="fragment" data-fragment-index="4">In the directory corresponding to the current lesson, create a new directory named after your Github username</li>
+                  <li class="fragment" data-fragment-index="5">In this folder, complete the tasks that are listed in the file "assignment.md"</li>
+                </ul>
+              </div>
+              
+              <img data-src="images/fork-repo.png" class="fragment current-visible r-frame" data-fragment-index="0" alt="Fork repository">
+              <img data-src="images/clone-forked-repo.png" class="fragment current-visible r-frame" data-fragment-index="2" alt="Fork repository">
+              <preview-window window-title="Terminal"
+                              icon-class="fa-terminal"
+                              class="fragment current-visible"
+                              data-fragment-index="3">
+                <pre><code data-trim data-noescape class="plaintext no-select">
+                  C:\Users\redi-user> <strong>git clone https://github.com/redi-user/fed-munich-2021-spring-homework.git</strong>
+                  Cloning into 'fed-munich-2021-spring-homework'...
+                  remote: Enumerating objects: 7, done.
+                  remote: Counting objects: 100% (7/7), done.
+                  remote: Compressing objects: 100% (5/5), done.
+                  remote: Total 7 (delta 0), reused 7 (delta 0), pack-reused 0
+                  Receiving objects: 100% (7/7), done.
+                  C:\Users\redi-user> <strong>cd fed-munich-2021-spring-homework</strong>
+                  C:\Users\redi-user\fed-munich-2021-spring-homework>
+                </code></pre>
+              </preview-window>
+              <img data-src="images/homework1.png" class="fragment current-visible r-frame" data-fragment-index="6" alt="Creating a new directory">
+              <img data-src="images/homework2.png" class="fragment current-visible r-frame" data-fragment-index="7" alt="Working on homework">
+            </div>
+          </section>
+          
+          <section>
+            <div class="r-stack">
+              <div>
+                <h3>Homework submission process</h3>
+                
+                <ul>
+                  <li>Once done, commit and push your work</li>
+                  <li class="fragment" data-fragment-index="0">Create a pull-request to get your changes back into the original repository</li>
+                  <li class="fragment" data-fragment-index="3">Once created, one of the teachers will review your work</li>
+                </ul>
+              </div>
+              
+              <img data-src="images/homework3.png" class="fragment current-visible r-frame" data-fragment-index="1" alt="Creating a pull reuquest">
+              <img data-src="images/homework4.png" class="fragment current-visible r-frame" data-fragment-index="2" alt="Creating a pull request">
             </div>
           </section>
         </section>
         
         <section>
           <h2>Homework</h2>
+          
+          <p>Create a HTML file similar to the one we created today.</p>
+        </section>
+        
+        <section>
+          <h2>Upcoming topics</h2>
+          <ul>
+            <li>HTML basics<br>
+              <small>Document structure and semantics, working with forms</small></li>
+            <li>CSS basics<br>
+              <small>CSS selectors, common CSS properties, inspecting elements</small></li>
+          </ul>
         </section>
         
         <section data-visibility="uncounted">

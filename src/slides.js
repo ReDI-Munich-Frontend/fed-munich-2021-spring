@@ -15,6 +15,7 @@ let deck = new Reveal({
 });
 deck.initialize({
   hash: true,
+  navigationMode: 'linear',
   preloadIframes: true,
   width: 1280,
   height: 720

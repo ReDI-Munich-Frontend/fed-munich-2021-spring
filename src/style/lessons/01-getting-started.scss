@@ -95,21 +95,21 @@
       }
       
       .git {
-        background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url(../lessons/01_getting_started/images/git.jpg);
+        background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(../lessons/01_getting_started/images/git.jpg);
       }
       
       .github {
-        background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(../lessons/01_getting_started/images/github.png);
+        background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(../lessons/01_getting_started/images/github.png);
         background-position-x: 0%;
       }
       
       .film {
-        background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(../lessons/01_getting_started/images/film.jpg);
+        background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(../lessons/01_getting_started/images/film.jpg);
         background-position-x: 100%;
       }
       
       .netflix {
-        background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(../lessons/01_getting_started/images/netflix.jpg);
+        background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(../lessons/01_getting_started/images/netflix.jpg);
       }
     }
   }
@@ -123,8 +123,11 @@
   
   code.no-select {
     user-select: none;
+    
+    color: rgba(221,221,221,0.7);
 
     strong {
+      color: rgb(221,221,221);
       user-select: all;
     }
   }
