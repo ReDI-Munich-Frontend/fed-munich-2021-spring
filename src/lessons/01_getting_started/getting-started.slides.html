@@ -236,7 +236,7 @@
             </div>
           </section>
           
-          <section data-auto-animate>
+          <section>
             <h3>What happened here?</h3>
             
             <div class="git-remote-add-explanation">
@@ -262,6 +262,129 @@
                   <div class="repo-path">C:\Users\redi-user\my-first-website\.git</div>
                 </div>
               </div>
+            </div>
+            
+            <p style="font-size: .8em" class="fragment"><a href="class-resources/git-cheat-sheet.md">Cheat sheet</a> with the most important git commands.</p>
+          </section>
+          
+          <section>
+            <div class="r-stack">
+              <div>
+                <h3>First contact with HTML</h3>
+                
+                <p>Create a new file called "index.html" in Visual Studio Code</p>
+                
+                <pre><code data-trim class="html"><script type="text/template">
+                  <!DOCTYPE html>
+                  <html>
+                    <head>
+                      <title>My first website</title>
+                    </head>
+                    <body>
+                      <h1>Welcome!</h1>
+                      <p>This is my first HTML site.</p>
+                    </body>
+                  </html>
+                </script></code></pre>
+                
+                <p style="font-size: .8em" class="fragment" data-fragment-index="1">We will dive deeper into HTML in the next lesson.</p>
+              </div>
+              
+              <preview-window window-title="My first website"
+                              address="file:///C:/Users/redi-user/my-first-website/index.html"
+                              icon-class="fa-globe-europe"
+                              class="fragment"
+                              data-fragment-index="0">
+                <iframe data-src="class-resources/first-website.html"></iframe>
+              </preview-window>
+            </div>
+          </section>
+          
+          <section>
+            <div class="r-stack">
+              <div>
+                <h3>Committing our changes into Git</h3>
+                
+                <ul>
+                  <li>Open the terminal again and type <code>git status</code></li>
+                  <li class="fragment" data-fragment-index="1">Now, add the newly created file to your commit with <code>git add</code></li>
+                  <li class="fragment" data-fragment-index="3">Commit the file with <code>git commit</code></li>
+                  <li class="fragment" data-fragment-index="5">Push the commit to Github with <code>git push</code></li>
+                </ul>
+                
+                <p class="fragment" data-fragment-index="7">When viewing your repository on Github now, you should see yor newly committed file "index.html"</p>
+              </div>
+            
+              <preview-window window-title="Terminal"
+                              icon-class="fa-terminal"
+                              class="fragment current-visible"
+                              data-fragment-index="0">
+                <pre><code data-trim data-noescape class="plaintext">
+                  C:\Users\redi-user\my-first-website> <strong>git status</strong>
+                  On branch master
+                  
+                  No commits yet
+                  
+                  Untracked files:
+                    (use "git add &lt;file&gt;..." to include in what will be committed)
+                          <span style="color: red">index.html</span>
+                  
+                  nothing added to commit but untracked files present (use "git add" to track)
+                  C:\Users\redi-user\my-first-website>
+                </code></pre>
+              </preview-window>
+
+              <preview-window window-title="Terminal"
+                              icon-class="fa-terminal"
+                              class="fragment current-visible"
+                              data-fragment-index="2">
+                <pre><code data-trim data-noescape class="plaintext">
+                  C:\Users\redi-user\my-first-website> <strong>git add index.html</strong>
+                  C:\Users\redi-user\my-first-website> <strong>git status</strong>
+                  On branch master
+                  
+                  No commits yet
+                  
+                  Changes to be committed:
+                    (use "git rm --cached &lt;file&gt;..." to unstage)
+                          <span style="color: lightgreen">new file:   index.html</span>
+                  C:\Users\redi-user\my-first-website>
+                </code></pre>
+              </preview-window>
+
+              <preview-window window-title="Terminal"
+                              icon-class="fa-terminal"
+                              class="fragment current-visible"
+                              data-fragment-index="4">
+                <pre><code data-trim data-noescape class="plaintext">
+                  C:\Users\redi-user\my-first-website> <strong>git commit -m 'initial commit'</strong>
+                  [master (root-commit) c84dc34] initial commit
+                   1 file changed, 10 insertions(+)
+                   create mode 100644 index.html
+                  C:\Users\redi-user\my-first-website>
+                </code></pre>
+              </preview-window>
+              
+              <preview-window window-title="Terminal"
+                              icon-class="fa-terminal"
+                              class="fragment current-visible"
+                              data-fragment-index="6">
+                <pre><code data-trim data-noescape class="plaintext">
+                  C:\Users\redi-user\my-first-website> <strong>git push -u origin master</strong>
+                  Enumerating objects: 3, done.
+                  Counting objects: 100% (3/3), done.
+                  Delta compression using up to 8 threads
+                  Compressing objects: 100% (2/2), done.
+                  Writing objects: 100% (3/3), 986 bytes | 986.00 KiB/s, done.
+                  Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+                  To github.com:oktupol/my-first-website.git
+                   * [new branch]      master -> master
+                  Branch 'master' set up to track remote branch 'master' from 'origin'.
+                  C:\Users\redi-user\my-first-website>
+                </code></pre>
+              </preview-window>
+              
+              <img data-src="images/git-repo-after-push.png" alt="Git repository on Github after push" class="fragment" data-fragment-index="8">
             </div>
           </section>
         </section>
