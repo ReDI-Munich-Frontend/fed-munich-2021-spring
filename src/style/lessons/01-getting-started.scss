@@ -55,12 +55,13 @@
   
   .git-github-comparison {
     display: inline-block;
-    --square-size: 300px;
+    --square-width: 260px;
+    --square-height: 220px;
 
     & > div {
       display: grid;
-      grid-template-columns: [start] var(--square-size) 100px var(--square-size) [end];
-      grid-template-rows: var(--square-size) auto var(--square-size);
+      grid-template-columns: [start] var(--square-width) 130px var(--square-width) [end];
+      grid-template-rows: var(--square-height) auto var(--square-height);
       
       & > div {
         box-sizing: border-box;
@@ -113,10 +114,58 @@
     }
   }
 
-  div.r-stack {
+  .project-showcase {
     preview-window {
       width: 100%;
       height: 100%;
+    }
+  }
+  
+  code.no-select {
+    user-select: none;
+
+    strong {
+      user-select: all;
+    }
+  }
+  
+  .git-remote-add-explanation {
+    display: inline-block;
+
+    & > div {
+      display: grid;
+      grid-template-columns: [start] 1fr 1fr [end];
+      row-gap: .75em;
+      
+      .connection {
+        grid-column-start: start;
+        grid-column-end: span end;
+        position: relative;
+        height: 1.5em;
+        
+        .first, .second {
+          position: absolute;
+          width: 100%;
+        }
+        
+        .first {
+          color: red;
+          font-weight: bold;
+        }
+        
+        .second {
+          color: lightgreen;
+        }
+      }
+      
+      .repo {
+        align-self: center;
+
+        .repo-path {
+          font-size: .6em;
+          font-family: monospace;
+        }
+      }
     }
   }
 }
