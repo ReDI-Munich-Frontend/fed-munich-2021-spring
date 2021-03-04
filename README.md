@@ -29,7 +29,7 @@ npm run start
 ```
 
 Then, the slides will be available at
-`http://localhost:8080/your-directory/your-slides-filename.slides.html`.
+`https://localhost:8080/your-directory/your-slides-filename.slides.html`.
 
 The build-in webserver will automatically reload whenever you make changes to
 your source files.

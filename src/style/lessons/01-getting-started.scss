@@ -9,7 +9,7 @@
     flex-flow: row wrap;
     justify-content: center;
     
-    max-width: 70%;
+    max-width: 80%;
     margin: 0 auto;
 
     li {
@@ -23,14 +23,14 @@
       font-size: .7em;
       
       box-sizing: border-box;
-      padding: .4em .4em;
+      padding: .4em;
       
       img {
         margin: 0;
-        margin-right: .4em;
+        margin-right: .75em;
         border-radius: 50%;
 
-        height: 3em;
+        height: 4em;
         max-width: unset;
         max-height: unset;
       }
