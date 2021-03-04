@@ -13,10 +13,24 @@
   <body>
     <div class="reveal">
       <div class="slides" id="getting-started">
-        <section>
+        <section data-timing="120">
           <p>Welcome to</p>
           <h1 class="r-fit-text">Frontend Development</h1>
           <p>ReDI School Munich - Spring 2021</p>
+          
+          <aside class="notes">
+            Agenda for today: 
+
+            <ul>
+              <li>Introduction</li>
+              <li>What to expect + Demo from last semester's course</li>
+              <li>Set-up of development environment</li>
+              <li>Writing our first website</li>
+              <li>Git workflow for homework</li>
+              <li>Actual homework</li>
+              <li>Quick overview of next topics</li>
+            </ul>
+          </aside>
         </section>
 
         <section>
@@ -68,11 +82,51 @@
         </section>
         
         <section>
-          <section data-auto-animate>
+          <section data-auto-animate data-timing="15">
+            <h2>Course expectations</h2>
+            <p>What will you be able to do after finishing this course?</p>
+          </section>
+
+          <section data-auto-animate data-background-color="#bbdefb" data-timing="15">
+            <h2 style="font-size: 1.2em">Course expectations</h2>
+            <p>Creating and implementing beautiful designs</p>
+            
+            <img data-src="images/web-design.svg" alt="Web design showcase" class="r-stretch">
+            
+          </section>
+          
+          <section data-auto-animate data-background-color="#defbbc" data-timing="15">
+            <h2 style="font-size: 1.2em">Course expectations</h2>
+            <p>Making your website work on all devices</p>
+            
+            <img data-src="images/responsive-design.svg" alt="Web design showcase" style="width: 80%">
+          </section>
+          
+          <section data-auto-animate data-timing="15">
+            <h2 style="font-size: 1.2em">Course expectations</h2>
+            <p>Making your application interactive</p>
+            
+            <img data-src="images/interactive.jpg" alt="An interactive toy" class="r-stretch">
+          </section>
+          
+          <section data-auto-animate data-timing="90">
+            <h2>Course expectations</h2>
+            <h4>You won't (yet) be able to...</h4>
+            <ul>
+              <li class="fragment">Create a chat or anything related to communication<br>
+                <small>...because that would require a backend.</small></li>
+              <li class="fragment">Make a video game<br>
+                <small>...because we won't go into graphics computing.</small></li>
+              <li class="fragment" data-notes="Refer to react course">Create more complex single-page web applications<br>
+                <small>...because the tools we use are not suited for those.</small></li>
+            </ul>
+          </section>
+
+          <section data-auto-animate data-timing="10">
             <h2>Past projects</h2>
           </section>
 
-          <section data-auto-animate>
+          <section data-auto-animate data-timing="180">
             <h2 style="font-size: .8em">Past projects</h2>
           
             <div class="r-stack r-stretch project-showcase">
@@ -101,11 +155,11 @@
         </section>
         
         <section>
-          <section data-auto-animate>
+          <section data-auto-animate data-timing="10">
             <h2 class="r-fit-text">Setting up the development environment</h2>
           </section>
           
-          <section data-auto-animate>
+          <section data-auto-animate data-timing="60">
             <h2 style="font-size: 1em">Setting up the development environment</h2>
             
             <div class="columns align-start justify-center">
@@ -142,16 +196,16 @@
         </section>
         
         <section>
-          <section data-auto-animate>
+          <section data-auto-animate data-timing="10">
             <h2>Git and Github</h2>
           </section>
           
-          <section data-auto-animate>
+          <section data-auto-animate data-timing="30">
             <h2>Git and Github</h2>
             <p>What's the difference?</p>
           </section>
           
-          <section data-auto-animate>
+          <section data-auto-animate data-timing="30">
             <h2>Git and Github</h2>
             
             <div class="git-github-comparison">
@@ -191,6 +245,24 @@
               <li>Download and install Git from <a href="https://git-scm.com/downloads">git-scm.com/downloads</a></li>
               <li>Create yourself an account on <a href="https://github.com">github.com</a></li>
             </ul>
+            
+            <aside class="notes">
+              <ul>
+                <li>SCM - Source Code Management</li>
+                <li>Allows to hold multiple revisions of the same file</li>
+                <li>Use cases: <ul>
+                  <li>Complete file history</li>
+                  <li>Working on the same files parallely</li>
+                </ul></li>
+                <li>Advantages: <ul>
+                  <li>Able to revert to any point in history</li>
+                  <li>Because of that: Code is less prone to errors</li>
+                  <li>No accidental collisions between two people that break the code (usually git handles these situations well; worst-case scenario: merge-conflict)</li>
+                  <li>By now universal standard</li>
+                </ul></li>
+                <li>Disadvantages: none</li>
+              </ul>
+            </aside>
           </section>
         </section>
           
@@ -236,7 +308,7 @@
             </div>
           </section>
           
-          <section>
+          <section data-timing="240">
             <h3>What happened here?</h3>
             
             <div class="git-remote-add-explanation">
@@ -458,7 +530,7 @@
           <p>Create a HTML file similar to the one we created today.</p>
         </section>
         
-        <section>
+        <section data-timing="60">
           <h2>Upcoming topics</h2>
           <ul>
             <li>HTML basics<br>
@@ -468,7 +540,7 @@
           </ul>
         </section>
         
-        <section data-visibility="uncounted">
+        <section data-visibility="uncounted" data-timing="180">
           <h2>Questions?</h2>
         </section>
       </div>

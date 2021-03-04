@@ -1,8 +1,17 @@
+// Font-Awesome 
 @import 'font-awesome';
 @import 'font-awesome-fonts';
 
-@import 'layout/layout';
+// Reveal.js theme
+@import 'reveal.js/css/reveal.scss';
+@import 'theme/custom';
+@import 'reveal.js/plugin/highlight/monokai.css';
 
+// Layout directives
+@import 'layout/columns';
+
+// Web components
 @import 'components/preview-window';
 
+// Lesson specific style sheets
 @import 'lessons/01-getting-started';

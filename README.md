@@ -44,7 +44,10 @@ which contains an overview of all lessons. If the built-in webserver was
 running, you need to restart it, as webpack isn't capable of detecting new html
 files during runtime.
 
-For creating code-examples or sharing any other files that shouldn't be changed by webpack, you may create a directory `class-resources` next to your slides file. Any files inside this directory will be copied and can be used e.g. in iframes.
+For creating code-examples or sharing any other files that shouldn't be changed
+by webpack, you may create a directory `class-resources` next to your slides
+file. Any files inside this directory will be copied and can be used e.g. in
+iframes.
 
 Example directory structure:
 
@@ -61,6 +64,11 @@ Example directory structure:
       | another-lesson.slides.html
       ...
 ```
+
+## Presenting
+
+While presenting, press <kbd>S</kbd> to show the speaker notes. If your browser
+blocks the speaker note pop-up, you may have to press S again once it's open.
 
 ## Deployment on Github Pages
 

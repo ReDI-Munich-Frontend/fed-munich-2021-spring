@@ -1,9 +1,6 @@
 import Reveal from 'reveal.js';
-import 'reveal.js/dist/reveal.css';
-import 'reveal.js/dist/theme/night.css';
-import 'reveal.js/plugin/highlight/monokai.css';
 
-import './style/index.scss'
+import './style/index.scss';
 
 import Highlight from 'reveal.js/plugin/highlight/highlight.esm'
 import Markdown from 'reveal.js/plugin/markdown/markdown.esm';
@@ -19,7 +16,8 @@ deck.initialize({
   navigationMode: 'linear',
   preloadIframes: true,
   width: 1280,
-  height: 720
+  height: 720,
+  totalTime: 7200 // two hours
 });
 
 CustomHtmlElement.register(PreviewWindowElement);
