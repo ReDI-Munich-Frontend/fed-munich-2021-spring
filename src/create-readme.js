@@ -21,10 +21,7 @@ const readmeEntry = `
 %{description}
 `;
 
-const readmeFooter = `
----
-[Link to current homework](https://github.com/ReDI-Munich-Frontend/fed-munich-2021-spring-homework)
-`;
+const readmeFooter = ``;
 
 const slides = slideFiles.map(slideFile => {
   const strippedFileName = slideFile.replace(/\.\/dist\/docs\//, '');
