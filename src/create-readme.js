@@ -21,7 +21,9 @@ const readmeEntry = `
 %{description}
 `;
 
-const readmeFooter = ``;
+const readmeFooter = `
+---
+<sub>[View on Github](https://github.com/${repoOwner}/${repoName})</sub>`;
 
 const slides = slideFiles.map(slideFile => {
   const strippedFileName = slideFile.replace(/\.\/dist\/docs\//, '');
