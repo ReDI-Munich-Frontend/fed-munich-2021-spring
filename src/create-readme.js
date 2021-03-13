@@ -11,7 +11,7 @@ const slideFiles = glob.sync('./dist/docs/**/*.slides.html');
 const readmeHeader = `
 # ReDI School Munich - Frontend Development - Spring 2021
 
-This repository contains teaching material and assignments for the Frontend Development course of spring 2021 at ReDI school Munich.
+This repository contains slides and class resources for the Frontend Development course of spring 2021 at ReDI school Munich.
 `;
 
 const readmeEntry = `
