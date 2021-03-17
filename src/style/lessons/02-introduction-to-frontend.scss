@@ -1,0 +1,35 @@
+@mixin glow {
+  font-size: 80px;
+  color: #fff;
+  text-align: center;
+  -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #111, 0 0 40px #111, 0 0 50px #111, 0 0 60px #111, 0 0 70px #111;
+  }
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #505050, 0 0 40px #505050, 0 0 50px #505050, 0 0 60px #505050, 0 0 70px #505050, 0 0 80px #505050;
+  }
+}
+
+#introduction-to-frontend {
+  .initial { 
+    .how-are-you {
+      $size: 15vh;
+
+      @include glow;
+
+      display: inline-block;
+      font-size: $size !important;
+      left: 50%;
+      margin: $size 0;
+      top: 50%;
+      transform: translate(0, -50%);
+      white-space: nowrap;
+    }
+  }
+}

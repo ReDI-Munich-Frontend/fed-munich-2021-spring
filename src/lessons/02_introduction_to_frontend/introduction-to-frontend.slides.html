@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Introduction to FrontEnd</title>
+    <meta name="date" content="2021-03-18">
+    <meta name="description" content="
+      - Introduce HTML
+      - Introduce structure semantics
+      - Build our first page using images
+      - Introduce inline CSS
+    ">
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides" id="introduction-to-frontend">
+
+        <!--SLIDE 1-->
+        <!--Quick Introduction-->
+        <section class="initial">
+          <!--SLIDE 1.1-->
+          <section data-auto-animate data-timing="10">
+            <p>Welcome back to</p>
+            <h3 class="r-fit-text">#2 class of FED</h3>
+            <p>ReDI School Munich - Spring 2021</p>
+          </section>
+
+          <!--SLIDE 1.2-->
+          <section data-auto-animate data-timing="10">
+            <p>Welcome back to</p>
+            <h3 class="r-fit-text">#2 class of FED</h3>
+            <p>ReDI School Munich - Spring 2021</p>
+
+            <h3 class="r-fit-text how-are-you">How are you?</h3>
+          
+            <aside class="notes">
+              Agenda for today:
+  
+              <ul>
+                <li>Introduction to HTML</li>
+                <li>Browser elements inspecting</li>
+                <li>Introduction to Semantics</li>
+                <li>In-class exercise 🎉</li>
+                <li>Introduction to CSS (inline)</li>
+                <li>Actual homework</li>
+                <li>Quick overview of next topics</li>
+              </ul>
+            </aside>
+          </section>
+        </section>
+
+        <!--SLIDE 2-->
+        <!--Quick recap-->
+        <section class="initial">
+          <!--SLIDE 2.1-->
+          <section data-auto-animate data-timing="10">
+            <h2>Recap</h2>
+          </section>
+
+          <!--SLIDE 2.2-->
+          <section data-auto-animate data-timing="10">
+            <h2>Recap</h2>
+
+            <img data-src="images/no.gif" class="r-frame">
+          </section>
+
+          <!--SLIDE 2.3-->
+          <section data-auto-animate data-timing="10">
+            <h2>Recap</h2>
+
+            <ul style="list-style: none;">
+              <li><span class="fragment" data-fragment-index="0">✅</span> Visual Studio Code</li>
+              <li><span class="fragment" data-fragment-index="1">✅</span> Git installed</li>
+              <li><span class="fragment" data-fragment-index="2">✅</span> GitHub account created</li>
+              <li><span class="fragment" data-fragment-index="3">✅</span> Our first contact with HTML</li>
+              <li><span class="fragment" data-fragment-index="4">✅</span> Homework <span class="fragment" data-fragment-index="5">👀</span></li>
+            </ul>
+          
+            <aside class="notes">
+              On recap:
+  
+              <ul>
+                <li>Remind everyone about the importancy of those bullet points</li>
+                <li>Homework reviewed (we're going to do something similar at the end</li>
+                <li>Remind about reviewing homework on next classes (when there's need to)</li>
+              </ul>
+            </aside>
+          </section>
+        </section>
+
+        <!--SLIDE 3-->
+        <!--Introduction to HTML (bullet points)-->
+        <section>
+          <!--SLIDE 3.1-->
+          <section data-auto-animate data-timing="10">
+            <h2>Introduction to HTML</h2>
+          </section>
+
+          <!--SLIDE 3.2-->
+          <section data-auto-animate data-timing="10">
+            <h2>Introduction to HTML</h2>
+            <p>What's HTML?</p>
+          </section>
+
+          <!--SLIDE 3.3-->
+          <section data-auto-animate data-timing="300">
+            <h2>Introduction to HTML</h2>
+            <p>What's HTML?</p>
+
+            <ul>
+              <li>It's basically where you add content to a page</li>
+              <li>HTML stands for <b>H</b>yper<b>t</b>ext <b>M</b>arkup <b>L</b>anguage</li>
+              <li>Why knowing <b>HTML</b></li>
+              <li>
+                <a href="https://www.w3.org/" target="_blank">W3C</a> standards
+              </li>
+            </ul>
+
+            <aside class="notes">
+              <ul>
+                <li>HTML is adding content in a way of organising them by adding structures around</li>
+                <li>Explain browser reading</li>
+                <li>Explain who actually defines guidelines and conventions</li>
+                <li>International community to organise guidelines around content strucuture in webpages. The World Wide Web Consortium is the main international standards organization for the World Wide Web. (They work with versions as well)</li>
+                <li>We're in the version 5 of HTML</li>
+              </ul>
+            </aside>
+          </section>
+        </section>
+
+        <!--SLIDE 4-->
+        <!--Introduction to HTML (basic structure - recap)-->
+        <section>
+          <!--SLIDE 4.1-->
+          <section data-auto-animate data-timing="10">
+            <h2>Introduction to HTML</h2>
+            <p>Basic Structure</p>
+          </section>
+
+          <!--SLIDE 4.2-->
+          <section data-auto-animate data-timing="10">
+            <h2>Introduction to HTML</h2>
+            <p>Basic Structure</p>
+
+            <pre data-auto-animate><code data-trim class="html"><script type="text/template">
+              <!DOCTYPE html>
+              <html>
+                <head>
+                  <title>My first website</title>
+                </head>
+                <body>
+                  <h1>Welcome!</h1>
+                  <p>This is my first HTML site.</p>
+                </body>
+              </html>
+            </script></code></pre>
+
+            <img data-src="images/skip.png" class="fragment fade-in" data-fragment-index="0"/>
+          </section>
+        </section>
+
+        <!--SLIDE 5-->
+        <!--Introduction to HTML (basic structure - following with class)-->
+        <section data-timing="600">
+          <h2>Introduction to HTML</h2>
+          <p>Basic Structure</p>
+
+          <aside class="notes">
+            Remind troupe we don't need everyone to code at this point
+          </aside>
+
+          <section data-auto-animate>
+            <pre data-id="code-animation"><code data-trim class="html"><script type="text/template">
+              <!DOCTYPE html>
+              <html>
+                <head>
+                  <title>My first website</title>
+                </head>
+                <body>
+                  <h1>Welcome!</h1>
+                  <p>This is my first HTML site.</p>
+                </body>
+              </html>
+            </script></code></pre>
+          </section>
+          <section data-auto-animate>
+            <pre data-id="code-animation"><code data-trim class="html"><script type="text/template">
+              <!DOCTYPE html>                
+            </script></code></pre>
+
+            <p style="font-size: .3em;" class="current-visible">
+              👉 The <i>DOCTYPE</i> declaration is an instruction to the web browser about what version of HTML the page is written in.
+            </p>
+          </section>
+          <section data-auto-animate>
+            <pre data-id="code-animation"><code data-trim class="html"><script type="text/template">
+              <!DOCTYPE html>
+              <html>
+                
+              </html>
+            </script></code></pre>
+
+            <p style="font-size: .3em;" class="current-visible">
+              👉 &lt;html&gt; tag indicates that this web page is written in HTML.
+            </p>
+
+            <aside class="notes">
+              <p>Explain that there's other types of documents but we're only seeing HTML at this course as markup structures (structuring content)</p>
+            </aside>
+          </section>
+          <section data-auto-animate>
+            <pre data-id="code-animation"><code data-trim class="html"><script type="text/template">
+              <!DOCTYPE html>
+              <html>
+                <head>
+                  
+                </head>
+              </html>
+            </script></code></pre>
+
+            <p style="font-size: .3em;" class="current-visible">
+              👉 the &lt;head&gt; element contains title and meta data of your web document.
+            </p>
+          </section>
+          <section data-auto-animate>
+            <pre data-id="code-animation"><code data-trim class="html"><script type="text/template">
+              <!DOCTYPE html>
+              <html>
+                <head>
+                  <title>My first website</title>
+                </head>
+              </html>
+            </script></code></pre>
+
+            <p style="font-size: .3em;" class="current-visible">
+              👉 &lt;title&gt; tag contains the web page title.
+            </p>
+          </section>
+          <section data-auto-animate>
+            <pre data-id="code-animation"><code data-trim class="html"><script type="text/template">
+              <!DOCTYPE html>
+              <html>
+                <head>
+                  <title>My first website</title>
+                </head>
+                <body>
+
+                </body>
+              </html>
+            </script></code></pre>
+
+            <p style="font-size: .3em;" class="current-visible">
+              👉 the &lt;body&gt; tag contains the content and its structure of your entire web page.
+            </p>
+          </section>
+          <section data-auto-animate>
+            <pre data-id="code-animation"><code data-trim class="html"><script type="text/template">
+              <!DOCTYPE html>
+              <html>
+                <head>
+                  <title>My first website</title>
+                </head>
+                <body>
+                  <h1>Welcome!</h1>
+                </body>
+              </html>
+            </script></code></pre>
+
+            <p style="font-size: .3em;" class="current-visible">
+              👉 the &lt;h1&gt; represents the level of heading of your web page. (we'll dip dive on this)
+            </p>
+          </section>
+          <section data-auto-animate>
+            <pre data-id="code-animation"><code data-trim class="html"><script type="text/template">
+              <!DOCTYPE html>
+              <html>
+                <head>
+                  <title>My first website</title>
+                </head>
+                <body>
+                  <h1>Welcome!</h1>
+                  <p>This is my first HTML site.</p>
+                </body>
+              </html>
+            </script></code></pre>
+
+            <p style="font-size: .3em;" class="current-visible">
+              👉 the &lt;p&gt; is simply a paragraph text that can be displayed at anywhere on your page. 🙂
+            </p>
+          </section>
+        </section>
+
+        <!--SLIDE 5-->
+        <!--Inspecting elements (introduction)-->
+        <section>
+          <!--SLIDE 5.1-->
+          <section data-auto-animate data-timing="10">
+            <h2>Inspecting elements</h2>
+          </section>
+          
+          <!--SLIDE 5.2-->
+          <section data-auto-animate data-timing="10">
+            <h2>Inspecting elements</h2>
+            <p>Why?</p>
+          </section>
+          
+          <!--SLIDE 5.3-->
+          <section data-auto-animate data-timing="300">
+            <h2>Inspecting elements</h2>
+            <p>Why?</p>
+
+            <ul style="list-style: none;">
+              <li><span class="fragment" data-fragment-index="0">✅</span> Debug <i data-fragment-index="1" class="fragment r-stretch"><small>👉 stands for identifying and removing errors from code</small></i></li>
+              <li><span class="fragment" data-fragment-index="2">✅</span> Re-order elements</li>
+              <li><span class="fragment" data-fragment-index="3">✅</span> Manipulate elements</li>
+              <li><span class="fragment" data-fragment-index="4">☑️</span> Do that together</li>
+            </ul>
+          </section>
+        </section>
+
+        <!--SLIDE 6-->
+        <!--Inspecting elements (introduction)-->
+        <section>
+          <!--SLIDE 6.1-->
+          <section data-auto-animate data-timing="10">
+            <h2>Let's inspect things together!</h2>
+          </section>
+
+          <!--SLIDE 6.2-->
+          <section data-auto-animate data-timing="10">
+            <h2>Let's inspect things together!</h2>
+            <p style="font-size: .4em;">First, copy and paste the <code>index.html</code> file you've created from previous homework</p>
+          </section>
+      </div>
+    </div>
+  </body>
+</html>
