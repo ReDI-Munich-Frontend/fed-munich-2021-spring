@@ -25,42 +25,42 @@ const readmeFooter = `
 ---
 <sub>[View on Github](https://github.com/${repoOwner}/${repoName})</sub>`;
 
-const slides = slideFiles.map(slideFile => {
-  const strippedFileName = slideFile.replace(/\.\/dist\/docs\//, '');
-  const fileContents = fs.readFileSync(slideFile);
-  const dom = new jsdom.JSDOM(fileContents);
+const slides = slideFiles
+  .filter(slideFile => !slideFile.endsWith('/00_template.slides.html'))
+  .map(slideFile => {
+    const strippedFileName = slideFile.replace(/\.\/dist\/docs\//, '');
+    const fileContents = fs.readFileSync(slideFile);
+    const dom = new jsdom.JSDOM(fileContents);
 
-  const sourceDirectory = ('./src/' + strippedFileName).replace(/\/[^\/]*$/, '') + '/';
-  const classResourcesDirectoryCandidate = sourceDirectory + 'class-resources';
-  
-  console.log(classResourcesDirectoryCandidate);
+    const sourceDirectory = ('./src/' + strippedFileName).replace(/\/[^\/]*$/, '') + '/';
+    const classResourcesDirectoryCandidate = sourceDirectory + 'class-resources';
 
-  const head = dom.window.document.querySelector('head');
+    const head = dom.window.document.querySelector('head');
 
-  const title = head.querySelector('title').textContent;
-  const dateString = head.querySelector('meta[name=date]').attributes['content'].value;
-  const descriptionRaw = head.querySelector('meta[name=description]').attributes['content'].value;
+    const title = head.querySelector('title').textContent;
+    const dateString = head.querySelector('meta[name=date]').attributes['content'].value;
+    const descriptionRaw = head.querySelector('meta[name=description]').attributes['content'].value;
 
-  const date = new Date(dateString);
-  const dateLocaleString = date.toLocaleDateString('en-GB', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric'
+    const date = new Date(dateString);
+    const dateLocaleString = date.toLocaleDateString('en-GB', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric'
+    });
+    const description = fixIndentation(descriptionRaw);
+
+    return {
+      title,
+      link: slideLinkBaseUrl + strippedFileName,
+      date: new Date(dateString),
+      dateLocaleString,
+      descriptionRaw,
+      description,
+      classResources: fs.existsSync(classResourcesDirectoryCandidate)
+        ? classResourcesDirectoryCandidate.replace(/^\.\//, '')
+        : null
+    };
   });
-  const description = fixIndentation(descriptionRaw);
-
-  return {
-    title,
-    link: slideLinkBaseUrl + strippedFileName,
-    date: new Date(dateString),
-    dateLocaleString,
-    descriptionRaw,
-    description,
-    classResources: fs.existsSync(classResourcesDirectoryCandidate)
-      ? classResourcesDirectoryCandidate.replace(/^\.\//, '')
-      : null
-  };
-});
 
 slides.sort((a, b) => a.date - b.date);
 
