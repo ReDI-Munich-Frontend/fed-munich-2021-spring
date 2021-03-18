@@ -32,10 +32,10 @@
             <p>ReDI School Munich - Spring 2021</p>
 
             <h3 class="r-fit-text how-are-you">How are you?</h3>
-          
+
             <aside class="notes">
               Agenda for today:
-  
+
               <ul>
                 <li>Introduction to HTML</li>
                 <li>Browser elements inspecting</li>
@@ -69,16 +69,16 @@
             <h2>Recap</h2>
 
             <ul style="list-style: none;">
-              <li><span class="fragment" data-fragment-index="0">✅</span> Visual Studio Code</li>
-              <li><span class="fragment" data-fragment-index="1">✅</span> Git installed</li>
-              <li><span class="fragment" data-fragment-index="2">✅</span> GitHub account created</li>
-              <li><span class="fragment" data-fragment-index="3">✅</span> Our first contact with HTML</li>
-              <li><span class="fragment" data-fragment-index="4">✅</span> Homework <span class="fragment" data-fragment-index="5">👀</span></li>
+              <li><span class="fragment">✅</span> Visual Studio Code</li>
+              <li><span class="fragment">✅</span> Git installed</li>
+              <li><span class="fragment">✅</span> GitHub account created</li>
+              <li><span class="fragment">✅</span> Our first contact with HTML</li>
+              <li><span class="fragment">✅</span> Homework <span class="fragment">👀</span></li>
             </ul>
-          
+
             <aside class="notes">
               On recap:
-  
+
               <ul>
                 <li>Remind everyone about the importancy of those bullet points</li>
                 <li>Homework reviewed (we're going to do something similar at the end</li>
@@ -155,7 +155,7 @@
               </html>
             </script></code></pre>
 
-            <img data-src="images/skip.png" class="fragment fade-in" data-fragment-index="0"/>
+            <img data-src="images/skip.png" class="fragment fade-in"/>
           </section>
         </section>
 
@@ -185,7 +185,7 @@
           </section>
           <section data-auto-animate>
             <pre data-id="code-animation"><code data-trim class="html"><script type="text/template">
-              <!DOCTYPE html>                
+              <!DOCTYPE html>
             </script></code></pre>
 
             <p style="font-size: .3em;" class="current-visible">
@@ -196,7 +196,7 @@
             <pre data-id="code-animation"><code data-trim class="html"><script type="text/template">
               <!DOCTYPE html>
               <html>
-                
+
               </html>
             </script></code></pre>
 
@@ -213,7 +213,7 @@
               <!DOCTYPE html>
               <html>
                 <head>
-                  
+
                 </head>
               </html>
             </script></code></pre>
@@ -292,45 +292,396 @@
 
         <!--SLIDE 5-->
         <!--Inspecting elements (introduction)-->
-        <section>
+        <section data-timing="600">
           <!--SLIDE 5.1-->
           <section data-auto-animate data-timing="10">
             <h2>Inspecting elements</h2>
           </section>
-          
+
           <!--SLIDE 5.2-->
           <section data-auto-animate data-timing="10">
             <h2>Inspecting elements</h2>
-            <p>Why?</p>
+            <img data-src="images/wat.jpg" class="r-frame" />
+
+            <aside class="notes">
+              Talk about the power of inspecting elements:
+
+              <ul>
+                <li>Arrange content</li>
+                <li>Arrange elements</li>
+                <li>Debug other stuff (we'll deep dive on that later on</li>
+              </ul>
+            </aside>
           </section>
-          
+
           <!--SLIDE 5.3-->
           <section data-auto-animate data-timing="300">
             <h2>Inspecting elements</h2>
             <p>Why?</p>
 
+            <div style="position: relative; overflow: hidden;">
+              <video
+                loop
+                controls
+                style="max-width: 70%; margin-top: -15px;"
+                data-autoplay
+                data-src="class-resources/inspecting-our-first-element.mp4"
+              ></video>
+            </div>
+          </section>
+
+          <!--SLIDE 5.4-->
+          <section data-auto-animate data-timing="300">
+            <h2>Inspecting elements</h2>
+            <p>Why?</p>
+
             <ul style="list-style: none;">
-              <li><span class="fragment" data-fragment-index="0">✅</span> Debug <i data-fragment-index="1" class="fragment r-stretch"><small>👉 stands for identifying and removing errors from code</small></i></li>
-              <li><span class="fragment" data-fragment-index="2">✅</span> Re-order elements</li>
-              <li><span class="fragment" data-fragment-index="3">✅</span> Manipulate elements</li>
-              <li><span class="fragment" data-fragment-index="4">☑️</span> Do that together</li>
+              <li><span class="fragment">✅</span> Re-order elements</li>
+              <li><span class="fragment">✅</span> Manipulate elements</li>
+              <li><span class="fragment">✅</span> Debug <i class="fragment r-stretch">
+                <small style="vertical-align: middle;">👉 stands for identifying and removing errors from code</small>
+              </i></li>
+              <li><span class="fragment">☑️</span> We can all do that together ❤️</li>
             </ul>
+
+            <aside class="notes">
+              Talk about the power of debugging:
+
+              <ul>
+                <li>Bug means...</li>
+                <li>Dont want to scare you but sometimes might be tricky even though we always end up finding a solution</li>
+              </ul>
+            </aside>
           </section>
         </section>
 
         <!--SLIDE 6-->
-        <!--Inspecting elements (introduction)-->
+        <!--Inspecting elements (prepare)-->
         <section>
           <!--SLIDE 6.1-->
           <section data-auto-animate data-timing="10">
-            <h2>Let's inspect things together!</h2>
+            <h2>Let's do that together!</h2>
           </section>
 
           <!--SLIDE 6.2-->
-          <section data-auto-animate data-timing="10">
-            <h2>Let's inspect things together!</h2>
-            <p style="font-size: .4em;">First, copy and paste the <code>index.html</code> file you've created from previous homework</p>
+          <section data-auto-animate data-timing="60">
+            <h2>Let's do that together!</h2>
+            <p class="small-please"><b>Reminder</b>: Make sure you always have the following steps settled locally before the class starts.</p>
           </section>
+
+          <!--SLIDE 6.3-->
+          <section data-auto-animate data-timing="400">
+            <div class="r-stack">
+              <div>
+                <h3>Let's do that together!</h3>
+
+                <ul style="list-style: none; font-size: .8em;">
+                  <li><span>✅</span> First, copy and paste the <code>index.html</code> file from previous homework and paste into a new folder (e.g. <code style="background: #171758;">lesson2/index.html</code>)</li>
+                  <li class="fragment" data-fragment-index="1" style="margin-top: 10px;"><span>✅</span> Open your Visual Studio Code</li>
+                  <li class="fragment" data-fragment-index="2"><span>✅</span> Open the folder you just created </li>
+                  <li class="fragment" data-fragment-index="5"><span>✅</span> In your browser, open the index.html by typing <code style="background: #171758;">file://</code> in your address bar </li>
+                  <li class="fragment" data-fragment-index="7"><span>☑️</span> Now it's time to inspect elements all together! ❤️</li>
+                </ul>
+              </div>
+
+              <preview-window window-title="My first website"
+                              address="file:///C:/Users/redi-user/lesson2/index.html"
+                              icon-class="fa-globe-europe"
+                              class="fragment current-visible"
+                              data-fragment-index="6">
+                <iframe data-src="../01_getting_started/class-resources/first-website.html"></iframe>
+              </preview-window>
+
+              <img data-src="images/vscode.png" class="fragment r-frame current-visible" data-fragment-index="3"/>
+              <img data-src="images/vscode-folder-opened.png" class="fragment r-frame current-visible" data-fragment-index="4"/>
+            </div>
+
+            <aside class="notes">
+              We ain't gonna need a terminal right now but it's good to have it opened for
+            </aside>
+          </section>
+        </section>
+
+        <!--SLIDE 7-->
+        <!--Inspecting elements (demo)-->
+        <section>
+          <!--SLIDE 7.1-->
+          <section data-auto-animate data-timing="10">
+            <h3>Now it's time to inspect elements all together! ❤️</h3>
+            <p class="small-please" style="font-style: italic;">demo being presented</p>
+          </section>
+        </section>
+
+        <!--SLIDE 8-->
+        <!--Other tags-->
+        <section>
+          <!--SLIDE 8.1-->
+          <section data-auto-animate data-timing="10">
+            <h3>More structural tags, for you</h3>
+          </section>
+
+          <!--SLIDE 8.2-->
+          <section data-auto-animate data-timing="10">
+            <h3>More structural tags, for you</h3>
+            <p class="small-please">Let's learn a few other tags in HTML which will be important in the upcoming lessons and topics</p>
+
+            <aside class="notes">
+              Explain what means "structural", in this case. (Compare with head)
+            </aside>
+          </section>
+
+          <!--SLIDE 8.3-->
+          <section data-auto-animate data-timing="10">
+            <h3>More structural tags, for you</h3>
+            <p class="small-please">Let's learn a few other tags in HTML which will be important in the upcoming lessons and topics</p>
+
+            <ul class="tags-with-code">
+              <li><code>&lt;div&gt;</code> defines a division or a section in an HTML document.</li>
+              <li><code>&lt;img&gt;</code> used to embed an image in an HTML page. <small style="vertical-align: middle;">(remember: there's not content within img)</small></li>
+              <li><code>&lt;a&gt;</code> defines a hyperlink, which is used to link from one page to another. (`a` as in anchor)</li>
+              <li class="fragment small-please" style="margin-top: 50px; color: gray;"><code>&lt;!-- SOME COMMENT --&gt;</code> specifies a comment in a page (only visible for developers).</li>
+            </ul>
+
+            <div class="fragment">
+              <p>👇🏼 The ones you know already</p>
+
+              <ul class="tags-with-code">
+                <li><code>&lt;p&gt;</code> represents a paragraph.</li>
+                <li><code>&lt;h1&gt;, &lt;h2&gt; ... &lt;h6&gt;</code> used to define HTML headings, from most to less important.</li>
+              </ul>
+            </div>
+          </section>
+
+          <!--SLIDE 8.4-->
+          <section data-auto-animate data-timing="10">
+            <h3>More structural tags, for you</h3>
+            <p class="small-please"><b>Remind</b>: Some of those tags contain important attributes!</p>
+          </section>
+
+          <!--SLIDE 8.5-->
+          <section data-auto-animate data-timing="10">
+            <h3>More structural tags, for you</h3>
+            <p class="small-please"><b>Remind</b>: Some of those tags contain important attributes!</p>
+
+            <p>"OK, but what are attributes of a tag?" 🤔💭</p>
+            <img data-src="images/curious.gif"/>
+          </section>
+
+          <!--SLIDE 8.5-->
+          <section data-auto-animate data-timing="10">
+            <h3>More structural tags, for you</h3>
+            <p class="small-please" style="font-weight: bold;">👉 Attributes are special words used inside the opening tag to control the element's behaviour</p>
+
+            <ul class="tags-with-code">
+              <li><code>&lt;img&gt;</code> contains, for instance, the <code>src=""</code> attribute. <small style="vertical-align: middle;">(and many others)</small></li>
+              <li>whereas <code>&lt;a&gt;</code> contains <code>href=""</code> and <code>target=""</code>.</li>
+            </ul>
+
+            <br/><br/>
+
+            <ul class="fragment tags-with-code tags-with-code--small">
+              <li><code>src="YOUR_IMAGE.jpg"</code> will make the <b>img</b> tag displays the image you have selected.</li>
+              <li>whereas <code>href="http://somewhere.com"</code> will make the anchor clickable to the page you want the user to go.</li>
+              <li>and <code>target="_blank|_self"</code> will make the anchor open the href outside or inside the page user is currently viewing (`_self` is default).</li>
+            </ul>
+
+            <p class="fragment small-please"><a href="https://github.com/hail2u/html-best-practices">Reference: HTML best practices 🔗</a></p>
+
+            <aside class="notes">
+              - Remind everyone about not loosing customers/users when using "_blank" and the necessity of it :)
+            </aside>
+          </section>
+        </section>
+
+        <!--SLIDE 9-->
+        <!--Let's have an example/demo of the new tags-->
+        <section>
+          <!--SLIDE 9.1-->
+          <section data-auto-animate data-timing="10">
+            <h3>It's another demo time! 🎥</h3>
+            <p class="small-please" style="font-style: italic;">Let's all focus in the demo and afterwards we'll be doing a in-class exercise.</p>
+
+            <aside class="notes">
+              Tell everyone the importancy of acessibility even though we're not covering it at this class.
+            </aside>
+          </section>
+        </section>
+
+        <!--SLIDE 10-->
+        <!--Group exercise (list of favorite animals)-->
+        <section data-timing="1200">
+          <!--SLIDE 10.1-->
+          <section data-auto-animate data-timing="10">
+            <h3>Group exercise!</h3>
+          </section>
+
+          <!--SLIDE 10.2-->
+          <section data-auto-animate data-timing="10">
+            <h3>Group exercise!</h3>
+            <p class="small-please">Let's get into group of 4 to build the following in-class exercise together:</p>
+
+          </section>
+
+          <!--SLIDE 10.2-->
+          <section data-auto-animate data-timing="10">
+            <h3>Group exercise! 🤘</h3>
+            <p class="small-please">Let's get into group of 4 to build the following website together in about 15 minutes:</p>
+
+            <div class="r-stack">
+              <div>
+                <ul class="mid-please">
+                  <li class="fragment" data-fragment-index="0">After the rooms are broken into groups, choose a person internally to be a leader and share their screen;</li>
+                  <li class="fragment" data-fragment-index="1">Group Leader should ask for your favorite 3 animals within the room;</li>
+                  <li class="fragment" data-fragment-index="2">Create the index.html and 3 different htmls with your favorite ones (e.g. <code>dog.html</code>);</li>
+                  <li class="fragment" data-fragment-index="3">For each animal, display an image of this animal;</li>
+                  <li class="fragment" data-fragment-index="4">For each animal, place an anchor of this animal to wikipedia;</li>
+                  <li class="fragment" data-fragment-index="6">Group Leader (or someone else) present to the other students your page and the final code (3 minutes per group);</li>
+                  <br/>
+                  <li class="fragment" data-fragment-index="7"><b>Reminder 1 </b>: Me and another teacher will be helping you in case you have questions through the exercise!</li>
+                  <li class="fragment" data-fragment-index="8"><b>Reminder 2 </b>: We'll be measuring timing box and we'll let you know when it's two (2) minutes to go!</li>
+                </ul>
+              </div>
+
+              <img data-src="images/unicorn.png" class="fragment current-visible r-frame" width="50%" data-fragment-index="5"/>
+            </div>
+
+            <aside class="notes">
+              <p>- Send current slides from presentation to students via Zoom Chat </p>
+              <br/>
+              <p><b>After done</b>:</p>
+              <p>- Remind to note who is leading / presenting (we should have 5 groups)</p>
+              <p>- Countdown on breakout rooms </p>
+              <p>- Countdown on final presentation </p>
+            </aside>
+          </section>
+        </section>
+
+        <!--SLIDE 11-->
+        <!--Assignment time-->
+        <section>
+          <!--SLIDE 11.1-->
+          <section data-auto-animate data-timing="10">
+            <h3>Let's fill the seats!</h3>
+
+            <aside class="notes">
+              Send an assigmnet link.
+            </aside>
+          </section>
+
+          <!--SLIDE 11.1-->
+          <section data-auto-animate data-timing="10">
+            <h3>Let's fill the seats!</h3>
+            <p class="small-please" style="font-style: italic;">Teacher will send you the link and password through our Zoom chat.</p>
+
+            <aside class="notes">
+              Send an assigmnet link.
+            </aside>
+          </section>
+        </section>
+
+        <!--SLIDE 12-->
+        <!--Introduction to CSS (bullet points)-->
+        <section>
+          <!--SLIDE 12.1-->
+          <section data-auto-animate data-timing="10">
+            <h2>Introduction to CSS</h2>
+          </section>
+
+          <!--SLIDE 12.2-->
+          <section data-auto-animate data-timing="10">
+            <h2>Introduction to CSS</h2>
+            <p>What's CSS?</p>
+          </section>
+
+          <!--SLIDE 12.3-->
+          <section data-auto-animate data-timing="300">
+            <h3>Quick Introduction to CSS</h3>
+            <p>What's CSS?</p>
+
+            <ul>
+              <li>CSS is the code that styles your web content</li>
+              <li>CSS stands for <b>C</b>ascading <b>S</b>tyle <b>S</b>heets</li>
+              <li>Why knowing <b>CSS</b></li>
+              <li>
+                <a href="https://www.w3.org/standards/webdesign/htmlcss.html" target="_blank">W3C</a> standards
+              </li>
+            </ul>
+          </section>
+        </section>
+
+        <!--SLIDE 13-->
+        <!--Inline CSS (examples)-->
+        <section>
+          <!--SLIDE 13.1-->
+          <section data-auto-animate data-timing="10">
+            <h3>For now, let's use "inline" CSS</h3>
+          </section>
+
+          <!--SLIDE 13.2-->
+          <section data-auto-animate data-timing="10">
+            <h3>For now, let's use "inline" CSS</h3>
+            <img data-src="images/wat.jpg" class="r-frame" />
+          </section>
+
+          <!--SLIDE 13.3-->
+          <section data-auto-animate data-timing="300">
+            <h3>For now, let's use "inline" CSS</h3>
+            <p class="small-please">You most likely remember our tag attributes from some of the tags, don't ya?</p>
+
+            <p class="fragment small-please" style="color: #c98f23; margin-bottom: 0;">Still, why "inline" and what does that mean❓</p>
+            <p class="fragment small-please current-value"  style="color: #0d407a; margin-top: 0;">– It means we want to make sure we add styles for a few components to get an idea of how CSS works</p>
+
+            <ul class="tags-with-code mid-please" style="list-style: decimal;">
+              <li>First, add this attribute for any structural element of your page: <code>style=""</code></li>
+              <li>As an example, insert a color for this element by adding this "color" property: <code style="font-size: .5em">style="color: blue;"</code></li>
+              <li>Remember: CSS contains properties which can define different styles, colors, margins, etc; for your element</li>
+              <li>Remember: For now, as we're using inline, let's make sure it's written as <code style="font-size: .5em">style="ATTRIBUTE: VALUE; ATTRIBUTE2: VALUE2;"</code></li>
+            </ul>
+
+            <p class="fragment small-please" data-fragment-index="1">👉 We will dive deeper into CSS in the next lesson.</p>
+          </section>
+        </section>
+
+        <!--SLIDE 14-->
+        <!--Last demo-->
+        <section>
+          <!--SLIDE 14.1-->
+          <section data-auto-animate data-timing="10">
+            <h3>It's another demo time! 🎥 <span class="fragment" data-fragment-index="0" style="color: gray;">yep, again...</span></h3>
+            <p class="fragment small-please" data-fragment-index="2"><a href="https://github.com/hail2u/html-best-practices">Reference: HTML best practices 🔗</a></p>
+            <p class="fragment small-please" data-fragment-index="1">👉 We will also dive deeper into inspecting elements and their styles in the upcoming lessons.</p>
+          </section>
+        </section>
+
+        <!--SLIDE 15-->
+        <!--Homework-->
+        <section>
+          <!--SLIDE 15.1-->
+          <section data-auto-animate data-timing="10">
+            <h2>Homework</h2>
+
+            <p class="fragment small-please">👉 Anyone color blind? Talk to me privately and I can propose a different exercise for you!</p>
+
+            <ul class="mid-please fragment">
+              <li>Goal is to build a page showing us the colors of a rainbow</li>
+              <li>Feel free to add images, if you want. They are completely optional.</li>
+              <li>Assignment will be displayed in Google classroom soon.</li>
+              <li>If you don't remember how to send the homework, please check <a href="https://redi-munich-frontend.github.io/fed-munich-2021-spring/lessons/01_getting_started/getting-started.slides.html#/6/0/0">this link</a>.</li>
+            </ul>
+
+            <aside class="notes">
+              - I added images as optional in order to make us understand a little better who are "lazy" or "pro-active" 😅
+            </aside>
+          </section>
+        </section>
+
+        <!--FINAL SLIDE-->
+        <!--Questions-->
+        <section>
+          <section data-auto-animate data-timing="10">
+            <h3>Questions❓</h3>
+          </section>
+        </section>
       </div>
     </div>
   </body>

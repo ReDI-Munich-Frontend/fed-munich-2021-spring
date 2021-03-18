@@ -17,7 +17,7 @@
 }
 
 #introduction-to-frontend {
-  .initial { 
+  .initial {
     .how-are-you {
       $size: 15vh;
 
@@ -31,5 +31,24 @@
       transform: translate(0, -50%);
       white-space: nowrap;
     }
+  }
+
+  .tags-with-code {
+    li > code {
+      background: #0d407a;
+      color: #c98f23;
+    }
+
+    &--small {
+      font-size: .4em;
+    }
+  }
+
+  .small-please {
+    font-size: .4em;
+  }
+
+  .mid-please {
+    font-size: .6em;
   }
 }

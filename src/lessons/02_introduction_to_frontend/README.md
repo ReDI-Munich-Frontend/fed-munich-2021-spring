@@ -2,12 +2,12 @@
 
 ## Summary
 
-- Basic HTML Document Structure (html, head, body, divs, heading, p)
-  - What is HTML
-    - W3C
-    - Browsers would read that
-  - Show examples with basic structure
-  - ```
+- [x] Basic HTML Document Structure (html, head, body, divs, heading, p)
+  - [x] What is HTML
+    - [x] W3C
+    - [x] Browsers would read that
+  - [x] Show examples with basic structure
+  - [] ```
   <!DOCTYPE html>
 <html>
   <head>
@@ -19,24 +19,24 @@
   </body>
 </html>
 ```
-  - Divs (break content into different areas)
-- Inspect elements
-  - Showing elements inspection
-  - Change elements values, positions
-- Semantics overview
-  - Heading, why h1, h2 ... 6
-  - Do this for readability and for crawlers search
-    - Show screenshot
-  - Explain SEO related topic
-- Introduce "more advanced" tags
-  - img
-  - anchors
-- In-class Exercises
-  - Build a page with your favorite animal
-  - Anchor for a wikipedia for that animal
-- Introduction to CSS
-  - What is CSS (basic explanation)
-  - Inline CSS usage in components
-  - Inspect element and change their css attributes
+- [x] Inspect elements
+  - [x] Showing elements inspection
+  - [x] Change elements values, positions
+- [x] Semantics overview
+  - [x] Heading, why h1, h2 ... 6
+  - [x] Do this for readability and for crawlers search
+    - [x] Show screenshot
+  - [x] Explain SEO related topic
+  - [x] Divs (break content into different areas)
+- [x] Introduce "more advanced" tags
+  - [x] img
+  - [x] anchors
+- [x] In-class Exercises
+  - [x] Build a page with your favorite animal
+  - [x] Anchor for a wikipedia for that animal
+- [x] Introduction to CSS
+  - [x] What is CSS (basic explanation)
+  - [x] Inline CSS usage in components
+  - [x] Inspect element and change their css attributes
 
 First Homework
