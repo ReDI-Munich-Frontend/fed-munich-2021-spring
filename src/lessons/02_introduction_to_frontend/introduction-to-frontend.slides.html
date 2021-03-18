@@ -188,7 +188,7 @@
               <!DOCTYPE html>
             </script></code></pre>
 
-            <p style="font-size: .3em;" class="current-visible">
+            <p class="small-please" class="current-visible">
               👉 The <i>DOCTYPE</i> declaration is an instruction to the web browser about what version of HTML the page is written in.
             </p>
           </section>
@@ -200,7 +200,7 @@
               </html>
             </script></code></pre>
 
-            <p style="font-size: .3em;" class="current-visible">
+            <p class="small-please" class="current-visible">
               👉 &lt;html&gt; tag indicates that this web page is written in HTML.
             </p>
 
@@ -218,7 +218,7 @@
               </html>
             </script></code></pre>
 
-            <p style="font-size: .3em;" class="current-visible">
+            <p class="small-please" class="current-visible">
               👉 the &lt;head&gt; element contains title and meta data of your web document.
             </p>
           </section>
@@ -232,7 +232,7 @@
               </html>
             </script></code></pre>
 
-            <p style="font-size: .3em;" class="current-visible">
+            <p class="small-please" class="current-visible">
               👉 &lt;title&gt; tag contains the web page title.
             </p>
           </section>
@@ -249,7 +249,7 @@
               </html>
             </script></code></pre>
 
-            <p style="font-size: .3em;" class="current-visible">
+            <p class="small-please" class="current-visible">
               👉 the &lt;body&gt; tag contains the content and its structure of your entire web page.
             </p>
           </section>
@@ -266,7 +266,7 @@
               </html>
             </script></code></pre>
 
-            <p style="font-size: .3em;" class="current-visible">
+            <p class="small-please" class="current-visible">
               👉 the &lt;h1&gt; represents the level of heading of your web page. (we'll dip dive on this)
             </p>
           </section>
@@ -284,7 +284,7 @@
               </html>
             </script></code></pre>
 
-            <p style="font-size: .3em;" class="current-visible">
+            <p class="small-please" class="current-visible">
               👉 the &lt;p&gt; is simply a paragraph text that can be displayed at anywhere on your page. 🙂
             </p>
           </section>
@@ -435,33 +435,38 @@
             <h3>More structural tags, for you</h3>
             <p class="small-please">Let's learn a few other tags in HTML which will be important in the upcoming lessons and topics</p>
 
-            <ul class="tags-with-code">
-              <li><code>&lt;div&gt;</code> defines a division or a section in an HTML document.</li>
-              <li><code>&lt;img&gt;</code> used to embed an image in an HTML page. <small style="vertical-align: middle;">(remember: there's not content within img)</small></li>
-              <li><code>&lt;a&gt;</code> defines a hyperlink, which is used to link from one page to another. (`a` as in anchor)</li>
-              <li class="fragment small-please" style="margin-top: 50px; color: gray;"><code>&lt;!-- SOME COMMENT --&gt;</code> specifies a comment in a page (only visible for developers).</li>
-            </ul>
+            <div class="columns align-start justify-center">
+              <div>
+                <ul class="tags-with-code">
+                  <li><code>&lt;div&gt;</code> defines a division or a section in an HTML document.</li>
+                  <li><code>&lt;img&gt;</code> used to embed an image in an HTML page. <small style="vertical-align: middle;">(remember: there's not content within img)</small></li>
+                  <li><code>&lt;a&gt;</code> defines a hyperlink, which is used to link from one page to another. (`a` as in anchor)</li>
+                  <li class="fragment small-please" style="margin-top: 50px; color: gray;"><code>&lt;!-- SOME COMMENT --&gt;</code> specifies a comment in a page (only visible for developers).</li>
+                </ul>
+              </div>
 
-            <div class="fragment">
-              <p>👇🏼 The ones you know already</p>
 
-              <ul class="tags-with-code">
-                <li><code>&lt;p&gt;</code> represents a paragraph.</li>
-                <li><code>&lt;h1&gt;, &lt;h2&gt; ... &lt;h6&gt;</code> used to define HTML headings, from most to less important.</li>
-              </ul>
+              <div class="fragment">
+                <p>👇🏼 The ones you know already</p>
+
+                <ul class="tags-with-code">
+                  <li><code>&lt;p&gt;</code> represents a paragraph.</li>
+                  <li><code>&lt;h1&gt;, &lt;h2&gt; ... &lt;h6&gt;</code> used to define HTML headings, from most to less important.</li>
+                </ul>
+              </div>
             </div>
           </section>
 
           <!--SLIDE 8.4-->
           <section data-auto-animate data-timing="10">
             <h3>More structural tags, for you</h3>
-            <p class="small-please"><b>Remind</b>: Some of those tags contain important attributes!</p>
+            <p class="small-please"><b>Reminder</b>: Some of those tags contain important attributes!</p>
           </section>
 
           <!--SLIDE 8.5-->
           <section data-auto-animate data-timing="10">
             <h3>More structural tags, for you</h3>
-            <p class="small-please"><b>Remind</b>: Some of those tags contain important attributes!</p>
+            <p class="small-please"><b>Reminder</b>: Some of those tags contain important attributes!</p>
 
             <p>"OK, but what are attributes of a tag?" 🤔💭</p>
             <img data-src="images/curious.gif"/>
@@ -470,22 +475,36 @@
           <!--SLIDE 8.5-->
           <section data-auto-animate data-timing="10">
             <h3>More structural tags, for you</h3>
-            <p class="small-please" style="font-weight: bold;">👉 Attributes are special words used inside the opening tag to control the element's behaviour</p>
+            <p class="small-please" style="font-weight: bold;">👉 Attributes are special words used inside the opening tag to control the element's behaviour.</p>
 
-            <ul class="tags-with-code">
-              <li><code>&lt;img&gt;</code> contains, for instance, the <code>src=""</code> attribute. <small style="vertical-align: middle;">(and many others)</small></li>
-              <li>whereas <code>&lt;a&gt;</code> contains <code>href=""</code> and <code>target=""</code>.</li>
-            </ul>
+            <div class="fragment">
+              <h5>Some of the <code>&lt;img&gt;</code> attributes</h5>
 
-            <br/><br/>
+              <pre data-auto-animate><code data-trim class="html"><script type="text/template">
+                <html>
+                  <head><title>Gimme more tags: images</title></head>
+                  <body>
+                    <img src="images/your_image.jpg"/>
+                  </body>
+                </html>
+              </script></code></pre>
+            </div>
 
-            <ul class="fragment tags-with-code tags-with-code--small">
-              <li><code>src="YOUR_IMAGE.jpg"</code> will make the <b>img</b> tag displays the image you have selected.</li>
-              <li>whereas <code>href="http://somewhere.com"</code> will make the anchor clickable to the page you want the user to go.</li>
-              <li>and <code>target="_blank|_self"</code> will make the anchor open the href outside or inside the page user is currently viewing (`_self` is default).</li>
-            </ul>
+            <div class="fragment">
+              <h5>Some of the <code>&lt;a&gt;</code> attributes</h5>
 
-            <p class="fragment small-please"><a href="https://github.com/hail2u/html-best-practices">Reference: HTML best practices 🔗</a></p>
+              <pre data-auto-animate><code data-trim class="html"><script type="text/template">
+                <html>
+                  <head><title>Gimme more tags: anchors</title></head>
+                  <body>
+                    <a href="http://somewhere.com" target="_self">if you click here, this url will open in the same tab</a> <!-- default -->
+                    <a href="http://somewhere.com" target="_blank">if you click here, you'll have another tab opening</a>
+                  </body>
+                </html>
+              </script></code></pre>
+            </div>
+
+            <p class="fragment small-please"><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element">Reference: HTML elements reference 🔗</a></p>
 
             <aside class="notes">
               - Remind everyone about not loosing customers/users when using "_blank" and the necessity of it :)
@@ -628,17 +647,38 @@
             <h3>For now, let's use "inline" CSS</h3>
             <p class="small-please">You most likely remember our tag attributes from some of the tags, don't ya?</p>
 
-            <p class="fragment small-please" style="color: #c98f23; margin-bottom: 0;">Still, why "inline" and what does that mean❓</p>
-            <p class="fragment small-please current-value"  style="color: #0d407a; margin-top: 0;">– It means we want to make sure we add styles for a few components to get an idea of how CSS works</p>
+            <pre data-auto-animate><code data-trim class="html"><script type="text/template">
+              <html>
+                <head><title>Inline CSS</title></head>
+                <body>
+                  <p>This is unstyled text</p>
+                  <p style="color: blue">This text is blue</p>
+                  <p style="color: red; background-color: yellow">
+                    Multiple properties can be separated by semicolons
+                  </p>
+                </body>
+              </html>
+            </script></code></pre>
 
-            <ul class="tags-with-code mid-please" style="list-style: decimal;">
+            <aside class="notes">
               <li>First, add this attribute for any structural element of your page: <code>style=""</code></li>
               <li>As an example, insert a color for this element by adding this "color" property: <code style="font-size: .5em">style="color: blue;"</code></li>
               <li>Remember: CSS contains properties which can define different styles, colors, margins, etc; for your element</li>
-              <li>Remember: For now, as we're using inline, let's make sure it's written as <code style="font-size: .5em">style="ATTRIBUTE: VALUE; ATTRIBUTE2: VALUE2;"</code></li>
-            </ul>
+              <li>Remember: For now, as we're using inline, let's make sure it's written as <code style="font-size: .5em">style="PROPERTY: VALUE; PROPERTY2: VALUE2;"</code></li>
+              <li>Remember: We want to separate HTML from CSS (beware we're deep diving on this in the next lesson!</li>
+            </aside>
+          </section>
 
-            <p class="fragment small-please" data-fragment-index="1">👉 We will dive deeper into CSS in the next lesson.</p>
+          <!--SLIDE 13.4-->
+          <section data-auto-animate data-timing="10">
+            <h3>For now, let's use "inline" CSS</h3>
+
+            <div style="text-align: left" class="r-fit-text">
+              <p class="small-please"><b>Q</b>: Still, why "inline" and what does that mean❓</p>
+              <p class="small-please current-value"><b>A</b>: It means we want to make sure we add styles for a few components to get an idea of how CSS works</p>
+            </div>
+
+            <p class="fragment small-please">👉 We will dive deeper into CSS in the next lesson.</p>
           </section>
         </section>
 
@@ -663,8 +703,9 @@
             <p class="fragment small-please">👉 Anyone color blind? Talk to me privately and I can propose a different exercise for you!</p>
 
             <ul class="mid-please fragment">
-              <li>Goal is to build a page showing us the colors of a rainbow</li>
-              <li>Feel free to add images, if you want. They are completely optional.</li>
+              <li>First goal is to create an html site where you use the elements and styles shown in the lesson</li>
+              <li>Create a site where you try out for example eight of the css properties listed <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Properties_Reference" target="_blank">here</li>
+              <li>Feel free to add images, if you want. They are completely optional and a plus.</li>
               <li>Assignment will be displayed in Google classroom soon.</li>
               <li>If you don't remember how to send the homework, please check <a href="https://redi-munich-frontend.github.io/fed-munich-2021-spring/lessons/01_getting_started/getting-started.slides.html#/6/0/0">this link</a>.</li>
             </ul>
