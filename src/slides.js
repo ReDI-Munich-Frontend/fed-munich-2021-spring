@@ -17,7 +17,7 @@ deck.initialize({
   preloadIframes: true,
   width: 1280,
   height: 720,
-  totalTime: 7200 // two hours
+  totalTime: 9000 // 2.5 hours
 });
 
 CustomHtmlElement.register(PreviewWindowElement);
