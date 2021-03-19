@@ -11,9 +11,9 @@ const htmlPlugins = glob.sync('./src/lessons/**/*.html', {
   ignore: './src/lessons/**/class-resources/**/*.html'
 }).map(file => {
   const jsFileCandidate = file.replace(/\.html$/i, '.js');
-  
+
   const chunks = [file.match(/\.slides\.html$/i) ? 'slides' : 'main'];
-  
+
   if (fs.existsSync(jsFileCandidate) && fs.lstatSync(jsFileCandidate).isFile()) {
     const chunkName = `additional-chunk-${i++}`;
     additionalEntryPoints[chunkName] = jsFileCandidate;
@@ -43,8 +43,9 @@ module.exports = {
     ...additionalEntryPoints
   },
   output: {
-    filename: '[id].[contenthash].js',
-    path: path.resolve(__dirname, 'dist/docs')
+    filename: 'js/[id].[contenthash].js',
+    path: path.resolve(__dirname, 'dist/docs'),
+    assetModuleFilename: 'assets/[contenthash][ext]'
   },
   module: {
     rules: [
@@ -101,4 +102,4 @@ module.exports = {
     }),
     ...htmlPlugins
   ]
-}
+};

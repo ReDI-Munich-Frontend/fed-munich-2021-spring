@@ -31,7 +31,11 @@ npm run start
 Then, the slides will be available at
 `https://localhost:8080/your-directory/your-slides-filename.slides.html`.
 
-The build-in webserver will automatically reload whenever you make changes to
+Alternatively, run `npm run start:open` to automatically open a browser with a
+lesson overview, from which you can easily navigate to the slides you're
+working on.
+
+The built-in webserver will automatically reload whenever you make changes to
 your source files.
 
 ## Creating new slides
@@ -68,7 +72,8 @@ Example directory structure:
 ## Presenting
 
 While presenting, press <kbd>S</kbd> to show the speaker notes. If your browser
-blocks the speaker note pop-up, you may have to press S again once it's open.
+blocks the speaker note pop-up, you may have to press <kbd>S</kbd> again once
+it's open.
 
 ## Deployment on Github Pages
 
