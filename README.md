@@ -13,7 +13,7 @@ Configuration of Reveal.js happens in `src/slides.js`.
 
 For local installation, you need Node.js.
 
-Clone this repsoitory and install the external dependencies:
+Clone this repository and install the external dependencies:
 
 ```
 git clone git@github.com:ReDI-Munich-Frontend/fed-munich-2021-spring.git
