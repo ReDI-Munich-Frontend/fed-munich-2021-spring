@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Introduction to CSS</title>
+    <meta name="date" content="2021-03-18" />
+    <!-- TODO: ADD content -->
+    <meta name="description" content="" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides" id="introduction-to-frontend">
+        <!--SLIDE 1-->
+        <section class="initial">
+          <!--SLIDE 1.1-->
+          <section data-auto-animate data-timing="10">
+            <p>Welcome to</p>
+            <h1 class="r-fit-text">Introduction to CSS</h1>
+            <p>ReDI School Munich - Spring 2021</p>
+          </section>
+        </section>
+
+        <section>
+          <!--SLIDE 2-->
+          <section data-auto-animate data-timing="10">
+            <p>But first...</p>
+            <h2>Let us recap!</h2>
+            <ul data-auto-animate data-timing="10">
+              <li class="fragment">HTML, tags and elements</li>
+              <li class="fragment">A tad of CSS</li>
+              <li class="fragment">The homework!</li>
+            </ul>
+          </section>
+        </section>
+
+        <section>
+          <!--SLIDE 3.1-->
+          <section data-auto-animate data-timing="10">
+            <h2>What is CSS?</h2>
+            <h3 class="fragment">Cascade Style Sheet</h3>
+            <aside class="notes">
+              Headings will look larger than regular text, paragraphs break onto
+              a new line and have space between them. Links are colored and
+              underlined to distinguish them from the rest of the text. What you
+              are seeing is the browser's default styles — very basic styles
+              that the browser applies to HTML to make sure it will be basically
+              readable even if no explicit styling is specified by the author of
+              the page.
+            </aside>
+          </section>
+          <!--SLIDE 3.2-->
+          <section data-auto-animate data-timing="10">
+            <h2>What do we use it for?</h2>
+            <ul>
+              <li class="fragment">
+                We use CSS to style a document and define how it should be
+                visually presented to the user
+              </li><br/>
+              <li class="fragment">
+                Change the color of a text, make something move, push an element
+                to the side and more!
+              </li>
+            </ul>
+          </section>
+        </section>
+        <section>
+          <!--SLIDE 4.1-->
+          <section>
+            <h2>How do we use it?</h2>
+            <p>There are three different ways of using css in our websites...</p>
+            <br/>
+              <p class="fragment">
+                Inline
+              </p><br/>
+              <p class="fragment">
+                Internal
+              </p><br/>
+              <p class="fragment">
+                External
+              </p>
+          </section>
+          <!--SLIDE 4.2-->
+          <section>
+            <h2>Inline CSS</h2>
+            <img src="images/inlineCss.png"/>
+            <aside class="notes"> However, we don’t want to continue down this path, as things start to get messy if our HTML is cluttered with lots of CSS inside it.</aside>
+          </section>
+          <!--SLIDE 4.3-->
+          <section>
+            <h2>Internal CSS</h2>
+            <img src="images/internalCss.png"/>
+          </section>
+          <!--SLIDE 4.4-->
+          <section>
+            <h2>External CSS</h2>
+            <img src="images/externalCss.png"/>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>CSS Syntax</h2>
+            <p class="fragment">I want the main heading to be red and somewhat big...</p>
+            <img class="fragment" src="images/cssExample.png" />
+          </section>
+          <section>
+            <h1>Selectors</h1>
+            <p>They are the ones that let us find or <b class="highlight">SELECT</b> the element that we want to style</p>
+            <aside class="notes">There are different types of selectors, basics, atributte, pseudo elements, pseudo classes, combinators</aside>
+          </section>
+          <section>
+            <h2>Basic Selectors</h2>
+            <img class="r-stretch" src="images/basicSelectors.png" />
+          </section>
+          <section>
+            <h2>Attribute Selectors</h2>
+            <img class="r-stretch" src="images/attrSelectors.png" />
+          </section>
+          <section>
+            <h2>Pseudo-classes Selectors</h2>
+            <img class="r-stretch" src="images/pseudoClassSelector.png" />
+          </section>
+          <section>
+            <h2>Pseudo-elements Selectors</h2>
+              <div class="columns align-center justify-center">
+                <div class="fragment fade-left">
+
+                  <img src="images/pseudoElemSelector.png" />
+                </div>
+                <div class="fragment fade-left">
+                  <img src="images/pseudoElemHtml.png" />
+                </div>
+              </div>
+          </section>
+          <section>
+            <h2>Combinators</h2>
+            <img class="r-stretch" src="images/combinatorSelectors.png" />
+          </section>
+          <section>
+            <h2>Let's practice!</h2>
+            <img class="r-stretch" src="images/warmup.gif" />
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>Specficity</h2>
+            <ul>
+              <li class="fragment fade-up">Is how the browser decides which property values are the <b>MOST</b> important for an element</li>
+              <li class="fragment fade-up">If two or more rules are competing the browser needs to select a winner!</li>
+            </ul>
+            <img class="fragment fade-up" src="images/math.gif" width="300px"/>
+          </section>
+          <section>
+            <h3>If two rules are the same, the last one wins!</h3>
+            <img class="r-stretch" src="images/specificity1.png" />
+          </section>
+          <section>
+            <h4>When they are not exactly the same there is some brain gymnastics involved</h4>
+            <img class="fragment" src="images/sp0.png" />  
+          </section>
+          <section>
+            <h4>When they are not exactly the same there is some brain gymnastics involved</h4>
+            <img class="fragment" src="images/sp0.png" />  
+          </section>
+          <section>
+            <h4>When they are not exactly the same there is some brain gymnastics involved</h4>
+            <div class="columns align-center justify-center">
+              <div class="fragment">
+                <img src="images/spex1.png" />  
+              </div>
+              <div class="fragment">
+                <img src="images/spex2.png" />  
+              </div>
+            </div>
+              
+          </section>
+          <section>
+            <div class="columns align-center justify-center">
+              <div class="fragment">
+                <img width="400px" src="images/spex1.png" />  
+              </div>
+              <div class="r-stack">
+                <img class="fragment" src="images/sp3.png" />  
+                <img class="fragment" src="images/sp4.png" />  
+              </div>
+            </div>
+          </section>
+          <section>
+            <h4>When they are not exactly the same there is some brain gymnastics involved</h4>
+            <div class="columns align-center justify-center">
+              <div class="fragment">
+                <img src="images/spex3.png" />  
+              </div>
+              <div class="fragment">
+                <img src="images/spex4.png" />  
+              </div>
+            </div>
+              
+          </section>
+          <section>
+            <div class="columns align-center justify-center">
+              <div class="fragment">
+                <img width="400px" src="images/spex3.png" />  
+              </div>
+              <div class="r-stack">
+                <img class="fragment" src="images/sp1.png" />  
+                <img class="fragment" src="images/sp2.png" />  
+              </div>
+            </div>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>What is the cascade?</h2>
+            <img src="images/think.gif" />  
+          </section>
+          <section>
+            <p>There are 4 main levels in the CSS Cascade</p>
+            <ul>
+              <li class="fragment">Importance!!</li>
+              <li class="fragment">Origin</li>
+              <li class="fragment">Specificity</li>
+              <li class="fragment">Position</li>
+            </ul>
+          </section>
+          <section>
+            <h3>Importance</h3>
+            <p>When is best to process it and manual overrides</p>
+            <ul>
+              <li class="fragment">Transitions</li>
+              <li class="fragment">!important (not recommended)</li>
+              <li class="fragment">Animation</li>
+              <li class="fragment">Normal properties</li>
+            </ul>
+          </section>
+          <section>
+            <h3>Origin</h3>
+            <p>Where does the rule come from?</p>
+            <ul>
+              <li class="fragment">Website (our styles)</li>
+              <li class="fragment">User</li>
+              <li class="fragment">Browser (default)</li>
+            </ul>
+          </section>
+          <section>
+            <h3>Specificity</h3>
+            <p>Who won the race?</p>
+            <ul>
+              <li class="fragment">Inline</li>
+              <li class="fragment">ID</li>
+              <li class="fragment">Classes, attributes, pseudo-class</li>
+              <li class="fragment">Element, pseudo-element</li>
+            </ul>
+          </section>
+          <section>
+            <h3>Position</h3>
+            <p>Where in the code is located?</p>
+            <p>Last one wins!!</p>
+          </section>
+        </section>
+        <section>
+          <h2>Homework</h2>
+          <section>
+              <h4>Part I - Properties</h4>
+              <ul>
+                <li>Create a Button that looks like the image</li>
+                <li>You can use any color combination for the text and background</li>
+              </ul>
+          </section>
+          <section>
+              <h4>Part II - Selectors</h4>
+              <ul>
+                <li>Use the provided html and add a style sheet to it</li>
+                <li>Set the background of all the spans to PINK</li>
+                <li>Make the special text RED</li>
+                <li>Make the last paragraph element have font-size: 50px and grey</li>
+                <li>Make the second element of the list BLUE</li>
+                <li>Make the links that go to google ORANGE</li>
+                <li>Make the second link PURPLE</li>
+                <li>Set the hover state for all the links to GREEN</li>
+                <!-- TODO: Think something for siblings vs children <li> </li> -->
+              </ul>
+          </section>
+        </section>
+      </div>
+    </div>
+  </body>
+</html>
