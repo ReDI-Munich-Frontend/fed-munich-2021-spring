@@ -1,0 +1,31 @@
+@import 'style/theme/custom';
+
+#game {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  background-color: white;
+  gap: 5px;
+
+
+  div {
+    background-color: $backgroundColor;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    font-weight: bold;
+
+    &.x::before {
+      content: 'X';
+    }
+    &.o::before {
+      content: 'O';
+    }
+  }
+
+  &.can-move div:not(.o):not(.x) {
+    cursor: pointer;
+  }
+}
