@@ -5,7 +5,7 @@
     <title>Introduction to CSS</title>
     <meta name="date" content="2021-03-18" />
     <!-- TODO: ADD content -->
-    <meta name="description" content="" />
+    <meta name="description" content="Recap, CSS, Selectors, Specificity, CSS Cascade" />
   </head>
   <body>
     <div class="reveal">
@@ -37,7 +37,7 @@
           <!--SLIDE 3.1-->
           <section data-auto-animate data-timing="10">
             <h2>What is CSS?</h2>
-            <h3 class="fragment">Cascade Style Sheet</h3>
+            <h3 class="fragment">Cascading Style Sheet</h3>
             <aside class="notes">
               Headings will look larger than regular text, paragraphs break onto
               a new line and have space between them. Links are colored and
@@ -82,7 +82,7 @@
           <section>
             <h2>Inline CSS</h2>
             <pre>
-              <code>
+              <code class="formattedCode border">
                 <script type="text/template">
                   <p style="color:red">I am a red paragraph</p>
                 </script>
@@ -97,7 +97,7 @@
           <section>
             <h2>Internal CSS</h2>
             <pre>
-              <code>
+              <code class="formattedCode border">
                 <script type="text/template">
                   <head>
                     <style>
@@ -108,7 +108,6 @@
                   </head>
                   <!-- ... -->
                   <p>I am a blue paragraph!</p>
-
                 </script>
               </code>
           </pre>
@@ -117,7 +116,7 @@
           <section>
             <h2>External CSS</h2>
             <pre>
-              <code>
+              <code class="formattedCode border">
                 <script type="text/template">
                   <head>
                     <link rel="stylesheet" href="styles.css">
@@ -134,7 +133,7 @@
               I want the main heading to be red and somewhat big...
             </p>
             <pre class="fragment">
-              <code>
+              <code class="formattedCode border">
                 <script type="text/template">
                   /* h1 is a selector */
                   h1 {
@@ -162,7 +161,7 @@
             <h2>Basic Selectors</h2>
             <div class="r-stack">
               <pre class="fragment">
-                <code>
+                <code class="formattedCode border">
                   <script type="text/template">
                     * { /* will select all elements */
                       color: red;
@@ -171,7 +170,7 @@
                 </code>
               </pre>
               <pre class="fragment">
-                <code>
+                <code class="formattedCode border">
                   <script type="text/template">
                     h1 {  /* Only select all h1 elements  */
                       color: blue;
@@ -180,7 +179,7 @@
                 </code>
               </pre>
               <pre class="fragment">
-                <code>
+                <code class="formattedCode border">
                   <script type="text/template">
                     /* <h1 class="heading">I am a purple h1! </h1> */
 
@@ -191,7 +190,7 @@
                 </code>
               </pre>
               <pre class="fragment">
-                <code>
+                <code class="formattedCode border">
                     /* <h1 id="header">I am a pink h1! </h1> */
 
                     #header { /* Only elements with id header  */
@@ -204,7 +203,7 @@
           <section>
             <h2>Pseudo-classes Selectors</h2>
             <pre class="fragment">
-              <code>
+              <code class="formattedCode">
                   /* Selects the anchor only when is hovered or focused  */
                   a:hover, a:focus { 
                       color: pink;
@@ -212,7 +211,7 @@
               </code>
             </pre>
             <pre class="fragment">
-              <code>
+              <code class="formattedCode">
                   /* Selects the last p of the parent  */
                   a:last-child { 
                       color: blue;
@@ -225,7 +224,7 @@
             <div class="columns align-center justify-center">
               <div class="fragment">
                 <pre>
-                  <code data-trim>
+                  <code class="formattedCode" data-trim>
                       /* Selects the last p of the parent  */
                       a::before { 
                           color: blue;
@@ -241,7 +240,7 @@
               </div>
               <div class="fragment" style="min-width: 500px">
                 <pre>
-                  <code data-trim>
+                  <code class="formattedCode" data-trim>
                       <p>
                         <!-- Before Content -->
                         I am a paragraph!
@@ -261,8 +260,7 @@
                 <div class="columns align-center justify-center">
                   <div>
                     <pre>
-                      <code data-trim>
-                          /* Selects the last p of the parent  */
+                      <code class="formattedCode" data-trim>
                           div p {
                             color: blue;
                           }
@@ -271,7 +269,7 @@
                   </div>
                   <div style="min-width: 500px">
                     <pre>
-                      <code data-trim>
+                      <code class="formattedCode" data-trim>
                           <div>
                             <p>Paragraph1</p>
                             <p>Paragraph2</p>
@@ -290,8 +288,7 @@
                 <div class="columns align-center justify-center">
                   <div>
                     <pre>
-                      <code data-trim>
-                          /* Selects the last p of the parent  */
+                      <code class="formattedCode" data-trim>
                           div + p {
                             color: blue;
                           }
@@ -300,7 +297,7 @@
                   </div>
                   <div style="min-width: 500px">
                     <pre>
-                      <code data-trim>
+                      <code class="formattedCode" data-trim>
                           <div>
                             <p>Paragraph1</p>
                           </div>
@@ -320,8 +317,7 @@
                 <div class="columns align-center justify-center">
                   <div>
                     <pre>
-                      <code data-trim>
-                          /* Selects the last p of the parent  */
+                      <code class="formattedCode" data-trim>
                           div ~ p {
                             color: blue;
                           }
@@ -330,11 +326,11 @@
                   </div>
                   <div style="min-width: 500px">
                     <pre>
-                      <code class="html" data-trim>
+                      <code class="formattedCode html" data-trim>
                         <div>Here is some content.</div>
                         <span>More content.</span>
-                        <p>And here is a red paragraph!</p>
-                        <p>And here is a another red paragraph!</p>
+                        <p>And here is a blue paragraph!</p>
+                        <p>And another blue paragraph!</p>
                       </code>
                     </pre>
                   </div>
@@ -348,8 +344,7 @@
                 <div class="columns align-center justify-center">
                   <div>
                     <pre>
-                      <code data-trim>
-                          /* Selects the last p of the parent  */
+                      <code class="formattedCode" data-trim>
                           div > p {
                             color: red;
                           }
@@ -358,7 +353,7 @@
                   </div>
                   <div style="min-width: 500px">
                     <pre>
-                      <code data-trim>
+                      <code class="formattedCode" data-trim>
                           <div>
                             <p>Paragraph1</p>
                             <p>I will be red</p>
@@ -397,7 +392,7 @@
             <p>Inline ALWAYS wins!</p>
             <p>If two rules are the same, the last one wins</p>
             <pre>
-              <code>
+              <code class="formattedCode">
                 div {
                   color: red;
                 }
@@ -421,7 +416,7 @@
               <div class="columns align-center justify-center">
                 <div>
                   <pre>
-                    <code data-trim>
+                    <code class="formattedCode" data-trim>
                         p {
                           color: red;
                         }
@@ -434,7 +429,7 @@
                 </div>
                 <div style="min-width: 500px">
                   <pre>
-                    <code data-trim>
+                    <code class="formattedCode" data-trim>
                         <div>
                           <p>Which color am I?</p>
                         </div>
@@ -449,7 +444,7 @@
               <div class="columns align-center justify-center">
                 <div>
                   <pre>
-                    <code data-trim style="min-width: 500px;">
+                    <code class="formattedCode" data-trim style="min-width: 500px;">
                       p {
                         color: red;
                       }
@@ -477,7 +472,7 @@
               <div class="columns align-center justify-center">
                 <div>
                   <pre>
-                    <code data-trim class="css" style="min-width: 300px;padding: 20px;">
+                    <code data-trim class="css formattedCode" style="min-width: 300px;padding: 20px;">
                         .text {
                           color: red;
                         }
@@ -490,7 +485,7 @@
                 </div>
                 <div>
                   <pre>
-                    <code data-trim class="html" style="margin-left:15px;min-width: 500px;padding: 20px;">
+                    <code data-trim class="html formattedCode" style="margin-left:15px;min-width: 500px;padding: 20px;">
                         <div>
                           <p class="text" id="text">
                             Which color am I?
@@ -506,7 +501,7 @@
             <div class="columns align-center justify-center">
               <div class="fragment">
                 <pre>
-                  <code data-trim class="css" style="min-width: 300px;padding: 20px;">
+                  <code data-trim class="formattedCode css" style="min-width: 300px;padding: 20px;">
                       .text {
                         color: red;
                       }
