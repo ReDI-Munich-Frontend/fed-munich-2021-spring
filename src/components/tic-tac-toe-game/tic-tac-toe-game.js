@@ -181,15 +181,15 @@ export class TicTacToeGameElement extends CustomHtmlElement {
       if (newDifficultyIndex >= difficulties.length) {
         newDifficultyIndex = difficulties.length - 1;
       }
-      const startingPlayer = this.startingPlayer === player.x ? player.o : player.x;
+      const startingPlayer = this.opponent(this.startingPlayer);
 
       this.reset(startingPlayer, difficulties[newDifficultyIndex])
     } else if (this.findFreeCells(this.board).length === 0) {
       alert('Stalemate! You\'re both losers!');
-      const startingPlayer = this.startingPlayer === player.x ? player.o : player.x;
+      const startingPlayer = this.opponent(this.startingPlayer);
       this.reset(startingPlayer, this.currentDifficulty);
     } else {
-      this.currentPlayer = movingPlayer === player.x ? player.o : player.x;
+      this.currentPlayer = this.opponent(movingPlayer);
     }
 
     if (this.currentPlayer === player.o) {
@@ -277,7 +277,7 @@ export class TicTacToeGameElement extends CustomHtmlElement {
       const { x, y } = availableMove;
       boardCopy[y][x] = currentPlayer;
 
-      const nextPlayer = currentPlayer === player.x ? player.o : player.x;
+      const nextPlayer = this.opponent(currentPlayer);
 
       const predictions = this.predict(boardCopy, nextPlayer, stupid, depth);
       moves.push({
@@ -382,5 +382,13 @@ export class TicTacToeGameElement extends CustomHtmlElement {
     }
 
     return result;
+  }
+
+  /**
+   * @param {symbol} aPlayer
+   * @returns {symbol}
+   */
+  opponent(aPlayer) {
+    return aPlayer === player.x ? player.o : player.x;
   }
 }
