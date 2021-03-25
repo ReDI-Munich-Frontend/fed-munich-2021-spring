@@ -80,7 +80,7 @@ export class TicTacToeGameElement extends CustomHtmlElement {
   connectedCallback() {
     super.connectedCallback();
 
-    this.boardElements = TicTacToeGameElement.createBoard();
+    this.boardElements = this.createBoard();
     for (let y = 0; y < 3; y++) {
       for (let x = 0; x < 3; x++) {
         this.boardElements[y][x] = this.select(`div[data-y="${y}"][data-x="${x}"]`);
@@ -112,7 +112,7 @@ export class TicTacToeGameElement extends CustomHtmlElement {
    * @param {symbol} newDifficulty The difficulty for the new game
    */
   reset(startingPlayer, newDifficulty) {
-    this.board = TicTacToeGameElement.createBoard();
+    this.board = this.createBoard();
     this.currentDifficulty = newDifficulty;
     this.currentPlayer = startingPlayer;
     this.startingPlayer = startingPlayer;
@@ -162,7 +162,7 @@ export class TicTacToeGameElement extends CustomHtmlElement {
     this.updateBoardElements();
 
     let winner;
-    if (winner = TicTacToeGameElement.checkWinner(this.board)) {
+    if (winner = this.checkWinner(this.board)) {
       let newDifficultyIndex = difficulties.indexOf(this.currentDifficulty);
       if (winner === player.x) {
         alert('Congratulations! You won!');
@@ -184,7 +184,7 @@ export class TicTacToeGameElement extends CustomHtmlElement {
       const startingPlayer = this.startingPlayer === player.x ? player.o : player.x;
 
       this.reset(startingPlayer, difficulties[newDifficultyIndex])
-    } else if (TicTacToeGameElement.findFreeCells(this.board).length === 0) {
+    } else if (this.findFreeCells(this.board).length === 0) {
       alert('Stalemate! You\'re both losers!');
       const startingPlayer = this.startingPlayer === player.x ? player.o : player.x;
       this.reset(startingPlayer, this.currentDifficulty);
@@ -211,17 +211,17 @@ export class TicTacToeGameElement extends CustomHtmlElement {
 
     switch (this.currentDifficulty) {
       case difficulty.noob:
-        nextMove = this.predict(TicTacToeGameElement.copyBoard(this.board), player.o, 0, true).move;
+        nextMove = this.predict(this.copyBoard(this.board), player.o, 0, true).move;
         break;
       case difficulty.regular:
         if (Math.random() < 0.65) {
-          nextMove = this.predict(TicTacToeGameElement.copyBoard(this.board), player.o).move;
+          nextMove = this.predict(this.copyBoard(this.board), player.o).move;
         } else {
           nextMove = this.getRandomMove();
         }
         break;
       case difficulty.pro:
-        nextMove = this.predict(TicTacToeGameElement.copyBoard(this.board), player.o).move;
+        nextMove = this.predict(this.copyBoard(this.board), player.o).move;
         break;
     }
 
@@ -235,7 +235,7 @@ export class TicTacToeGameElement extends CustomHtmlElement {
    * @returns {Move}
    */
   getRandomMove() {
-    const availableMoves = TicTacToeGameElement.findFreeCells(this.board);
+    const availableMoves = this.findFreeCells(this.board);
 
     return availableMoves[Math.floor(Math.random() * availableMoves.length)];
   }
@@ -255,7 +255,7 @@ export class TicTacToeGameElement extends CustomHtmlElement {
    */
   predict(board, currentPlayer, depth = 0, stupid = false) {
     let winner;
-    if (winner = TicTacToeGameElement.checkWinner(board)) {
+    if (winner = this.checkWinner(board)) {
       if (winner === player.o) {
         return { score: 10 - depth };
       } else {
@@ -263,7 +263,7 @@ export class TicTacToeGameElement extends CustomHtmlElement {
       }
     }
 
-    const availableMoves = TicTacToeGameElement.findFreeCells(board);
+    const availableMoves = this.findFreeCells(board);
 
     if (availableMoves.length === 0) {
       return { score: 0 };
@@ -273,7 +273,7 @@ export class TicTacToeGameElement extends CustomHtmlElement {
     depth++;
 
     for (const availableMove of availableMoves) {
-      const boardCopy = TicTacToeGameElement.copyBoard(board);
+      const boardCopy = this.copyBoard(board);
       const { x, y } = availableMove;
       boardCopy[y][x] = currentPlayer;
 
@@ -316,7 +316,7 @@ export class TicTacToeGameElement extends CustomHtmlElement {
    * @typedef {[BoardRow, BoardRow, BoardRow]} Board
    * @returns {Board}
    */
-  static createBoard() {
+  createBoard() {
     return [[null, null, null], [null, null, null], [null, null, null]];
   }
 
@@ -324,7 +324,7 @@ export class TicTacToeGameElement extends CustomHtmlElement {
    * @param {Board} board
    * @returns {Board}
    */
-  static copyBoard(board) {
+  copyBoard(board) {
     return [[...board[0]], [...board[1]], [...board[2]]];
   }
 
@@ -332,7 +332,7 @@ export class TicTacToeGameElement extends CustomHtmlElement {
    * @param {Board} board
    * @returns {symbol | null}
    */
-  static checkWinner(board) {
+  checkWinner(board) {
     const checkWinnerReducer = (a, v) => a === v && v !== null ? v : null;
     let winner;
 
@@ -370,7 +370,7 @@ export class TicTacToeGameElement extends CustomHtmlElement {
    * @param {Board} board
    * @returns {[Move]}
    */
-  static findFreeCells(board) {
+  findFreeCells(board) {
     const result = [];
 
     for (let y = 0; y < 3; y++) {
