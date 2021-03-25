@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Selectors</title>
+    <style>
+      h1 {
+        /* Only select all h1 elements  */
+        color: blue;
+      }
+
+      .subtitle {
+        /* Only elements with the class heading  */
+        color: purple;
+      }
+
+      #header {
+        /* Only elements with id header  */
+        text-decoration: underline;
+      }
+
+      .yellow {
+        color: white;
+        background-color: darkorange;
+        font-weight: bold;
+      }
+
+      .red {
+        color: white;
+        background-color: red;
+        font-weight: bold;
+      }
+      .other {
+        color: blue;
+      }
+      .purple {
+        color: white;
+        background-color: purple;
+        font-weight: bold;
+      }
+
+      h1 {
+        font-family: cursive;
+      }
+
+      h2 {
+        font-family: cursive;
+      }
+
+      a:link {
+        color: red;
+      }
+      a:visited {
+        color: orange;
+      }
+      a:hover {
+        background-color: rgb(255, 214, 255);
+      }
+      a:active {
+        background-color: rgb(255, 214, 255);
+      }
+      a:focus {
+        background-color: rgb(255, 214, 255);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="potatos">
+      <h1 id="header">Potatos</h1>
+      <p class="subtitle">There are more than 4000 types of potatos!!</p>
+      <ul>
+        <li class="other">Russet</li>
+        <li class="red">Red potato</li>
+        <li class="yellow">Yellow potato</li>
+        <li class="other">Fingerling potato</li>
+        <li class="purple">Purple potato</li>
+      </ul>
+      <p>
+        The <span class="purple">purple</span> potato has a more earthy flavor,
+        in contrast the <span>yellow's</span> potato flavor is more buttery and
+        creamy!
+      </p>
+      <p>
+        The <span class="red">red</span> potato has a thick kin and stays firm
+        during the cooking which is ideal for roasting!
+      </p>
+    </div>
+
+    <div class="recipes">
+      <h2>Recipes with potatos</h2>
+      <p>
+        There are many things that you can do with potatoes, roasting, boiling,
+        frying! They are a very versatile and healthy food
+      </p>
+      <h3>Boiled potatos</h3>
+      <ul>
+        <li>
+          <a href="https://rasamalaysia.com/boiled-potatoes/"
+            >Boiled potatoes with parsley
+          </a>
+        </li>
+        <li>
+          <a href="https://theforkedspoon.com/boiled-potatoes/"
+            >Boiled potatoes with garlic
+          </a>
+        </li>
+        <li>
+          <a href="https://3boysandadog.com/leftover-boiled-potato-recipes/"
+            >Leftover Potatos recipes</a
+          >
+        </li>
+      </ul>
+
+      <h3>Fried potatos</h3>
+      <ul>
+        <li class="other">
+          <a href="https://www.delish.com/cooking/a23463225/pan-fried-potatoes/"
+            >Pan Fried Potatos
+          </a>
+        </li>
+        <li class="other">
+          <a
+            href="https://www.allrecipes.com/recipe/158546/garlic-herb-skillet-potatoes/"
+            >Garlic Herb Skillet Potatoes
+          </a>
+        </li>
+        <li class="other">
+          <a
+            href="https://www.allrecipes.com/recipe/73135/homestyle-potato-chips/"
+            >Potato Chips</a
+          >
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>
