@@ -211,7 +211,7 @@ export class TicTacToeGameElement extends CustomHtmlElement {
 
     switch (this.currentDifficulty) {
       case difficulty.noob:
-        nextMove = this.predict(this.copyBoard(this.board), player.o, 0, true).move;
+        nextMove = this.predict(this.copyBoard(this.board), player.o, true).move;
         break;
       case difficulty.regular:
         if (Math.random() < 0.65) {
@@ -248,12 +248,12 @@ export class TicTacToeGameElement extends CustomHtmlElement {
    *
    * @param {Board} board
    * @param {symbol} currentPlayer
-   * @param {number} depth
    * @param {boolean} stupid The 'stupid' flag turns this minimax algorithm into
    *                         'minimin', i.e. try to lose as fast as possible.
+   * @param {number} depth
    * @returns {Prediction}
    */
-  predict(board, currentPlayer, depth = 0, stupid = false) {
+  predict(board, currentPlayer, stupid = false, depth = 0) {
     let winner;
     if (winner = this.checkWinner(board)) {
       if (winner === player.o) {
@@ -279,7 +279,7 @@ export class TicTacToeGameElement extends CustomHtmlElement {
 
       const nextPlayer = currentPlayer === player.x ? player.o : player.x;
 
-      const predictions = this.predict(boardCopy, nextPlayer, depth, stupid);
+      const predictions = this.predict(boardCopy, nextPlayer, stupid, depth);
       moves.push({
         move: availableMove,
         score: predictions.score
