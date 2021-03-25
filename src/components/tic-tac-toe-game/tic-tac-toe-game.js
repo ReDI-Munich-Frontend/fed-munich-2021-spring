@@ -177,7 +177,7 @@ export class TicTacToeGameElement extends CustomHtmlElement {
         nextMove = this.predict(TicTacToeGameElement.copyBoard(this.board), player.o, 0, true).move;
         break;
       case difficulty.regular:
-        if (Math.random() < 0.6) {
+        if (Math.random() < 0.65) {
           nextMove = this.predict(TicTacToeGameElement.copyBoard(this.board), player.o).move;
         } else {
           nextMove = this.getRandomMove();
