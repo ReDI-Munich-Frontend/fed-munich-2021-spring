@@ -1,0 +1,24 @@
+.run-button {
+  background: #00cc00;
+  color: white;
+  border: none;
+  font-size: .75em;
+  border-radius: .8em;
+  height: 1.6em;
+  padding-left: 1em;
+  padding-right: .8em;
+  cursor: pointer;
+
+  display:flex;
+  align-items: center;
+
+  &::after {
+    display: inline-block;
+    width: .5196em;
+    height: .6em;
+    background: white;
+    clip-path: polygon(0 0, 100% 50%, 0 100%);
+    margin-left: .4em;
+    content: '';
+  }
+}

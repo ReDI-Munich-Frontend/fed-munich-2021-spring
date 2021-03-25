@@ -16,6 +16,26 @@ const player = {
 }
 
 
+/**
+ * This component is a fully functional Tic Tac Toe game. Include it anywhere
+ * in your page with
+ *
+ * <tic-tac-toe-game></tic-tac-toe-game>
+ *
+ * The tag doesn't take any attributes.
+ *
+ * Upon loading, the game will automatically start. The user is always player
+ * 'X'; the computer always 'O'.
+ *
+ * There are three difficulty settings: noob, regular and pro. The game starts
+ * in 'regular' difficulty. If the user loses, the difficulty decreases by one,
+ * if the user wins, the difficulty increases. Stalemates don't affect the
+ * difficulty setting.
+ *
+ * When a game ends, a message about the outcome of the game is displayed and
+ * the game restarts. Whoever was the second player in the previous round will
+ * now start the game.
+ */
 export class TicTacToeGameElement extends CustomHtmlElement {
   static get template() {
     return template;
@@ -87,6 +107,11 @@ export class TicTacToeGameElement extends CustomHtmlElement {
     });
   }
 
+  /**
+   * Starts a new game
+   * @param {symbol} startingPlayer The player who is supposed to go first in the new game
+   * @param {symbol} newDifficulty The difficulty for the new game
+   */
   reset(startingPlayer, newDifficulty) {
     this.board = TicTacToeGameElement.createBoard();
     this.currentDifficulty = newDifficulty;
@@ -96,6 +121,9 @@ export class TicTacToeGameElement extends CustomHtmlElement {
     this.updateBoardElements();
   }
 
+  /**
+   * Makes board changes visible
+   */
   updateBoardElements() {
     for (let y = 0; y < 3; y++) {
       for (let x = 0; x < 3; x++) {
@@ -114,6 +142,13 @@ export class TicTacToeGameElement extends CustomHtmlElement {
     }
   }
 
+  /**
+   * Conducts a move and checks whether the game has ended. If it has, it starts a new game.
+   * @param {symbol} movingPlayer
+   * @param {number} x
+   * @param {number} y
+   * @returns {void}
+   */
   move(movingPlayer, x, y) {
     if (this.board[y][x]) {
       console.warn(`Tile x: ${x}, y: ${y} is already filled`);
@@ -169,6 +204,9 @@ export class TicTacToeGameElement extends CustomHtmlElement {
     }, 1000);
   }
 
+  /**
+   * Performs a move for the computer (O) player
+   */
   moveAi() {
     let nextMove;
 
@@ -193,12 +231,26 @@ export class TicTacToeGameElement extends CustomHtmlElement {
     this.move(player.o, x, y);
   }
 
+  /**
+   * Out of all possible moves, pick one randomly
+   * @returns {{ x: number, y: number }}
+   */
   getRandomMove() {
     const availableMoves = TicTacToeGameElement.findFreeCells(this.board);
 
     return availableMoves[Math.floor(Math.random() * availableMoves.length)];
   }
 
+  /**
+   * Minimax algorithm that picks the next move for the computer (O) player.
+   *
+   * @param {[[symbol | null]]} board
+   * @param {symbol} currentPlayer
+   * @param {number} depth
+   * @param {boolean} stupid The stupid flag turns this minimax algorithm into
+   *                         'minimin', i.e. try to lose as fast as possible.
+   * @returns
+   */
   predict(board, currentPlayer, depth = 0, stupid = false) {
     let winner;
     if (winner = TicTacToeGameElement.checkWinner(board)) {
@@ -232,22 +284,34 @@ export class TicTacToeGameElement extends CustomHtmlElement {
       });
     }
 
-    // The `stupid` flag turns this minimax algorithm into 'minimin'
     if (currentPlayer === player.o && !stupid) {
+      // max calculation
       return moves.reduce((a, v) => v.score > a.score ? v : a);
     } else {
+      // min caluclation
       return moves.reduce((a, v) => v.score < a.score ? v : a);
     }
   }
 
+  /**
+   * @returns {[[symbol | null]]}
+   */
   static createBoard() {
     return [[null, null, null], [null, null, null], [null, null, null]];
   }
 
+  /**
+   * @param {[[symbol | null]]} board
+   * @returns {[[symbol]]}
+   */
   static copyBoard(board) {
     return [[...board[0]], [...board[1]], [...board[2]]];
   }
 
+  /**
+   * @param {[[symbol | null]]} board
+   * @returns {symbol | null}
+   */
   static checkWinner(board) {
     const checkWinnerReducer = (a, v) => a === v && v !== null ? v : null;
     let winner;
@@ -281,6 +345,11 @@ export class TicTacToeGameElement extends CustomHtmlElement {
     return null;
   }
 
+  /**
+   * Returns all free cells in the board
+   * @param {[[symbol | null]]} board
+   * @returns {[{ x: number, y: number }]}
+   */
   static findFreeCells(board) {
     const result = [];
 

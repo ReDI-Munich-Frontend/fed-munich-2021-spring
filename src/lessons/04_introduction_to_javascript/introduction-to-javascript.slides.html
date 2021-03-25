@@ -22,8 +22,122 @@
         </section>
 
         <section>
-          <h2>Tic Tac Toe</h2>
+          <h2>Let's play a game</h2>
           <tic-tac-toe-game style="height:500px; width: 500px"></tic-tac-toe-game>
+        </section>
+
+        <section>
+          <h2>⏪</h2>
+        </section>
+
+        <section>
+          <section>
+            <h3>Recap: Button</h3>
+
+            <div class="columns">
+              <pre><code data-trim class="html" data-line-numbers="7-9"><script type="text/template">
+                <!DOCTYPE html>
+                <html>
+                  <head>
+                    <title>Button</title>
+                  </head>
+                  <body>
+                    <button type="button">
+                      Click me!
+                    </button>
+                  </body>
+                </html>
+              </script></code></pre>
+
+              <preview-window window-title="Button"
+                              icon-class="fa-globe-europe"
+                              address="file:///button.html"
+                              style="width: 400px; margin-left: 2em">
+                <iframe data-src="code-example/button-01.html"></iframe>
+              </preview-window>
+            </div>
+
+            <p style="color: red" class="fragment">Not very spectacular yet</p>
+          </section>
+
+          <section>
+            <h4>Let's give it some action</h4>
+
+            <div class="columns">
+              <pre><code data-trim class="html" data-line-numbers="7-9"><script type="text/template">
+                <!DOCTYPE html>
+                <html>
+                  <head>
+                    <title>Button</title>
+                  </head>
+                  <body>
+                    <button type="button" onclick="alert('Hello World!')">
+                      Click me!
+                    </button>
+                  </body>
+                </html>
+              </script></code></pre>
+
+              <preview-window window-title="Button"
+                              icon-class="fa-globe-europe"
+                              address="file:///button.html"
+                              style="width: 400px; margin-left: 2em">
+                <iframe data-src="code-example/button-02.html"></iframe>
+              </preview-window>
+            </div>
+
+            <ul>
+              <li class="fragment"><code>alert()</code> is a <strong>function</strong></li>
+              <li class="fragment"><code>onclick</code> is an <strong>event handler</strong></li>
+            </ul>
+          </section>
+
+          <section>
+            <h4>Look, mum, no hands!</h4>
+
+            <div class="columns">
+              <!-- can't use built in escaping due to </script> tag -->
+              <pre><code data-trim class="html" data-line-numbers="1-12 | 5-7">
+                &lt;!DOCTYPE html>
+                &lt;html>
+                  &lt;head>
+                    &lt;title>Button&lt;/title>
+                    &lt;script>
+                      alert('I appear upon page load');
+                    &lt;/script>
+                  &lt;/head>
+                  &lt;body>
+                    &lt;h1>Javascript&lt;/h1>
+                  &lt;/body>
+                &lt;/html>
+              </code></pre>
+
+              <div style="margin-left: 2em" class="rows align-center justify-space-around">
+                <preview-window window-title="Button"
+                                icon-class="fa-globe-europe"
+                                address="file:///script-tag.html"
+                                style="width: 400px">
+                  <iframe data-src="code-example/script-tag-example-01.html" name="script-tag-example"></iframe>
+                </preview-window>
+
+                <button type="button" class="run-button" onclick="frames['script-tag-example'].window.simulatePageLoad()">
+                  Run
+                </button>
+              </div>
+            </div>
+          </section>
+        </section>
+
+        <section>
+          <h2>⏪</h2>
+        </section>
+
+        <section>
+          <section>
+            <h3>Recap: Developer Tools</h3>
+
+            <p style="font-size: 0.7em">Windows keyboard shortcut: <strong>F12</strong><br>Mac keyboard shortcut: <strong>Command + Alt + i</strong></p>
+          </section>
         </section>
       </div>
     </div>
