@@ -18,10 +18,12 @@
     font-weight: bold;
 
     &.x::before {
-      content: 'X';
+      content: '✖';
+      color: #89fd6b;
     }
     &.o::before {
-      content: 'O';
+      content: '🞅';
+      color: #fc4c03;
     }
   }
 

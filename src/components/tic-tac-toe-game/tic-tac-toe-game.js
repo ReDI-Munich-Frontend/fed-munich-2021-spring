@@ -247,7 +247,7 @@ export class TicTacToeGameElement extends CustomHtmlElement {
    * @param {[[symbol | null]]} board
    * @param {symbol} currentPlayer
    * @param {number} depth
-   * @param {boolean} stupid The stupid flag turns this minimax algorithm into
+   * @param {boolean} stupid The 'stupid' flag turns this minimax algorithm into
    *                         'minimin', i.e. try to lose as fast as possible.
    * @returns
    */
@@ -286,10 +286,26 @@ export class TicTacToeGameElement extends CustomHtmlElement {
 
     if (currentPlayer === player.o && !stupid) {
       // max calculation
-      return moves.reduce((a, v) => v.score > a.score ? v : a);
+      return moves.reduce((a, v) => {
+        if (v.score > a.score) {
+          return v;
+        } else if (v.score === a.score) {
+          return Math.random() >= 0.5 ? v : a;
+        } else {
+          return a;
+        }
+      });
     } else {
-      // min caluclation
-      return moves.reduce((a, v) => v.score < a.score ? v : a);
+      // min calculation
+      return moves.reduce((a, v) => {
+        if (v.score < a.score) {
+          return v;
+        } else if (v.score === a.score) {
+          return Math.random() >= 0.5 ? v : a;
+        } else {
+          return a;
+        }
+      });
     }
   }
 
