@@ -55,7 +55,8 @@
               <li class="fragment">
                 We use CSS to style a document and define how it should be
                 visually presented to the user
-              </li><br/>
+              </li>
+              <br />
               <li class="fragment">
                 Change the color of a text, make something move, push an element
                 to the side and more!
@@ -67,73 +68,310 @@
           <!--SLIDE 4.1-->
           <section>
             <h2>How do we use it?</h2>
-            <p>There are three different ways of including css in our websites...</p>
-            <br/>
-              <p class="fragment">
-                Inline
-              </p><br/>
-              <p class="fragment">
-                Internal
-              </p><br/>
-              <p class="fragment">
-                External
-              </p>
+            <p>
+              There are three different ways of including css in our websites...
+            </p>
+            <br />
+            <p class="fragment">Inline</p>
+            <br />
+            <p class="fragment">Internal</p>
+            <br />
+            <p class="fragment">External</p>
           </section>
           <!--SLIDE 4.2-->
           <section>
             <h2>Inline CSS</h2>
-            <img src="images/inlineCss.png"/>
-            <aside class="notes"> However, we don’t want to continue down this path, as things start to get messy if our HTML is cluttered with lots of CSS inside it.</aside>
+            <pre>
+              <code>
+                <script type="text/template">
+                  <p style="color:red">I am a red paragraph</p>
+                </script>
+              </code>
+            </pre>
+            <aside class="notes">
+              However, we don’t want to continue down this path, as things start
+              to get messy if our HTML is cluttered with lots of CSS inside it.
+            </aside>
           </section>
           <!--SLIDE 4.3-->
           <section>
             <h2>Internal CSS</h2>
-            <img src="images/internalCss.png"/>
+            <pre>
+              <code>
+                <script type="text/template">
+                  <head>
+                    <style>
+                      p {
+                        color: blue;
+                      }
+                    </style>
+                  </head>
+                  <!-- ... -->
+                  <p>I am a blue paragraph!</p>
+
+                </script>
+              </code>
+          </pre>
           </section>
           <!--SLIDE 4.4-->
           <section>
             <h2>External CSS</h2>
-            <img src="images/externalCss.png"/>
+            <pre>
+              <code>
+                <script type="text/template">
+                  <head>
+                    <link rel="stylesheet" href="styles.css">
+                  </head>
+                </script>
+              </code>
+            </pre>
           </section>
         </section>
         <section>
           <section>
             <h2>CSS Syntax</h2>
-            <p class="fragment">I want the main heading to be red and somewhat big...</p>
-            <img class="fragment" width="900" src="images/cssExample.png" />
+            <p class="fragment">
+              I want the main heading to be red and somewhat big...
+            </p>
+            <pre class="fragment">
+              <code>
+                <script type="text/template">
+                  /* h1 is a selector */
+                  h1 {
+                    /* color and font-size are properties */
+                    /* red and 25px are values */
+                    color: red;
+                    font-size: 25px;
+                  }
+                </script>
+              </code>
+            </pre>
           </section>
           <section>
             <h1>Selectors</h1>
-            <p>They are the ones that let us find or <b class="highlight">SELECT</b> the element that we want to style</p>
-            <aside class="notes">There are different types of selectors, basics, atributte, pseudo elements, pseudo classes, combinators</aside>
+            <p>
+              They are the ones that let us find or
+              <b class="highlight">SELECT</b> the element that we want to style
+            </p>
+            <aside class="notes">
+              There are different types of selectors, basics, atributte, pseudo
+              elements, pseudo classes, combinators
+            </aside>
           </section>
           <section>
             <h2>Basic Selectors</h2>
-            <img class="r-stretch" src="images/basicSelectors.png" />
-          </section>
-          <section>
-            <h2>Attribute Selectors</h2>
-            <img class="r-stretch" src="images/attrSelectors.png" />
+            <div class="r-stack">
+              <pre class="fragment">
+                <code>
+                  <script type="text/template">
+                    * { /* will select all elements */
+                      color: red;
+                    }
+                  </script>
+                </code>
+              </pre>
+              <pre class="fragment">
+                <code>
+                  <script type="text/template">
+                    h1 {  /* Only select all h1 elements  */
+                      color: blue;
+                    }
+                  </script>
+                </code>
+              </pre>
+              <pre class="fragment">
+                <code>
+                  <script type="text/template">
+                    /* <h1 class="heading">I am a purple h1! </h1> */
+
+                    .heading { /* Only elements with the class heading  */
+                      color: purple;
+                    }
+                  </script>
+                </code>
+              </pre>
+              <pre class="fragment">
+                <code>
+                    /* <h1 id="header">I am a pink h1! </h1> */
+
+                    #header { /* Only elements with id header  */
+                        color: pink;
+                    }
+                </code>
+              </pre>
+            </div>
           </section>
           <section>
             <h2>Pseudo-classes Selectors</h2>
-            <img class="r-stretch" src="images/pseudoClassSelector.png" />
+            <pre class="fragment">
+              <code>
+                  /* Selects the anchor only when is hovered or focused  */
+                  a:hover, a:focus { 
+                      color: pink;
+                  }
+              </code>
+            </pre>
+            <pre class="fragment">
+              <code>
+                  /* Selects the last p of the parent  */
+                  a:last-child { 
+                      color: blue;
+                  }
+              </code>
+            </pre>
           </section>
           <section>
             <h2>Pseudo-elements Selectors</h2>
-              <div class="columns align-center justify-center">
-                <div class="fragment fade-left">
-
-                  <img src="images/pseudoElemSelector.png" />
-                </div>
-                <div class="fragment fade-left">
-                  <img src="images/pseudoElemHtml.png" />
-                </div>
+            <div class="columns align-center justify-center">
+              <div class="fragment">
+                <pre>
+                  <code data-trim>
+                      /* Selects the last p of the parent  */
+                      a::before { 
+                          color: blue;
+                          content: "Before content"
+                      }
+                      /* Selects the last p of the parent  */
+                      a::after { 
+                          color: blue;
+                          content: "After content"
+                      }
+                  </code>
+                </pre>
               </div>
+              <div class="fragment" style="min-width: 500px">
+                <pre>
+                  <code data-trim>
+                      <p>
+                        <!-- Before Content -->
+                        I am a paragraph!
+                        <!-- After Content -->
+                      </p>
+                  </code>
+                </pre>
+              </div>
+            </div>
           </section>
           <section>
             <h2>Combinators</h2>
-            <img class="r-stretch" src="images/combinatorSelectors.png" />
+            <div class="r-stack">
+              <div class="fragment fade-out" data-fragment-index="0">
+                <h5>Descendant</h5>
+                <h6>Selects all elements that are inside another</h6>
+                <div class="columns align-center justify-center">
+                  <div>
+                    <pre>
+                      <code data-trim>
+                          /* Selects the last p of the parent  */
+                          div p {
+                            color: blue;
+                          }
+                      </code>
+                    </pre>
+                  </div>
+                  <div style="min-width: 500px">
+                    <pre>
+                      <code data-trim>
+                          <div>
+                            <p>Paragraph1</p>
+                            <p>Paragraph2</p>
+                          </div>
+                      </code>
+                    </pre>
+                  </div>
+                </div>
+              </div>
+              <div class="fragment fade-in-then-out" data-fragment-index="0">
+                <h5>Adjacent Sibling</h5>
+                <h6>
+                  Selects the second element directly follows the first, and
+                  both share the same parent.
+                </h6>
+                <div class="columns align-center justify-center">
+                  <div>
+                    <pre>
+                      <code data-trim>
+                          /* Selects the last p of the parent  */
+                          div + p {
+                            color: blue;
+                          }
+                      </code>
+                    </pre>
+                  </div>
+                  <div style="min-width: 500px">
+                    <pre>
+                      <code data-trim>
+                          <div>
+                            <p>Paragraph1</p>
+                          </div>
+                          <p>I will be blue</p>
+                          <p>This won't be blue</p>
+                      </code>
+                    </pre>
+                  </div>
+                </div>
+              </div>
+              <div class="fragment fade-in-then-out">
+                <h5>General Sibling</h5>
+                <h6>
+                  This means that the second element follows the first (though
+                  not necessarily immediately), and both share the same parent.
+                </h6>
+                <div class="columns align-center justify-center">
+                  <div>
+                    <pre>
+                      <code data-trim>
+                          /* Selects the last p of the parent  */
+                          div ~ p {
+                            color: blue;
+                          }
+                      </code>
+                    </pre>
+                  </div>
+                  <div style="min-width: 500px">
+                    <pre>
+                      <code class="html" data-trim>
+                        <div>Here is some content.</div>
+                        <span>More content.</span>
+                        <p>And here is a red paragraph!</p>
+                        <p>And here is a another red paragraph!</p>
+                      </code>
+                    </pre>
+                  </div>
+                </div>
+              </div>
+              <div class="fragment">
+                <h5>Children</h5>
+                <h6>
+                  Selects elements that are direct children to the first element
+                </h6>
+                <div class="columns align-center justify-center">
+                  <div>
+                    <pre>
+                      <code data-trim>
+                          /* Selects the last p of the parent  */
+                          div > p {
+                            color: red;
+                          }
+                      </code>
+                    </pre>
+                  </div>
+                  <div style="min-width: 500px">
+                    <pre>
+                      <code data-trim>
+                          <div>
+                            <p>Paragraph1</p>
+                            <p>I will be red</p>
+                            <div>
+                              <p>This won't be red</p>
+                            </div>
+                          </div>
+                      </code>
+                    </pre>
+                  </div>
+                </div>
+              </div>
+            </div>
           </section>
           <section>
             <h2>Let's practice!</h2>
@@ -144,69 +382,156 @@
           <section>
             <h2>Specificity</h2>
             <ul>
-              <li class="fragment fade-up">Is how the browser decides which property values are the <b>MOST</b> important for an element</li>
-              <li class="fragment fade-up">If two or more rules are competing the browser needs to select a winner!</li>
+              <li class="fragment fade-up">
+                Is how the browser decides which property values are the
+                <b>MOST</b> important for an element
+              </li>
+              <li class="fragment fade-up">
+                If two or more rules are competing the browser needs to select a
+                winner!
+              </li>
             </ul>
-            <img class="fragment fade-up" src="images/math.gif" width="300px"/>
+            <img class="fragment fade-up" src="images/math.gif" width="300px" />
           </section>
           <section>
             <p>Inline ALWAYS wins!</p>
             <p>If two rules are the same, the last one wins</p>
-            <img class="r-stretch" src="images/specificity1.png" />
+            <pre>
+              <code>
+                div {
+                  color: red;
+                }
+
+                div {
+                  color: blue; /* I WIN! */
+                }
+              </code>
+            </pre>
           </section>
           <section>
-            <h4>When they are not exactly the same there is some brain gymnastics involved</h4>
+            <h4>
+              When they are not exactly the same there is some brain gymnastics
+              involved
+            </h4>
             <p class="fragment">How does the browser calculate Specificity?</p>
-            <img class="fragment" src="images/sp0.png" />  
+            <img class="r-stretch" src="images/sp1.png" />
           </section>
           <section>
-            <div class="columns align-center justify-center">
-              <div class="fragment">
-                <img src="images/spex1.png" />  
+            <div class="fragment">
+              <div class="columns align-center justify-center">
+                <div>
+                  <pre>
+                    <code data-trim>
+                        p {
+                          color: red;
+                        }
+
+                        div p {
+                          color: blue;
+                        }
+                    </code>
+                  </pre>
+                </div>
+                <div style="min-width: 500px">
+                  <pre>
+                    <code data-trim>
+                        <div>
+                          <p>Which color am I?</p>
+                        </div>
+                    </code>
+                  </pre>
+                </div>
               </div>
-              <div class="fragment">
-                <img src="images/spex2.png" />  
+            </div>
+          </section>
+          <section>
+            <div class="fragment">
+              <div class="columns align-center justify-center">
+                <div>
+                  <pre>
+                    <code data-trim style="min-width: 500px;">
+                      p {
+                        color: red;
+                      }
+
+                      div p {
+                        color: blue;
+                      }
+                    </code>
+                  </pre>
+                </div>
+                <div>
+                  <div
+                    class="r-stack"
+                    style="margin-left: 15px; max-width: 700px"
+                  >
+                    <img class="fragment" src="images/sp2.png" />
+                    <img class="fragment" src="images/sp3.png" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section>
+            <div class="fragment">
+              <div class="columns align-center justify-center">
+                <div>
+                  <pre>
+                    <code data-trim class="css" style="min-width: 300px;padding: 20px;">
+                        .text {
+                          color: red;
+                        }
+
+                        #text {
+                          color: blue;
+                        }
+                    </code>
+                  </pre>
+                </div>
+                <div>
+                  <pre>
+                    <code data-trim class="html" style="margin-left:15px;min-width: 500px;padding: 20px;">
+                        <div>
+                          <p class="text" id="text">
+                            Which color am I?
+                          </p>
+                        </div>
+                    </code>
+                  </pre>
+                </div>
               </div>
             </div>
           </section>
           <section>
             <div class="columns align-center justify-center">
               <div class="fragment">
-                <img width="400px" src="images/spex1.png" />  
+                <pre>
+                  <code data-trim class="css" style="min-width: 300px;padding: 20px;">
+                      .text {
+                        color: red;
+                      }
+
+                      #text {
+                        color: blue;
+                      }
+                  </code>
+                </pre>
               </div>
               <div class="r-stack">
-                <img class="fragment" src="images/sp3.png" />  
-                <img class="fragment" src="images/sp4.png" />  
+                <img class="fragment" src="images/sp5.png" />
+                <img class="fragment" src="images/sp4.png" />
               </div>
             </div>
           </section>
           <section>
-            <div class="columns align-center justify-center">
-              <div class="fragment">
-                <img src="images/spex3.png" />  
-              </div>
-              <div class="fragment">
-                <img src="images/spex4.png" />  
-              </div>
-            </div>
-              
-          </section>
-          <section>
-            <div class="columns align-center justify-center">
-              <div class="fragment">
-                <img width="400px" src="images/spex3.png" />  
-              </div>
-              <div class="r-stack">
-                <img class="fragment" src="images/sp1.png" />  
-                <img class="fragment" src="images/sp2.png" />  
-              </div>
-            </div>
+            <h2>Let's see it in action!</h2>
+            <img src="images/cat.gif" />
           </section>
         </section>
         <section>
           <section>
             <h2>What is the cascade?</h2>
-            <img src="images/think.gif" />  
+            <img src="images/think.gif" />
           </section>
           <section>
             <p>There are 4 main levels in the CSS Cascade</p>
@@ -255,26 +580,39 @@
         <section>
           <h2>Homework</h2>
           <section>
-              <h4>Part I - Properties</h4>
-              <ul>
-                <li>Create a Button that looks like the image</li>
-                <li>You can use any color combination for the text and background</li>
-              </ul>
+            <h4>Part I - Properties</h4>
+            <p>Create a Button that looks like the image</p>
+            <img width="300" src="./images/homework-btn.png" alt="" />
           </section>
           <section>
-              <h4>Part II - Selectors</h4>
-              <ul>
-                <li>Use the provided html and add a style sheet to it</li>
-                <li>Set the background of all the spans to PINK</li>
-                <li>Make the special text RED</li>
-                <li>Make the last paragraph element have font-size: 50px and grey</li>
-                <li>Make the second element of the list BLUE</li>
-                <li>Make the links that go to google ORANGE</li>
-                <li>Make the second link PURPLE</li>
-                <li>Set the hover state for all the links to GREEN</li>
-                <!-- TODO: Think something for siblings vs children <li> </li> -->
-              </ul>
+            <h4>Part II - Selectors</h4>
+            <ul>
+              <li>Make the text with the class special RED</li>
+              <li>
+                Set the background of all the spans to PINK and the color BLUE
+              </li>
+              <li>
+                Make the last paragraph element have a big font size and ORANGE
+              </li>
+              <li>
+                Set the hover and focus states for all the links to have
+                background CYAN
+              </li>
+              <li>
+                Make the element with id "continue" to have a big font size
+              </li>
+              <li>
+                Make all strong elements inside the list to have color BLUE
+              </li>
+              <li>
+                Make the second link element to have background color VIOLET
+              </li>
+            </ul>
           </section>
+        </section>
+        <section>
+          <h1>Questions?</h1>
+          <img src="./images/questions.gif" alt="">
         </section>
       </div>
     </div>
