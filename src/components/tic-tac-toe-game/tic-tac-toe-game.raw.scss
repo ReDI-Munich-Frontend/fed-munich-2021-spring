@@ -32,7 +32,7 @@
     }
   }
 
-  &.can-move div:not(.o):not(.x) {
+  &.can-move div:empty {
     cursor: pointer;
   }
 }
