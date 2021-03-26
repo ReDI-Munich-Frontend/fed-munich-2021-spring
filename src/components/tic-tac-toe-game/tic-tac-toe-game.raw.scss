@@ -1,5 +1,3 @@
-@import 'style/theme/custom';
-
 #game {
   height: 100%;
   display: grid;
@@ -10,26 +8,10 @@
 
 
   div {
-    background-color: $backgroundColor;
+    background-color: #111;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 2em;
-    font-weight: bold;
-
-    &.x::before {
-      content: '';
-      height: 100%;
-      width: 100%;
-      background-color: #89fd6b;
-    }
-    &.o::before {
-      content: '';
-      height: 100%;
-      width: 100%;
-      background-color: #fc4c03;
-      clip-path: path('');
-    }
   }
 
   &.can-move div:empty {

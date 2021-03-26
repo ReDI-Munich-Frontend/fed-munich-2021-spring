@@ -21,5 +21,7 @@ deck.initialize({
   totalTime: 9000 // 2.5 hours
 });
 
+window.deck = deck;
+
 CustomHtmlElement.register(PreviewWindowElement);
 CustomHtmlElement.register(TicTacToeGameElement);

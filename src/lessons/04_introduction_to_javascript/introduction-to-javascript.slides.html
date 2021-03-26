@@ -11,7 +11,7 @@
   </head>
   <body>
     <div class="reveal">
-      <div class="slides">
+      <div class="slides" id="introduction-to-javascript">
         <section>
           <h1 class="r-fit-text">Introduction to Javascript</h1>
           <p>Redi School Munich - Spring 2021</p>
@@ -33,6 +33,8 @@
         <section>
           <section>
             <h3>Recap: Button</h3>
+
+            <small>MDN: <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button">&lt;button&gt;</a></small>
 
             <div class="columns">
               <pre><code data-trim class="html" data-line-numbers="7-9"><script type="text/template">
@@ -87,12 +89,12 @@
             </div>
 
             <ul>
-              <li class="fragment"><code>alert()</code> is a <strong>function</strong></li>
-              <li class="fragment"><code>onclick</code> is an <strong>event handler</strong></li>
+              <li class="fragment"><code>alert()</code> is a <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions">function</a></strong></li>
+              <li class="fragment"><code>onclick</code> is an <strong><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/Events/Event_handlers">event handler</a></strong></li>
             </ul>
           </section>
 
-          <section>
+          <section id="script-tag-example-slide">
             <h4>Look, mum, no hands!</h4>
 
             <div class="columns">
@@ -120,23 +122,54 @@
                   <iframe data-src="code-example/script-tag-example-01.html" name="script-tag-example"></iframe>
                 </preview-window>
 
-                <button type="button" class="run-button" onclick="frames['script-tag-example'].window.simulatePageLoad()">
+                <button type="button" class="run-button">
                   Run
                 </button>
               </div>
             </div>
           </section>
-        </section>
 
-        <section>
-          <h2>⏪</h2>
+          <section>
+            <h4>External scripts</h4>
+
+            <div class="columns align-center justify-center" style="width:100%">
+              <!-- can't use built in escaping due to </script> tag -->
+              <div style="flex-grow:1">
+                <code>index.html</code>
+                <pre><code data-trim class="html" data-line-numbers="5">
+                  &lt;!DOCTYPE html>
+                  &lt;html>
+                    &lt;head>
+                      &lt;title>Button&lt;/title>
+                      &lt;script src="script.js">&lt;/script>
+                    &lt;/head>
+                    &lt;body>
+                      &lt;h1>Javascript&lt;/h1>
+                    &lt;/body>
+                  &lt;/html>
+                </code></pre>
+              </div>
+
+              <div style="flex-grow:1">
+                <code>script.js</code>
+                <pre><code data-trim class="javascript" data-line-numbers>
+                  alert('Hello World');
+                </code></pre>
+              </div>
+            </div>
+
+            <p class="fragment">Preferred method, because this keeps markup and logic separate</p>
+          </section>
         </section>
 
         <section>
           <section>
             <h3>Recap: Developer Tools</h3>
 
-            <p style="font-size: 0.7em">Windows keyboard shortcut: <strong>F12</strong><br>Mac keyboard shortcut: <strong>Command + Alt + i</strong></p>
+            <p style="font-size: 0.7em">
+              Windows keyboard shortcut: <strong>F12</strong><br>
+              Mac keyboard shortcut: <strong>Command + Alt + i</strong>
+            </p>
           </section>
         </section>
       </div>

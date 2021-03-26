@@ -1,0 +1,14 @@
+#introduction-to-javascript {
+  #script-tag-example-slide {
+    preview-window {
+      opacity: 0;
+      transition: 0.4s ease-in-out;
+      transition-property: opacity;
+
+      &.running {
+        opacity: 1;
+      }
+    }
+  }
+}
+

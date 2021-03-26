@@ -12,6 +12,9 @@
   display:flex;
   align-items: center;
 
+  transition-property: background-color, color;
+  transition: 0.4s ease-in-out;
+
   &::after {
     display: inline-block;
     width: .5196em; // sqrt( 0.6 ** 2 - 0.3 ** 2)
@@ -20,5 +23,17 @@
     clip-path: polygon(0 0, 100% 50%, 0 100%);
     margin-left: .4em;
     content: '';
+    transition-property: background-color;
+    transition: 0.4s ease-in-out;
+  }
+
+  &[disabled] {
+    color: #a2a2a2;
+    background-color: #666666;
+    cursor: default;
+
+    &::after {
+      background: #a2a2a2;
+    }
   }
 }
