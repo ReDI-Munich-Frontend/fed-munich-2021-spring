@@ -87,7 +87,11 @@ module.exports = {
         use: ['style-loader', 'css-loader', sassLoader]
       },
       {
-        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        test: /\.raw\.svg$/i,
+        use: ['raw-loader']
+      },
+      {
+        test: /(?<!\.raw)\.(png|svg|jpg|jpeg|gif)$/i,
         type: 'asset/resource'
       }
     ]

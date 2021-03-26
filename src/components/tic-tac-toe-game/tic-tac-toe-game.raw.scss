@@ -5,8 +5,8 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
-  background-color: white;
-  gap: 5px;
+  background-color: #cecece;
+  gap: 15px;
 
 
   div {
@@ -18,12 +18,17 @@
     font-weight: bold;
 
     &.x::before {
-      content: '✖';
-      color: #89fd6b;
+      content: '';
+      height: 100%;
+      width: 100%;
+      background-color: #89fd6b;
     }
     &.o::before {
-      content: '🞅';
-      color: #fc4c03;
+      content: '';
+      height: 100%;
+      width: 100%;
+      background-color: #fc4c03;
+      clip-path: path('');
     }
   }
 

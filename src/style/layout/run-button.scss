@@ -14,7 +14,7 @@
 
   &::after {
     display: inline-block;
-    width: .5196em;
+    width: .5196em; // sqrt( 0.6 ** 2 - 0.3 ** 2)
     height: .6em;
     background: white;
     clip-path: polygon(0 0, 100% 50%, 0 100%);

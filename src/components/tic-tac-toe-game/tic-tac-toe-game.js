@@ -1,6 +1,8 @@
 import { CustomHtmlElement } from '../custom-html-element';
 import template from './tic-tac-toe-game.html';
 import style from './tic-tac-toe-game.raw.scss';
+import xIcon from './x.raw.svg';
+import oIcon from './o.raw.svg';
 
 const difficulty = {
   noob: Symbol('noob'),
@@ -129,13 +131,13 @@ export class TicTacToeGameElement extends CustomHtmlElement {
         const boardElement = this.boardElements[y][x];
         switch (this.board[y][x]) {
           case player.o:
-            boardElement.classList = 'o';
+            boardElement.innerHTML = oIcon;
             break;
           case player.x:
-            boardElement.classList = 'x';
+            boardElement.innerHTML = xIcon;
             break;
           default:
-            boardElement.classList = '';
+            boardElement.innerHTML = '';
         }
       }
     }
