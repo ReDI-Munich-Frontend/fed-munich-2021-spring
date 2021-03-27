@@ -492,6 +492,28 @@
             <div style="display: inline-block">
               <button type="button" class="run-button">Run</button>
           </section>
+
+          <section>
+            <h3>Some more operators</h3>
+
+            <p>All of these can be used as conditions for <code>if</code> statements</p>
+
+            <pre><code data-trim class="javascript"><script type="text/template">
+              // Comparison - Greater Than: >
+              console.log(10 > 8);      // ==> true
+              console.log(8 > 8);       // ==> false
+
+              // Comparison - Greater Than or Equal: >=
+              console.log(9 >= 9);      // ==> true
+              console.log(3 >= 9);      // ==> false
+
+              // Comparison - Less Than: <
+              console.log(5 < 3);       // ==> false
+
+              // Comparison - Less Than or Equal: <=
+              console.log(3 <= 3);      // ==> true
+            </script></code></pre>
+          </section>
         </section>
 
         <section>
@@ -548,7 +570,7 @@
           <section data-auto-animate>
             <h3>Making our own functions</h3>
 
-            <pre><code data-trim class="javascript" data-line-numbers="1-4 | 3">
+            <pre><code data-trim class="javascript" data-line-numbers="1-4 | 3" data-id="function-return">
               function multiply(num1, num2) {
                 let result = num1 * num2;
                 return result;
@@ -558,10 +580,28 @@
             <p class="fragment">The <code>return</code> statement passes on a value to the caller.<br>The function stops at this point.</p>
 
             <pre class="fragment"><code data-trim class="javascript" data-line-numbers>
-              console.log( multiply(3, 5) );  // ==> 15
+              console.log(multiply(3, 5));  // ==> 15
 
               const product = multiply(4, 4);
-              console.log(product);           // ==> 16
+              console.log(product);         // ==> 16
+            </code></pre>
+          </section>
+
+          <section data-auto-animate>
+            <h3>Making our own functions</h3>
+
+            <pre><code data-trim class="javascript" data-line-numbers="3" data-id="function-return">
+              function multiply(num1, num2) {
+                let result = num1 * num2;
+                return result;
+              }
+            </code></pre>
+
+            <p>All other variables declared inside the function are discarded.</p>
+
+            <pre><code data-trim class="javascript" data-line-numbers>
+              console.log(multiply(6, 3));  // ==> 18
+              console.log(result);          // ==> ReferenceError: result is not defined
             </code></pre>
           </section>
 
@@ -583,8 +623,60 @@
               }
             </code></pre>
             <pre><code data-trim class="javascript">
-              console.log( myFunction1() );  // ==> undefined
+              console.log(myFunction1());  // ==> undefined
             </code></pre>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>Document Object Model</h2>
+            <p>Javascript's interface for interacting with HTML</p>
+            <small>MDN: <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction">Document Object Model</a></small>
+          </section>
+
+          <section>
+            <div class="r-stack">
+              <div style="width: 100%">
+                <h3>Query Selector</h3>
+
+                <p>Select an HTML element using <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors">CSS-selectors</a> in Javascript</p>
+
+                <div class="columns align-start justify-center" style="width:100%">
+                  <div style="flex-grow: 1">
+                    <code style="font-size: .75em">query-selectors.html</code>
+                    <pre><code data-trim class="html">
+                      &lt;!DOCTYPE html>
+                      &lt;html>
+                        &lt;head>
+                          &lt;title>Query Seletctors&lt;/title>
+                          &lt;script src="query-selectors.js" defer>
+                          &lt;/script>
+                        &lt;/head>
+                        &lt;body>
+                          &lt;h1>Query Selectors&lt;/h1>
+                        &lt;/body>
+                      &lt;/html>
+                    </code></pre>
+                  </div>
+
+                  <div style="flex-grow: 1">
+                    <code style="font-size: .75em">query-selectors.js</code>
+                    <pre><code data-trim class="javascript">
+                      let heading = document.querySelector('h1');
+
+                      heading.innerHTML = 'Changed';
+
+                      console.log(heading);
+                    </code></pre>
+                  </div>
+                </div>
+                <p class="fragment" style="font-size: .8em">
+                  <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/innerHTML"><code><em>Element</em>.innerHTML</code></a> lets us access and change the element's content.
+                </p>
+              </div>
+              <video data-src="images/query-selector.mp4" controls loop data-autoplay class="fragment r-frame"></video>
+            </div>
           </section>
         </section>
       </div>
