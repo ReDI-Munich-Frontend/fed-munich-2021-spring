@@ -170,6 +170,421 @@
               Windows keyboard shortcut: <strong>F12</strong><br>
               Mac keyboard shortcut: <strong>Command + Alt + i</strong>
             </p>
+
+            <img data-src="images/developer-console.png" class="fragment r-frame" alt="Developer Console"/>
+          </section>
+
+          <section>
+            <h2>Developer Console</h2>
+
+            <video data-src="images/developer-tools.mp4" controls loop data-autoplay></video>
+          </section>
+        </section>
+
+        <section>
+          <section data-auto-animate>
+            <p>Language Basics:</p>
+            <h2>Variables</h2>
+          </section>
+
+          <section data-auto-animate>
+            <h2>Variables</h2>
+            <small>MDN: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar_and_types#declarations">Declarations</a></small>
+
+            <pre><code data-trim class="javascript" data-line-numbers="1-9 | 1-2 | 1-2,4-6 | 8-9">
+              // Variable declaration:
+              let question;
+
+              // Variable assignment:
+              question = "What's the answer to the ultimate question of life, "
+                       + "the universe and everything?";
+
+              // Declaration and assignment
+              let answer = 42;
+            </code></pre>
+          </section>
+
+          <section>
+            <h3>Two (or three) different ways of declaring variables</h3>
+
+            <pre><code data-trim class="javascript" data-line-numbers="1-5 | 1-2 | 4-5 | 1-5">
+              let myVariable = "I can be changed";
+              myVariable = "New value"; // Works fine
+
+              const myConstant = "I cannot be changed";
+              myConstant = "New value"; // Throws an error!
+            </code></pre>
+
+            <div class="additional-note fragment">
+              <h5>The old way of declaring variables:</h5>
+              <pre><code data-trim class="javascript" data-line-numbers>
+                var myVariable = "This is a variable";
+                myVariable = "newValue";
+              </code></pre>
+            </div>
+          </section>
+
+          <section>
+            <h3>Logging</h3>
+            <small>MDN: <a href="https://developer.mozilla.org/en-US/docs/Web/API/Console/log">console.log()</a></small>
+            <p><code>console.log()</code> can be used to print any value into the developer console.</p>
+
+            <pre><code data-trim class="javascript" data-line-numbers>
+              let person1 = "Alice";
+              let person2 = "Bob";
+
+              console.log(person1);
+              console.log("The name of the second person is " + person2);
+            </code></pre>
+
+            <img data-src="images/console-log.png" class="fragment" alt="Console Log"/>
+          </section>
+
+          <section>
+            <h3>Primitive Data Types</h3>
+            <small>MDN: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#primitive_values">Primitive Data Types</a></small>
+
+            <table id="data-types">
+              <tr class="fragment">
+                <td>String</td>
+                <td><pre><code data-trim class="javascript">
+                  let myString = "Bob";
+                </code></pre></td>
+              </tr>
+              <tr class="fragment">
+                <td>Number</td>
+                <td><pre><code data-trim class="javascript">
+                  let myNumber = 12.5;
+                </code></pre></td>
+              </tr>
+              <tr class="fragment">
+                <td>Boolean</td>
+                <td><pre><code data-trim class="javascript">
+                  let myBoolean = true; // two possible values: true / false
+                </code></pre></td>
+              </tr>
+              <tr class="fragment">
+                <td>Undefined</td>
+                <td><pre><code data-trim class="javascript">
+                  let myUndefined = undefined; // only possible value
+                </code></pre></td>
+              </tr>
+            </table>
+
+            <p class="future-outlook fragment">Furthermore, there are <code>Object</code>, <code>Function</code>, <code>BigInt</code> and <code>Symbol</code>.</p>
+          </section>
+
+          <section>
+            <h3>The <code>typeof</code> Operator</h3>
+            <small>MDN: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof">typeof</a></small>
+
+            <p>Returns the data type of an expression.</p>
+
+            <pre><code data-trim class="javascript">
+              const myString = "Charlie";
+              const myBoolean = false;
+
+              console.log(typeof myString);  // ==> string
+              console.log(typeof myBoolean); // ==> boolean
+              console.log(typeof 123);       // ==> Number
+            </code></pre>
+          </section>
+        </section>
+
+        <section>
+          <section data-auto-animate>
+            <p>Language basics:</p>
+            <h2>Comments</h2>
+          </section>
+
+          <section data-auto-animate>
+            <h2>Comments</h2>
+
+            <ul>
+              <li>Purely informational for the developer</li>
+              <li>Two types: single-line and block comments</li>
+            </ul>
+
+            <pre><code data-trim class="javascript">
+              // This is a single-line comment
+
+              /*
+                Everything in between
+                is a comment
+              */
+            </code></pre>
+          </section>
+        </section>
+
+        <section>
+          <section data-auto-animate>
+            <p>Language basics:</p>
+            <h2>Operators</h2>
+          </section>
+
+          <section data-auto-animate>
+            <h2>Operators</h2>
+            <small>MDN: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators">Expressions and Operators</a></small>
+            <p>Symbols that produce a result based on one or more input values.
+              <br>A small selection:</p>
+
+            <pre><code data-trim class="javascript">
+              // Addition (numbers): +
+              console.log(6 + 9);                // ==> 15
+
+              // Concatenation (strings): +
+              console.log("Hello " + "world");   // ==> "Hello World"
+
+              // Subtraction, Multiplication, Division: - * /
+              console.log(9 - 3);                // ==> 6
+              console.log(8 * 2);                // ==> 16
+              console.log(9 / 3);                // ==> 3
+            </code></pre>
+          </section>
+
+          <section>
+            <h3>Implicit Type Conversion</h3>
+            <small>MDN: <a href="https://developer.mozilla.org/en-US/docs/Mozilla/js-ctypes/Using_js-ctypes/Type_conversion">Type conversion</a></small>
+
+            <p style="font-size: .75em">If the types of two values used for an operator mismatch, or the types don't match the operator's expectation, Javascript guesses which type to use.</p>
+
+            <pre><code data-trim class="javascript">
+              // string + number = string
+              console.log("4" + 2);        // ==> "42"
+
+              // string * number = number
+              console.log("4" * 2);        // ==> 8
+
+              // boolean + boolean = number
+              console.log(true + false);   // ==> 1
+
+              // boolean + string = string
+              console.log(true + "false"); // ==> "truefalse"
+            </code></pre>
+
+            <p class="fragment" style="font-size: .75em">👉 Make sure your variables have the right type. Use <code>typeof</code> if you don't know their type.</p>
+          </section>
+        </section>
+
+        <section>
+          <section data-auto-animate>
+            <p>Language basics:</p>
+            <h2>Conditionals</h2>
+          </section>
+
+          <section data-auto-animate>
+            <h2>Conditionals</h2>
+
+            <p>Syntax:</p>
+
+            <pre><code data-trim class="javascript">
+              if ( /* condition */ ) {
+                /* code that runs when condition is true */
+              }
+            </code></pre>
+
+            <p style="font-size: .75em" class="fragment">The condition can be any expression which returns a boolean.</p>
+
+            <pre class="fragment"><code data-trim class="javascript">
+              if (true) {
+                console.log('I always run');
+              }
+
+              if (false) {
+                console.log('I never run');
+              }
+            </code></pre>
+          </section>
+
+          <section id="conditionals-example-slide">
+            <h2>Conditionals</h2>
+
+            <pre><code data-trim class="javascript">
+              const passwordEntry = prompt('What is the password?');
+
+              if (passwordEntry === 'hunter2') {
+                alert('You now have access to my super secret area!');
+              }
+            </code></pre>
+
+            <div style="display: inline-block">
+              <button type="button" class="run-button">Run</button>
+            </div>
+
+            <div class="additional-note fragment">
+              <p><code>===</code> is the strict equality operator. It returns true, if both arguments are matching types and values.</p>
+
+              <pre><code data-trim class="javascript">
+                console.log(5 === 5);      // ==> true
+                console.log(8 === 2 * 4);  // ==> true
+                console.log('5' === 5);    // ==> false
+              </code></pre>
+
+              <p>By contrast, the loose equality operator <code>==</code> only checks values, not types</p>
+
+              <pre><code data-trim class="javascript">
+                console.log(5 == 5);       // ==> true
+                console.log('5' == 5);     // ==> true  (different types, but same value)
+                console.log('3' == 5);     // ==> false (different types and values)
+              </code></pre>
+            </div>
+          </section>
+
+          <section>
+            <h3>Negative Case: <code>else</code></h3>
+
+            <p>Syntax:</p>
+
+            <pre><code data-trim class="javascript">
+              if ( /* condition */ ){
+                /* code that runs when condition is true */
+              } else {
+                /* code that runs when condition is false */
+              }
+            </code></pre>
+          </section>
+
+          <section id="conditionals-example-slide-2">
+            <h3>Negative Case: <code>else</code></h3>
+
+            <pre><code data-trim class="javascript">
+              const pizzaTopping = prompt('What do you like on your pizza: 🍕');
+
+              if (pizzaTopping !== 'pineapples') {
+                alert('Yum! I love pizza with ' + pizzaTopping);
+              } else {
+                alert('Eeew how could you?');
+              }
+            </code></pre>
+
+            <div style="display: inline-block">
+              <button type="button" class="run-button">Run</button>
+            </div>
+
+            <div class="additional-note fragment">
+              <p><code>!==</code> is the strict inequality operator. It does the opposite of <code>===</code></p>
+
+              <pre><code data-trim class="javascript">
+                console.log(5 !== 5);            // ==> false
+                console.log('Alice' !== 'Bob');  // ==> true
+                console.log('20' !== 20);        // ==> true
+              </code></pre>
+            </div>
+          </section>
+
+          <section id="conditionals-example-slide-3">
+            <h3>Conditionals with more than two branches</h3>
+
+            <pre><code data-trim class="javascript">
+              const input = prompt('Ask me about what the names of some coding languages mean');
+
+              if (input === 'html') {
+                alert('HTML stands for HyperText Markup Language');
+              } else if (input === 'css') {
+                alert('CSS stands for Cascading Style Sheets');
+              } else if (input === 'javascript') {
+                alert('Javascript is just Javascript');
+              } else {
+                alert('I don\'t know the language ' + input);
+              }
+            </code></pre>
+
+            <div style="display: inline-block">
+              <button type="button" class="run-button">Run</button>
+          </section>
+        </section>
+
+        <section>
+          <section data-auto-animate>
+            <p>Language basics:</p>
+            <h2>Functions</h2>
+          </section>
+
+          <section data-auto-animate>
+            <h2>Functions</h2>
+            <p><small>MDN: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions">Functions</a></small></p>
+
+            <ul>
+              <li>Reusable sub-routines that are stored with a name</li>
+              <li class="fragment" data-fragment-index="0">Javascript comes with many built-in functions</li>
+            </ul>
+
+            <p class="fragment" data-fragment-index="1">Syntax for calling a function:</p>
+
+            <pre class="fragment" data-fragment-index="1"><code data-trim class="javascript">
+              name_of_the_function( /* 0 - n comma-separated arguments */ );
+            </code></pre>
+
+            <div class="additional-note fragment" data-fragment-index="2">
+              <p>Some functions that we already saw:</p>
+              <pre><code data-trim class="javascript">
+                alert(message);
+                console.log(value);
+                prompt(question);
+              </code></pre>
+            </div>
+          </section>
+
+          <section>
+            <h3>Return values</h3>
+            <p>Functions may return a value, which we can then process further</p>
+
+            <pre><code data-trim class="javascript">
+              let answer = prompt('Question');
+            </code></pre>
+          </section>
+
+          <section data-auto-animate>
+            <h3>Making our own functions</h3>
+            <p>Function declaration syntax:</p>
+
+            <pre><code data-trim class="javascript" data-line-numbers="1-3 | 1">
+              function myFunction(firstArgument, secondArgument) {
+                /* function logic */
+              }
+            </code></pre>
+          </section>
+
+          <section data-auto-animate>
+            <h3>Making our own functions</h3>
+
+            <pre><code data-trim class="javascript" data-line-numbers="1-4 | 3">
+              function multiply(num1, num2) {
+                let result = num1 * num2;
+                return result;
+              }
+            </code></pre>
+
+            <p class="fragment">The <code>return</code> statement passes on a value to the caller.<br>The function stops at this point.</p>
+
+            <pre class="fragment"><code data-trim class="javascript" data-line-numbers>
+              console.log( multiply(3, 5) );  // ==> 15
+
+              const product = multiply(4, 4);
+              console.log(product);           // ==> 16
+            </code></pre>
+          </section>
+
+          <section data-auto-animate>
+            <h3>Making our own functions</h3>
+
+            <p>The <code>return</code> statement is optional. Both of these examples are valid and return nothing:</p>
+
+            <pre><code data-trim class="javascript">
+              // Assuming someOtherFunction() exists
+              function myFunction1() {
+                someOtherFunction();
+
+                return;
+              }
+
+              function myFunction2() {
+                someOtherFunction();
+              }
+            </code></pre>
+            <pre><code data-trim class="javascript">
+              console.log( myFunction1() );  // ==> undefined
+            </code></pre>
           </section>
         </section>
       </div>
