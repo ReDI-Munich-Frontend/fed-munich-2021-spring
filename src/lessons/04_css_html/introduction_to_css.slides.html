@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>CSS and HTML</title>
+    <meta name="date" content="2021-03-18" />
+    <meta name="description" content="Recap, CSS Box Model" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides" id="introduction-to-frontend">
+        <!--SLIDE 1-->
+        <section class="initial">
+          <!--SLIDE 1.1-->
+          <section data-auto-animate data-timing="10">
+            <p>Welcome to</p>
+            <h1 class="r-fit-text">CSS and HTML</h1>
+            <p>ReDI School Munich - Spring 2021</p>
+          </section>
+        </section>
+
+        <section>
+          <!--SLIDE 2-->
+          <section data-auto-animate data-timing="10">
+            <p>But first...</p>
+            <h2>Let us recap!</h2>
+            <ul data-auto-animate data-timing="10">
+              <li class="fragment">Selectors</li>
+              <li class="fragment">Selectors</li>
+              <li class="fragment">And Selectors...</li>
+              <img class="fragment" src="./images/css.gif" />
+            </ul>
+          </section>
+        </section>
+
+        <section>
+          <!--SLIDE 3.1-->
+          <section data-auto-animate data-timing="10">
+            <h2>The Box Model</h2>
+            <h3 class="fragment">Everything is boxes!</h3>
+            <img class="fragment" src="./images/boxes.gif" />
+          </section>
+          <!--SLIDE 3.2-->
+          <section data-auto-animate data-timing="10">
+            <p class="fade-out">Lets have a look to these boxes</p>
+            <pre class="fragment">
+                <code class="formattedCode">
+                  <script type="text/template">
+                    * {
+                      border: 2px solid red;
+                    }
+                  </script>
+                </code>
+              </pre>
+          </section>
+          <section>
+            <img src="./images/boxes.png" class="r-stretch" />
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>Types of boxes</h2>
+            <p class="fragment">We can say there are two main types of boxes</p>
+            <ul class="fragment">
+              <li>Block boxes</li>
+              <li>Inline Boxes</li>
+            </ul>
+            <p class="fragment">This will tell us how do they interact with other elements and how they behave</p>
+          </section>
+          <section>
+            <h2>Block Boxes</h2>
+            <ul>
+              <li class="fragment">Take up the entire space of the container</li>
+              <li class="fragment">Breaks into a new line</li>
+              <li class="fragment"><b>width</b> and <b>height</b> properties will be respected</li>
+              <li class="fragment">Padding, margin and order will push others away</li>
+              <li class="fragment">&lt;h1&gt;, &lt;p&gt; are block elements</li>
+            </ul>
+          </section>
+          <h2>Inline Boxes</h2>
+            <ul>
+              <li class="fragment">Take only the space they need </li>
+              <li class="fragment"><b>width</b> and <b>height</b> don't apply</li>
+              <li class="fragment">Breaks into a new line</li>
+              <li class="fragment">Vertical margin, border and padding apply but dont move other boxes</li>
+              <li class="fragment">Horizontal margin, border and padding will apply and move other boxes</li>
+              <li class="fragment">&lt;a&gt;, &lt;span&gt; are inline elements</li>
+              <li class="fragment">They cannot contain other block elements</li>
+            </ul>
+          </section>
+          <section><h2>Let's take a look!</h2></section>
+          <section>
+            <h2>How do we change it?</h2>
+            <p>In order to change the type of the box we use the <span class="highlight">display</span> property</p>
+            <pre class="fragment">
+              <code class="formattedCode">
+                  .block {
+                    display: block
+                  }
+                  .inline {
+                    display: inline
+                  }
+              </code>
+            </pre>
+            <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/display" class="small">More on display property</a>
+          </section>
+          <section>
+            <h2>Using width and height</h2>
+            <p>These properties apply only to the content!</p>
+            <p class="fragment">width + padding + border = actual width of an element</p>
+            <p class="fragment">height + padding + border = actual height of an element</p> 
+            <p class="fragment">DEMO!</p>
+          </section>
+          <section>
+            <h2>Box Sizing</h2>
+            <pre class="fragment">
+              <code class="formattedCode">
+                  .border-box {
+                    box-sizing: border-box;
+                  }
+
+                  .content-box {
+                    box-sizing: content-box;
+                  }
+              </code>
+            </pre>
+          </section>
+        </section>
+
+        <section>
+          <!-- ADVANCED HTML -->
+          <section>
+            <h2>More HTML</h2>
+            <img src="./images/layout.png" class="r-stretch">
+          </section>
+          <section>
+            <h2>&lt;header&gt;</h2>
+            <ul>
+              <li class="fragment">Identifies the content that precedes the primary content of the page</li>
+              <li class="fragment">It can contain other elements as navigation, search, branding... </li>
+              <li class="fragment">It can be used as well as a header for the article tag</li>
+            </ul>
+          </section>
+          <section>
+            <h2>&lt;nav&gt;</h2>
+            <ul>
+              <li class="fragment">Represents a section that contains navigation elements</li>
+              <li class="fragment">There might be several navs but they should be properly described</li>
+              <li class="fragment">Is best reserved for the primary navigation areas</li>
+            </ul>
+            <pre>
+              <code class="fragment formattedCode">
+                <script type="text/template">
+                <nav>
+                  <a href="/home">Home</a>
+                  <a href="/details">Details</a>
+                  <a href="/aboutUs">About Us</a>
+                </nav>
+              </script>
+            </code>
+            </pre>
+          </section>
+          <section>
+            <h2>&lt;aside&gt;</h2>
+            <ul>
+              <li class="fragment">Used for content that is not very important</li>
+              <li class="fragment">Identifies content related to the primary content</li>
+              <li class="fragment">Related links, advertisements... </li>
+            </ul>
+            <pre>
+              <code class="fragment formattedCode">
+                <script type="text/template">
+                  <aside>
+                    <!-- Website sidebar: Advertising, Post Index, Login Forms -->
+                  </aside>
+              </script>
+            </code>
+            </pre>
+          </section>
+          <section>
+            <h2>&lt;article&gt;</h2>
+            <ul>
+              <li class="fragment">Identifies a self contained pice of information that it could be distributed to other websites as a unit</li>
+              <li class="fragment">Each article should have a heading as a child</li>
+              <li class="fragment">There can be multiple articles in one document</li>
+              <li class="fragment">Forum or blog post, magazine article... </li>
+            </ul>
+            <pre>
+              <code class="fragment formattedCode">
+                <script type="text/template">
+                  <article>
+                    <h2>My First Blog Post!</h2>
+                    <p>.....</p>
+                  </article>
+              </script>
+            </code>
+            </pre>
+          </section>
+          <section>
+            <h2>&lt;section&gt;</h2>
+            <ul>
+              <li class="fragment">Represents a generic content</li>
+              <li class="fragment">It groups together related elements</li>
+              <li class="fragment">Should have a heading as a child</li>
+              <li class="fragment">There can be multiple sections in one document</li>
+            </ul>
+            <pre>
+              <code class="fragment formattedCode">
+                <script type="text/template">
+                  <section>
+                    <h2>Heading</h2>
+                    <p>Bunch of awesome content</p>
+                  </section>
+              </script>
+            </code>
+            </pre>
+          </section>
+          <section>
+            <h2>&lt;footer&gt;</h2>
+            <ul>
+              <li class="fragment">Represents the footer of a page, section or article</li>
+              <li class="fragment">Is placed at the bottom of its parent element</li>
+              <li class="fragment">Copyright, author, nav elements</li>
+            </ul>
+            <pre>
+              <code class="fragment formattedCode">
+                <script type="text/template">
+                  <footer>
+                    Copyright 2021.
+                    <a href="/careers">Work with us!</a>
+                  </footer>
+              </script>
+            </code>
+            </pre>
+          </section>
+        </section>
+
+        <section>
+          <h1>Questions?</h1>
+          <img src="./images/questions.gif" alt="" />
+        </section>
+      </div>
+    </div>
+  </body>
+</html>
