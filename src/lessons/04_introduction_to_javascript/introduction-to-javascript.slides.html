@@ -602,6 +602,8 @@
             <pre><code data-trim class="javascript" data-line-numbers>
               console.log(multiply(6, 3));  // ==> 18
               console.log(result);          // ==> ReferenceError: result is not defined
+              console.log(num1);            // ==> ReferenceError: num1 is not defined
+              console.log(num2);            // ==> ReferenceError: num2 is not defined
             </code></pre>
           </section>
 
@@ -677,6 +679,42 @@
                 </p>
               </div>
               <video data-src="images/query-selector.mp4" controls loop data-autoplay class="fragment r-frame"></video>
+            </div>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <div class="r-stack">
+              <h2>Putting all of it together</h2>
+
+              <pre class="fragment"><code data-trim class="html" style="max-height:unset" data-line-numbers="1-18 | 2,17 | 3,18">
+                &lt;script>
+                  function changeImage() {
+                    const imgElement = document.querySelector('#catImage');
+
+                    if (imgElement.attributes.src.value === 'images/cat1.jpg') {
+                      imgElement.attributes.src.value = 'images/cat2.jpg';
+                    } else if (imgElement.attributes.src.value === 'images/cat2.jpg') {
+                      imgElement.attributes.src.value = 'images/cat3.jpg';
+                    } else {
+                      imgElement.attributes.src.value = 'images/cat1.jpg';
+                    }
+                  }
+                &lt;/script>
+
+                <!-- ... -->
+
+                &lt;button type="button" onClick="changeImage()">Change Image&lt;/button>
+                &lt;img src="images/cat1.jpg" id="catImage" alt="Cat"/>
+              </code></pre>
+
+              <preview-window window-title="Button"
+                              icon-class="fa-globe-europe"
+                              address="file:///javascript.html"
+                              style="width: 700px; height: 700px" class="fragment">
+                <iframe data-src="class-resources/query-selectors-02/query-selectors-02.html"></iframe>
+              </preview-window>
             </div>
           </section>
         </section>

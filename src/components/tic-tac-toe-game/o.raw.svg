@@ -2,7 +2,7 @@
    height="100"
    viewBox="0 0 100 100">
   <g>
-    <ellipse style="stroke:#fc4c03;stroke-width:16;"
+    <ellipse style="stroke:#fc4c03;stroke-width:16;fill:rgba(0,0,0,0)"
        cx="50"
        cy="50"
        rx="41"
