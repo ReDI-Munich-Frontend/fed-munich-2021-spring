@@ -8,7 +8,8 @@ cat > index.html << EOF
 <!DOCTYPE html>
 <html>
 <head><title>Slide list</title></head>
-<body style="font-family: monospace">
+<body style="font-family: monospace;font-size:24px">
+<h1>Slides listing</h1>
 <ul>
 EOF
 
