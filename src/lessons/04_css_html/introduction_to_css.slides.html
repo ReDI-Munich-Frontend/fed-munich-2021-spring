@@ -37,7 +37,7 @@
           <!--SLIDE 3.1-->
           <section data-auto-animate data-timing="10">
             <h2>The Box Model</h2>
-            <h3 class="fragment">Everything is boxes!</h3>
+            <h2 class="fragment">Everything is boxes!</h2>
             <img class="fragment" src="./images/boxes.gif" />
           </section>
           <!--SLIDE 3.2-->
@@ -233,6 +233,107 @@
             </code>
             </pre>
           </section>
+          <section>
+            <h2>&lt;main&gt;</h2>
+            <ul>
+              <li class="fragment">Includes content that is unique to the page</li>
+              <li class="fragment">It can be used only once per page</li>
+              <li class="fragment">It should not have elements such as footer, header, main navigation</li>
+            </ul>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>&lt;form&gt;</h2>
+            <ul>
+              <li class="fragment">Contains interactive controls for submitting</li>
+              <li class="fragment">It can contain other elements such as &lt;input&gt;, &lt;select&gt;, &lt;option&gt;</li>
+            </ul>
+            <p class="fragment"><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form" class="small">More on form element</a></p>
+          </section>
+          <section>
+            <h2>&lt;input&gt;</h2>
+            <ul>
+              <li class="fragment">Is used to gather data from the user</li>
+              <li class="fragment">How it works will be dependant of their attribute<span class="highlight">type</span></li>
+              <li class="fragment">Every input should have an associated <span class="highlight">label</span></li>
+            </ul>
+            <pre>
+              <code class="fragment formattedCode">
+                <script type="text/template">
+                  <label for="username">Username</label>
+                  <input type="text" name="username" id="username">
+                  <label for="quantity">Quantity</label>
+                  <input type="number" name="quantity" id="quantity">
+              </script>
+            </code>
+            </pre>
+            <p class="fragment"><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input" class="small">More on input element</a></p>
+          </section>
+          <section>
+            <h2>&lt;button&gt;</h2>
+            <ul>
+              <li class="fragment">Represents a clickable element</li>
+              <li class="fragment">It generally indicates that an action can by done by pressing it</li>
+              <li class="fragment">If the button is not for submitting a form we need to set their <span class="highlight">type</span> to <span class="highlight">button</span> </li>
+            </ul>
+            <pre>
+              <code class="fragment formattedCode">
+                <script type="text/template">
+                  <button>Submit!</button>
+                  <button type="Button">It does submit</button>
+              </script>
+            </code>
+            </pre>
+            <p class="fragment"><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button" class="small">More on button element</a></p>
+          </section>
+          <section>
+            <h2>&lt;select&gt;</h2>
+            <ul>
+              <li class="fragment">It provides a menu of options</li>
+              <li class="fragment">Each option has a value represented by the <span class="highlight">&lt;select&gt;</span> tag</li>
+            </ul>
+            <pre>
+              <code class="fragment formattedCode">
+                <script type="text/template">
+                  <select name="housepets">
+                    <option value="cat">Cat</option>
+                    <option value="dog">Dog</option>
+                    <option value="llama">Llama</option>
+                  </select>
+              </script>
+            </code>
+            </pre>
+            <p class="fragment"><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select" class="small">More on select element</a></p>
+          </section>
+          <section>
+            <h2>&lt;textarea&gt;</h2>
+            <ul>
+              <li class="fragment">Represents a multiline text control</li>
+              <li class="fragment">Useful when we want to capture large amounts of text from the user</li>
+            </ul>
+            <pre>
+              <code class="fragment formattedCode">
+                <script type="text/template">
+                  <textarea name="textarea" rows="10" cols="50">
+                    Write something here
+                  </textarea>
+              </script>
+            </code>
+            </pre>
+            <p class="fragment"><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea" class="small">More on textarea element</a></p>
+          </section>
+        </section>
+
+        <section>
+          <h2>Homework</h2>
+          <p>Create a page that includes a Contact form, with the following fields</p>
+          <ul>
+            <li>Name and Last name</li>
+            <li>Email</li>
+            <li>Message</li>
+          </ul>
+          <p>You must use the tags learned in the class to have at least header, navigation, main and footer</p>
         </section>
 
         <section>
