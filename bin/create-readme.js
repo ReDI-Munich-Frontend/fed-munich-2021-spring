@@ -26,7 +26,7 @@ const readmeFooter = `
 <sub>[View on Github](https://github.com/${repoOwner}/${repoName})</sub>`;
 
 const slides = slideFiles
-  .filter(slideFile => !slideFile.endsWith('/template.slides.html'))
+  .filter(slideFile => !slideFile.endsWith('/00_template.slides.html'))
   .map(slideFile => {
     const strippedFileName = slideFile.replace(/\.\/dist\/docs\//, '');
     const fileContents = fs.readFileSync(slideFile);
