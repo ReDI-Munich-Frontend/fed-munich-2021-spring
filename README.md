@@ -75,7 +75,8 @@ While presenting, press <kbd>S</kbd> to show the speaker notes. If your browser
 blocks the speaker note pop-up, you may have to press <kbd>S</kbd> again once
 it's open.
 
-## Deployment on Github Pages
+## Automatic Deployment
+### Deployment on Github Pages
 
 A workflow exists to automatically build and deploy the slides into the
 `gh-pages` branch of this repository.
@@ -87,3 +88,17 @@ A separate README file is generated automatically, which contains links to and
 meta-information of the slides. It is committed as `README.md` and
 `docs/index.md` of the `gh-pages` branch, meaning that it's the home page of
 the Github-Pages URL.
+
+### Deployment on Netlify
+
+A build script exists which allows building previews for pull-requests with
+[Netlify](https://www.netlify.com). In order to use it, set up a new site on
+Netlify and link your repository with default settings apart from the
+following:
+
+- Build Command: `bin/build-netlify.sh`
+- Publish Directory: `dist/docs`
+- Production Branch: `master`
+- Deploy Previews: _Any pull requests against your production branch / branch
+  deploy branches_
+- Branch Deploys: _None_
