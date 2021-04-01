@@ -18,7 +18,22 @@
         </section>
 
         <section>
-          TODO Recap
+          <h2>Javascript...</h2>
+
+          <p class="fragment">...is not Java 😁</p>
+          <p class="fragment">...was created in ten days.</p>
+          <p class="fragment">...is the <a href="https://insights.stackoverflow.com/survey/2020#technology-programming-scripting-and-markup-languages">most commonly used programming language in the world</a>.</p>
+
+          <aside class="notes">
+            <h4>Brief history of Javascript</h4>
+
+            <ul>
+              <li>Originally launched as <em>LiveScript</em> in 1995</li>
+              <li>Back then, Java applets were the hottest craze</li>
+              <li>Original intention of Javascript: Communication layer between User/DOM and Java Applets. Hence the name</li>
+              <li>Nowadays, the European Computer Manufacturers Association (ECMA) maintains the Javascript standard</li>
+            </ul>
+          </aside>
         </section>
 
         <section>
@@ -127,6 +142,10 @@
                 </button>
               </div>
             </div>
+
+            <aside class="notes">
+              <strong>Don't forget to click the RUN button!</strong>
+            </aside>
           </section>
 
           <section>
@@ -159,6 +178,11 @@
             </div>
 
             <p class="fragment">Preferred method, because this keeps markup and logic separate</p>
+
+            <aside class="notes">
+              Javascript is loaded and executed before the body starts loading.<br>
+              This becomes important later
+            </aside>
           </section>
         </section>
 
@@ -172,17 +196,33 @@
             </p>
 
             <img data-src="images/developer-console.png" class="fragment r-frame" alt="Developer Console"/>
+
+            <aside class="notes">
+              <p>Demo: Expressions</p>
+              <ul>
+                <li>Empty expression</li>
+                <li>Constant literal</li>
+                <li>Mathematical operators (just usage, no explanation)</li>
+                <li>Return values</li>
+              </ul>
+
+              <p>Then go to slide about <strong>Variables</strong></p>
+            </aside>
           </section>
 
           <section>
             <h2>Developer Console</h2>
 
             <video data-src="images/developer-tools.mp4" controls loop data-autoplay></video>
+
+            <aside class="notes">
+              Go to slide about <strong>Variables</strong>
+            </aside>
           </section>
         </section>
 
         <section>
-          <section data-auto-animate>
+          <section data-auto-animate data-autoslide="2000">
             <p>Language Basics:</p>
             <h2>Variables</h2>
           </section>
@@ -202,6 +242,13 @@
               // Declaration and assignment
               let answer = 42;
             </code></pre>
+
+            <aside class="notes">
+              <ul>
+                <li>Quick demo of variable declaration and assignment</li>
+                <li>Mention return values</li>
+              </ul>
+            </aside>
           </section>
 
           <section>
@@ -222,6 +269,10 @@
                 myVariable = "newValue";
               </code></pre>
             </div>
+
+            <aside class="notes">
+              Quick demo including console.log, then skip next slide
+            </aside>
           </section>
 
           <section>
@@ -272,6 +323,15 @@
             </table>
 
             <p class="future-outlook fragment">Furthermore, there are <code>Object</code>, <code>Function</code>, <code>BigInt</code> and <code>Symbol</code>.</p>
+
+            <aside class="notes">
+              Mention:
+              <ul>
+                <li>undefined = default value before assignment</li>
+                <li>We will use objects, but not create any</li>
+                <li>console is an object. Demo</li>
+              </ul>
+            </aside>
           </section>
 
           <section>
@@ -416,6 +476,10 @@
                 console.log('I never run');
               }
             </code></pre>
+
+            <aside class="notes">
+              <p>Refer back to implicit type conversion: condition is converted into boolean</p>
+            </aside>
           </section>
 
           <section id="conditionals-example-slide">
@@ -450,6 +514,10 @@
                 console.log('3' == 5);     // ==> false (different types and values)
               </code></pre>
             </div>
+            
+            <aside class="notes">
+              <p>Quick demo about what happens when user hits Cancel</p>
+            </aside>
           </section>
 
           <section>
