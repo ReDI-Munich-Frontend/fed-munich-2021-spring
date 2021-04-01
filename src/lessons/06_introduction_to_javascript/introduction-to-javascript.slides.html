@@ -286,7 +286,7 @@
 
               console.log(typeof myString);  // ==> string
               console.log(typeof myBoolean); // ==> boolean
-              console.log(typeof 123);       // ==> Number
+              console.log(typeof 123);       // ==> number
             </code></pre>
           </section>
         </section>
@@ -363,6 +363,28 @@
             </code></pre>
 
             <p class="fragment" style="font-size: .75em">👉 Make sure your variables have the right type. Use <code>typeof</code> if you don't know their type.</p>
+          </section>
+
+          <section>
+            <h3>Explicit Type Conversion</h3>
+            <p style="font-size: .75em">If you need to convert a variable from one type to another, you can use a <a href="https://developer.mozilla.org/en-US/docs/Glossary/Primitive#primitive_wrapper_objects_in_javascript">Primitive Wrapper</a></p>
+
+            <pre><code data-trim class="javascript">
+              let age = prompt('How old are you? Type a number');
+
+              console.log(age);           // ==> "30"
+              console.log(typeof age);    // ==> string
+
+              age = Number(age);     // converting to number
+
+              console.log(age);           // ==> 30
+              console.log(typeof age);    // ==> number
+
+              age = String(age);     // converting back to string
+
+              console.log(age);           // ==> "30"
+              console.log(typeof age);    // ==> string
+            </code></pre>
           </section>
         </section>
 
