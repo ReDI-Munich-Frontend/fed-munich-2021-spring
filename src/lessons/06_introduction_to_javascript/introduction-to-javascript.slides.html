@@ -120,7 +120,7 @@
                   &lt;head>
                     &lt;title>Button&lt;/title>
                     &lt;script>
-                      alert('I appear upon page load');
+                      alert("I appear upon page load");
                     &lt;/script>
                   &lt;/head>
                   &lt;body>
@@ -172,7 +172,7 @@
               <div style="flex-grow:1">
                 <code>script.js</code>
                 <pre><code data-trim class="javascript" data-line-numbers>
-                  alert('Hello World');
+                  alert("Hello World");
                 </code></pre>
               </div>
             </div>
@@ -352,7 +352,7 @@
         </section>
 
         <section>
-          <section data-auto-animate>
+          <section data-auto-animate data-autoslide="2000">
             <p>Language basics:</p>
             <h2>Comments</h2>
           </section>
@@ -377,7 +377,7 @@
         </section>
 
         <section>
-          <section data-auto-animate>
+          <section data-auto-animate data-autoslide="2000">
             <p>Language basics:</p>
             <h2>Operators</h2>
           </section>
@@ -430,7 +430,7 @@
             <p style="font-size: .75em">If you need to convert a variable from one type to another, you can use a <a href="https://developer.mozilla.org/en-US/docs/Glossary/Primitive#primitive_wrapper_objects_in_javascript">Primitive Wrapper</a></p>
 
             <pre><code data-trim class="javascript">
-              let age = prompt('How old are you? Type a number');
+              let age = prompt("How old are you? Type a number");
 
               console.log(age);           // ==> "30"
               console.log(typeof age);    // ==> string
@@ -449,7 +449,7 @@
         </section>
 
         <section>
-          <section data-auto-animate>
+          <section data-auto-animate data-autoslide="2000">
             <p>Language basics:</p>
             <h2>Conditionals</h2>
           </section>
@@ -469,11 +469,11 @@
 
             <pre class="fragment"><code data-trim class="javascript">
               if (true) {
-                console.log('I always run');
+                console.log("I always run");
               }
 
               if (false) {
-                console.log('I never run');
+                console.log("I never run");
               }
             </code></pre>
 
@@ -486,10 +486,10 @@
             <h2>Conditionals</h2>
 
             <pre><code data-trim class="javascript">
-              const passwordEntry = prompt('What is the password?');
+              const passwordEntry = prompt("What is the password?");
 
-              if (passwordEntry === 'hunter2') {
-                alert('You now have access to my super secret area!');
+              if (passwordEntry === "hunter2") {
+                alert("You now have access to my super secret area!");
               }
             </code></pre>
 
@@ -503,18 +503,18 @@
               <pre><code data-trim class="javascript">
                 console.log(5 === 5);      // ==> true
                 console.log(8 === 2 * 4);  // ==> true
-                console.log('5' === 5);    // ==> false
+                console.log("5" === 5);    // ==> false
               </code></pre>
 
               <p>By contrast, the loose equality operator <code>==</code> only checks values, not types</p>
 
               <pre><code data-trim class="javascript">
                 console.log(5 == 5);       // ==> true
-                console.log('5' == 5);     // ==> true  (different types, but same value)
-                console.log('3' == 5);     // ==> false (different types and values)
+                console.log("5" == 5);     // ==> true  (different types, but same value)
+                console.log("3" == 5);     // ==> false (different types and values)
               </code></pre>
             </div>
-            
+
             <aside class="notes">
               <p>Quick demo about what happens when user hits Cancel</p>
             </aside>
@@ -538,12 +538,12 @@
             <h3>Negative Case: <code>else</code></h3>
 
             <pre><code data-trim class="javascript">
-              const pizzaTopping = prompt('What do you like on your pizza: 🍕');
+              const pizzaTopping = prompt("What do you like on your pizza: 🍕");
 
-              if (pizzaTopping !== 'pineapples') {
-                alert('Yum! I love pizza with ' + pizzaTopping);
+              if (pizzaTopping !== "pineapples") {
+                alert("Yum! I love pizza with " + pizzaTopping);
               } else {
-                alert('Eeew how could you?');
+                alert("Eeew how could you?");
               }
             </code></pre>
 
@@ -556,8 +556,8 @@
 
               <pre><code data-trim class="javascript">
                 console.log(5 !== 5);            // ==> false
-                console.log('Alice' !== 'Bob');  // ==> true
-                console.log('20' !== 20);        // ==> true
+                console.log("Alice" !== "Bob");  // ==> true
+                console.log("20" !== 20);        // ==> true
               </code></pre>
             </div>
           </section>
@@ -566,16 +566,16 @@
             <h3>Conditionals with more than two branches</h3>
 
             <pre><code data-trim class="javascript">
-              const input = prompt('Ask me about what the names of some coding languages mean');
+              const input = prompt("Ask me about what the names of some coding languages mean");
 
-              if (input === 'html') {
-                alert('HTML stands for HyperText Markup Language');
-              } else if (input === 'css') {
-                alert('CSS stands for Cascading Style Sheets');
-              } else if (input === 'javascript') {
-                alert('Javascript is just Javascript');
+              if (input === "html") {
+                alert("HTML stands for HyperText Markup Language");
+              } else if (input === "css") {
+                alert("CSS stands for Cascading Style Sheets");
+              } else if (input === "javascript") {
+                alert("Javascript is just Javascript");
               } else {
-                alert('I don\'t know the language ' + input);
+                alert("I don't know the language " + input);
               }
             </code></pre>
 
@@ -607,7 +607,7 @@
         </section>
 
         <section>
-          <section data-auto-animate>
+          <section data-auto-animate data-autoslide="2000">
             <p>Language basics:</p>
             <h2>Functions</h2>
           </section>
@@ -642,7 +642,7 @@
             <p>Functions may return a value, which we can then process further</p>
 
             <pre><code data-trim class="javascript">
-              let answer = prompt('Question');
+              let answer = prompt("Question");
             </code></pre>
           </section>
 
@@ -756,9 +756,9 @@
                   <div style="flex-grow: 1">
                     <code style="font-size: .75em">query-selectors.js</code>
                     <pre><code data-trim class="javascript">
-                      let heading = document.querySelector('h1');
+                      let heading = document.querySelector("h1");
 
-                      heading.innerHTML = 'Changed';
+                      heading.innerHTML = "Changed";
 
                       console.log(heading);
                     </code></pre>
@@ -781,14 +781,14 @@
               <pre class="fragment"><code data-trim class="html" style="max-height:unset" data-line-numbers="1-18 | 2,17 | 3,18">
                 &lt;script>
                   function changeImage() {
-                    const imgElement = document.querySelector('#catImage');
+                    const imgElement = document.querySelector("#catImage");
 
-                    if (imgElement.attributes.src.value === 'images/cat1.jpg') {
-                      imgElement.attributes.src.value = 'images/cat2.jpg';
-                    } else if (imgElement.attributes.src.value === 'images/cat2.jpg') {
-                      imgElement.attributes.src.value = 'images/cat3.jpg';
+                    if (imgElement.attributes.src.value === "images/cat1.jpg") {
+                      imgElement.attributes.src.value = "images/cat2.jpg";
+                    } else if (imgElement.attributes.src.value === "images/cat2.jpg") {
+                      imgElement.attributes.src.value = "images/cat3.jpg";
                     } else {
-                      imgElement.attributes.src.value = 'images/cat1.jpg';
+                      imgElement.attributes.src.value = "images/cat1.jpg";
                     }
                   }
                 &lt;/script>
