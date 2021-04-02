@@ -353,7 +353,7 @@
 
         <section>
           <section data-auto-animate data-autoslide="2000">
-            <p>Language basics:</p>
+            <p>Language Basics:</p>
             <h2>Comments</h2>
           </section>
 
@@ -378,7 +378,7 @@
 
         <section>
           <section data-auto-animate data-autoslide="2000">
-            <p>Language basics:</p>
+            <p>Language Basics:</p>
             <h2>Operators</h2>
           </section>
 
@@ -450,7 +450,7 @@
 
         <section>
           <section data-auto-animate data-autoslide="2000">
-            <p>Language basics:</p>
+            <p>Language Basics:</p>
             <h2>Conditionals</h2>
           </section>
 
@@ -608,7 +608,7 @@
 
         <section>
           <section data-auto-animate data-autoslide="2000">
-            <p>Language basics:</p>
+            <p>Language Basics:</p>
             <h2>Functions</h2>
           </section>
 
@@ -807,6 +807,157 @@
               </preview-window>
             </div>
           </section>
+        </section>
+
+        <section>
+          <section data-auto-animate data-autoslide="2000">
+            <p>Language Basics:</p>
+            <h2>Loops</h2>
+          </section>
+
+          <section data-auto-animate>
+            <h2>Loops</h2>
+            <p>Two commonly used types:</p>
+            <ul>
+              <li class="fragment"><code>while</code></li>
+              <li class="fragment"><code>for</code></li>
+            </ul>
+          </section>
+
+          <section>
+            <h3><code>while</code></h3>
+            <p><small>MDN: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/while">while</a></small></p>
+
+            <p>Syntax:</p>
+
+            <pre><code data-trim class="javascript">
+              while ( /* condition */ ) {
+                /* code to run repeatedly while condition is true */
+              }
+            </code></pre>
+
+            <div class="additional-note fragment">
+              <p>The syntax of <code>while</code>-loops is similar to that of <code>if</code>-statements:</p>
+
+              <pre><code data-trim class="javascript">
+                if ( /* condition */ ) {
+                  /* code to run if condition is true */
+                }
+              </code></pre>
+            </div>
+          </section>
+
+          <section>
+            <h3><code>while</code></h3>
+
+            <pre><code data-trim class="javascript"><script type="text/template">
+              let sum = 0;
+              let number = 1;
+
+              while (number <= 100) {
+                sum += number;
+                number++;
+              }
+
+              console.log(sum);      // ==> 5050
+            </script></code></pre>
+
+            <div class="additional-note fragment columns justify-center">
+              <div style="flex-grow: 1">
+                <pre><code data-trim class="javascript">sum += number;</code></pre>
+                <p>is equivalent to</p>
+                <pre><code data-trim class="javascript">sum = sum + number;</code></pre>
+              </div>
+
+              <div style="flex-grow: 1">
+                <pre><code data-trim class="javascript">number++;</code></pre>
+                <p>is equivalent to</p>
+                <pre><code data-trim class="javascript">number = number + 1;</code></pre>
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <h3>The <code>break</code> keyword</h3>
+
+            <p>Stops the execution of a loop regardless of the condition</p>
+
+            <pre><code data-trim class="javscript"><script type="text/template">
+              let number = 0;
+
+              while (number < 10) {
+                number++;
+
+                if (number >= 5) {
+                  break;
+                }
+              }
+
+              console.log(number);    // ==> 5
+            </script></code></pre>
+          </section>
+
+          <section>
+            <h3><code>for</code></h3>
+            <p><small>MDN: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for">for</a></small></p>
+
+            <p>Syntax:</p>
+
+            <pre><code data-trim class="javascript">
+              for ( /* initialization */; /* condition */; /* final expression */) {
+                /* code to be run while condition is true */
+              }
+            </code></pre>
+          </section>
+
+          <section>
+            <h3><code>for</code></h3>
+
+            <pre><code data-trim class="javascript"><script type="text/template">
+              function factorial(number) {
+                let product = 1;
+
+                for (let i = 1; i <= number; i++) {
+                  product *= i;
+                }
+
+                return product;
+              }
+
+              console.log(factorial(5));   // ==> 120
+            </script></code></pre>
+          </section>
+
+          <section>
+            <h4>Every <code>for</code> loop can be rewritten as a <code>while</code> loop</h4>
+
+            <div class="columns justify-center">
+              <div style="flex-grow: 1">
+                <pre><code data-trim class="javascript"><script type="text/template">
+                  for (let i = 1; i <= number; i++) {
+                    product *= i;
+                  }
+                </script></code></pre>
+              </div>
+              <div style="flex-grow: 1">
+                <pre><code data-trim class="javascript"><script type="text/template">
+                  let i = 1;
+                  while (i <= number) {
+                    product *= i;
+                    i++;
+                  }
+                </script></code></pre>
+              </div>
+            </div>
+          </section>
+        </section>
+
+        <section>
+          TODO Debugger, Breakpoints
+        </section>
+
+        <section>
+          TODO Arrays
         </section>
 
         <section data-visibility="uncounted">
