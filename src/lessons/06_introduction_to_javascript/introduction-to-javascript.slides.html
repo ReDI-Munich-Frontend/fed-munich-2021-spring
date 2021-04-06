@@ -1,0 +1,1146 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Introduction to Javascript</title>
+    <meta name="date" content="2021-03-30">
+    <meta name="description" content="
+    TODO
+    ">
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides" id="introduction-to-javascript">
+        <section>
+          <h1 class="r-fit-text">Introduction to Javascript</h1>
+          <p>Redi School Munich - Spring 2021</p>
+        </section>
+
+        <section>
+          <h2>Javascript...</h2>
+
+          <p class="fragment">...is not Java 😁</p>
+          <p class="fragment">...was created in ten days.</p>
+          <p class="fragment">...is the <a href="https://insights.stackoverflow.com/survey/2020#technology-programming-scripting-and-markup-languages">most commonly used programming language in the world</a>.</p>
+
+          <aside class="notes">
+            <h4>Brief history of Javascript</h4>
+
+            <ul>
+              <li>Originally launched as <em>LiveScript</em> in 1995</li>
+              <li>Back then, Java applets were the hottest craze</li>
+              <li>Original intention of Javascript: Communication layer between User/DOM and Java Applets. Hence the name</li>
+              <li>Nowadays, the European Computer Manufacturers Association (ECMA) maintains the Javascript standard</li>
+            </ul>
+          </aside>
+        </section>
+
+        <section>
+          <h2>Let's play a game</h2>
+          <tic-tac-toe-game style="height:500px; width: 500px"></tic-tac-toe-game>
+        </section>
+
+        <section>
+          <h2>⏪</h2>
+        </section>
+
+        <section>
+          <section>
+            <h3>Recap: Button</h3>
+
+            <small>MDN: <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button">&lt;button&gt;</a></small>
+
+            <div class="columns">
+              <pre><code data-trim class="html" data-line-numbers="7-9"><script type="text/template">
+                <!DOCTYPE html>
+                <html>
+                  <head>
+                    <title>Button</title>
+                  </head>
+                  <body>
+                    <button type="button">
+                      Click me!
+                    </button>
+                  </body>
+                </html>
+              </script></code></pre>
+
+              <preview-window window-title="Button"
+                              icon-class="fa-globe-europe"
+                              address="file:///button.html"
+                              style="width: 400px; margin-left: 2em">
+                <iframe data-src="code-example/button-01.html"></iframe>
+              </preview-window>
+            </div>
+
+            <p style="color: red" class="fragment">Not very spectacular yet</p>
+          </section>
+
+          <section>
+            <h4>Let's give it some action</h4>
+
+            <div class="columns">
+              <pre><code data-trim class="html" data-line-numbers="7-9"><script type="text/template">
+                <!DOCTYPE html>
+                <html>
+                  <head>
+                    <title>Button</title>
+                  </head>
+                  <body>
+                    <button type="button" onclick="alert('Hello World!')">
+                      Click me!
+                    </button>
+                  </body>
+                </html>
+              </script></code></pre>
+
+              <preview-window window-title="Button"
+                              icon-class="fa-globe-europe"
+                              address="file:///button.html"
+                              style="width: 400px; margin-left: 2em">
+                <iframe data-src="code-example/button-02.html"></iframe>
+              </preview-window>
+            </div>
+
+            <ul>
+              <li class="fragment"><code>alert()</code> is a <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions">function</a></strong></li>
+              <li class="fragment"><code>onclick</code> is an <strong><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/Events/Event_handlers">event handler</a></strong></li>
+            </ul>
+          </section>
+
+          <section id="script-tag-example-slide">
+            <h4>Look, mum, no hands!</h4>
+
+            <div class="columns">
+              <!-- can't use built in escaping due to </script> tag -->
+              <pre><code data-trim class="html" data-line-numbers="1-12 | 5-7">
+                &lt;!DOCTYPE html>
+                &lt;html>
+                  &lt;head>
+                    &lt;title>Button&lt;/title>
+                    &lt;script>
+                      alert("I appear upon page load");
+                    &lt;/script>
+                  &lt;/head>
+                  &lt;body>
+                    &lt;h1>Javascript&lt;/h1>
+                  &lt;/body>
+                &lt;/html>
+              </code></pre>
+
+              <div style="margin-left: 2em" class="rows align-center justify-space-around">
+                <preview-window window-title="Button"
+                                icon-class="fa-globe-europe"
+                                address="file:///script-tag.html"
+                                style="width: 400px">
+                  <iframe data-src="code-example/script-tag-example-01.html" name="script-tag-example"></iframe>
+                </preview-window>
+
+                <button type="button" class="run-button">
+                  Run
+                </button>
+              </div>
+            </div>
+
+            <aside class="notes">
+              <strong>Don't forget to click the RUN button!</strong>
+            </aside>
+          </section>
+
+          <section>
+            <h4>External scripts</h4>
+
+            <div class="columns align-center justify-center" style="width:100%">
+              <!-- can't use built in escaping due to </script> tag -->
+              <div style="flex-grow:1">
+                <code>index.html</code>
+                <pre><code data-trim class="html" data-line-numbers="5">
+                  &lt;!DOCTYPE html>
+                  &lt;html>
+                    &lt;head>
+                      &lt;title>Button&lt;/title>
+                      &lt;script src="script.js">&lt;/script>
+                    &lt;/head>
+                    &lt;body>
+                      &lt;h1>Javascript&lt;/h1>
+                    &lt;/body>
+                  &lt;/html>
+                </code></pre>
+              </div>
+
+              <div style="flex-grow:1">
+                <code>script.js</code>
+                <pre><code data-trim class="javascript" data-line-numbers>
+                  alert("Hello World");
+                </code></pre>
+              </div>
+            </div>
+
+            <p class="fragment">Preferred method, because this keeps markup and logic separate</p>
+
+            <aside class="notes">
+              Javascript is loaded and executed before the body starts loading.<br>
+              This becomes important later
+            </aside>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h3>Recap: Developer Tools</h3>
+
+            <p style="font-size: 0.7em">
+              Keyboard shortcut: <strong>F12</strong>
+            </p>
+
+            <img data-src="images/developer-console.png" class="fragment r-frame" alt="Developer Console"/>
+
+            <aside class="notes">
+              <p>Demo: Expressions</p>
+              <ul>
+                <li>Empty expression</li>
+                <li>Constant literal</li>
+                <li>Mathematical operators (just usage, no explanation)</li>
+                <li>Return values</li>
+              </ul>
+
+              <p>Then go to slide about <strong>Variables</strong></p>
+            </aside>
+          </section>
+
+          <section>
+            <h2>Developer Console</h2>
+
+            <video data-src="images/developer-tools.mp4" controls loop data-autoplay></video>
+
+            <aside class="notes">
+              Go to slide about <strong>Variables</strong>
+            </aside>
+          </section>
+        </section>
+
+        <section>
+          <section data-auto-animate data-autoslide="2000">
+            <p>Language Basics:</p>
+            <h2>Variables</h2>
+          </section>
+
+          <section data-auto-animate>
+            <h2>Variables</h2>
+            <small>MDN: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar_and_types#declarations">Declarations</a></small>
+
+            <pre><code data-trim class="javascript" data-line-numbers="1-9 | 1-2 | 1-2,4-6 | 8-9">
+              // Variable declaration:
+              let question;
+
+              // Variable assignment:
+              question = "What's the answer to the ultimate question of life, "
+                       + "the universe and everything?";
+
+              // Declaration and assignment
+              let answer = 42;
+            </code></pre>
+
+            <aside class="notes">
+              <ul>
+                <li>Quick demo of variable declaration and assignment</li>
+                <li>Mention return values</li>
+              </ul>
+            </aside>
+          </section>
+
+          <section>
+            <h3>Two (or three) different ways of declaring variables</h3>
+
+            <pre><code data-trim class="javascript" data-line-numbers="1-5 | 1-2 | 4-5 | 1-5">
+              let myVariable = "I can be changed";
+              myVariable = "New value"; // Works fine
+
+              const myConstant = "I cannot be changed";
+              myConstant = "New value"; // Throws an error!
+            </code></pre>
+
+            <div class="additional-note fragment">
+              <h5>The old way of declaring variables:</h5>
+              <pre><code data-trim class="javascript" data-line-numbers>
+                var myVariable = "This is a variable";
+                myVariable = "newValue";
+              </code></pre>
+            </div>
+
+            <aside class="notes">
+              Quick demo including console.log, then skip next slide
+            </aside>
+          </section>
+
+          <section>
+            <h3>Logging</h3>
+            <small>MDN: <a href="https://developer.mozilla.org/en-US/docs/Web/API/Console/log">console.log()</a></small>
+            <p><code>console.log()</code> can be used to print any value into the developer console.</p>
+
+            <pre><code data-trim class="javascript" data-line-numbers>
+              let person1 = "Alice";
+              let person2 = "Bob";
+
+              console.log(person1);
+              console.log("The name of the second person is " + person2);
+            </code></pre>
+
+            <img data-src="images/console-log.png" class="fragment" alt="Console Log"/>
+          </section>
+
+          <section>
+            <h3>Primitive Data Types</h3>
+            <small>MDN: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#primitive_values">Primitive Data Types</a></small>
+
+            <table id="data-types">
+              <tr class="fragment">
+                <td>String</td>
+                <td><pre><code data-trim class="javascript">
+                  let myString = "Bob";
+                </code></pre></td>
+              </tr>
+              <tr class="fragment">
+                <td>Number</td>
+                <td><pre><code data-trim class="javascript">
+                  let myNumber = 12.5;
+                </code></pre></td>
+              </tr>
+              <tr class="fragment">
+                <td>Boolean</td>
+                <td><pre><code data-trim class="javascript">
+                  let myBoolean = true; // two possible values: true / false
+                </code></pre></td>
+              </tr>
+              <tr class="fragment">
+                <td>Undefined</td>
+                <td><pre><code data-trim class="javascript">
+                  let myUndefined = undefined; // only possible value
+                </code></pre></td>
+              </tr>
+            </table>
+
+            <p class="future-outlook fragment">Furthermore, there are <code>Object</code>, <code>Function</code>, <code>BigInt</code> and <code>Symbol</code>.</p>
+
+            <aside class="notes">
+              Mention:
+              <ul>
+                <li>undefined = default value before assignment</li>
+                <li>We will use objects, but not create any</li>
+                <li>console is an object. Demo</li>
+              </ul>
+            </aside>
+          </section>
+
+          <section>
+            <h3>The <code>typeof</code> Operator</h3>
+            <small>MDN: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof">typeof</a></small>
+
+            <p>Returns the data type of an expression.</p>
+
+            <pre><code data-trim class="javascript">
+              const myString = "Charlie";
+              const myBoolean = false;
+
+              console.log(typeof myString);  // ==> string
+              console.log(typeof myBoolean); // ==> boolean
+              console.log(typeof 123);       // ==> number
+            </code></pre>
+          </section>
+        </section>
+
+        <section>
+          <section data-auto-animate data-autoslide="2000">
+            <p>Language Basics:</p>
+            <h2>Comments</h2>
+          </section>
+
+          <section data-auto-animate>
+            <h2>Comments</h2>
+
+            <ul>
+              <li>Purely informational for the developer</li>
+              <li>Two types: single-line and block comments</li>
+            </ul>
+
+            <pre><code data-trim class="javascript">
+              // This is a single-line comment
+
+              /*
+                Everything in between
+                is a comment
+              */
+            </code></pre>
+          </section>
+        </section>
+
+        <section>
+          <section data-auto-animate data-autoslide="2000">
+            <p>Language Basics:</p>
+            <h2>Operators</h2>
+          </section>
+
+          <section data-auto-animate>
+            <h2>Operators</h2>
+            <small>MDN: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators">Expressions and Operators</a></small>
+            <p>Symbols that produce a result based on one or more input values.
+              <br>A small selection:</p>
+
+            <pre><code data-trim class="javascript">
+              // Addition (numbers): +
+              console.log(6 + 9);                // ==> 15
+
+              // Concatenation (strings): +
+              console.log("Hello " + "world");   // ==> "Hello World"
+
+              // Subtraction, Multiplication, Division: - * /
+              console.log(9 - 3);                // ==> 6
+              console.log(8 * 2);                // ==> 16
+              console.log(9 / 3);                // ==> 3
+            </code></pre>
+          </section>
+
+          <section>
+            <h3>Implicit Type Conversion</h3>
+            <small>MDN: <a href="https://developer.mozilla.org/en-US/docs/Mozilla/js-ctypes/Using_js-ctypes/Type_conversion">Type conversion</a></small>
+
+            <p style="font-size: .75em">If the types of two values used for an operator mismatch, or the types don't match the operator's expectation, Javascript guesses which type to use.</p>
+
+            <pre><code data-trim class="javascript">
+              // string + number = string
+              console.log("4" + 2);        // ==> "42"
+
+              // string * number = number
+              console.log("4" * 2);        // ==> 8
+
+              // boolean + boolean = number
+              console.log(true + false);   // ==> 1
+
+              // boolean + string = string
+              console.log(true + "false"); // ==> "truefalse"
+            </code></pre>
+
+            <p class="fragment" style="font-size: .75em">👉 Make sure your variables have the right type. Use <code>typeof</code> if you don't know their type.</p>
+          </section>
+
+          <section>
+            <h3>Explicit Type Conversion</h3>
+            <p style="font-size: .75em">If you need to convert a variable from one type to another, you can use a <a href="https://developer.mozilla.org/en-US/docs/Glossary/Primitive#primitive_wrapper_objects_in_javascript">Primitive Wrapper</a></p>
+
+            <pre><code data-trim class="javascript">
+              let age = prompt("How old are you? Type a number");
+
+              console.log(age);           // ==> "30"
+              console.log(typeof age);    // ==> string
+
+              age = Number(age);     // converting to number
+
+              console.log(age);           // ==> 30
+              console.log(typeof age);    // ==> number
+
+              age = String(age);     // converting back to string
+
+              console.log(age);           // ==> "30"
+              console.log(typeof age);    // ==> string
+            </code></pre>
+          </section>
+        </section>
+
+        <section>
+          <section data-auto-animate data-autoslide="2000">
+            <p>Language Basics:</p>
+            <h2>Conditionals</h2>
+          </section>
+
+          <section data-auto-animate>
+            <h2>Conditionals</h2>
+
+            <p>Syntax:</p>
+
+            <pre><code data-trim class="javascript">
+              if ( /* condition */ ) {
+                /* code that runs when condition is true */
+              }
+            </code></pre>
+
+            <p style="font-size: .75em" class="fragment">The condition can be any expression which returns a boolean.</p>
+
+            <pre class="fragment"><code data-trim class="javascript">
+              if (true) {
+                console.log("I always run");
+              }
+
+              if (false) {
+                console.log("I never run");
+              }
+            </code></pre>
+
+            <aside class="notes">
+              <p>Refer back to implicit type conversion: condition is converted into boolean</p>
+            </aside>
+          </section>
+
+          <section id="conditionals-example-slide">
+            <h2>Conditionals</h2>
+
+            <pre><code data-trim class="javascript">
+              const passwordEntry = prompt("What is the password?");
+
+              if (passwordEntry === "hunter2") {
+                alert("You now have access to my super secret area!");
+              }
+            </code></pre>
+
+            <div style="display: inline-block">
+              <button type="button" class="run-button">Run</button>
+            </div>
+
+            <div class="additional-note fragment">
+              <p><code>===</code> is the strict equality operator. It returns true, if both arguments are matching types and values.</p>
+
+              <pre><code data-trim class="javascript">
+                console.log(5 === 5);      // ==> true
+                console.log(8 === 2 * 4);  // ==> true
+                console.log("5" === 5);    // ==> false
+              </code></pre>
+
+              <p>By contrast, the loose equality operator <code>==</code> allows for implicit type conversion before comparing values</p>
+
+              <pre><code data-trim class="javascript">
+                console.log(5 == 5);       // ==> true
+                console.log("5" == 5);     // ==> true  (different types, but same value after type conversion)
+                console.log("3" == 5);     // ==> false (different types and values)
+              </code></pre>
+            </div>
+
+            <aside class="notes">
+              <p>Quick demo about what happens when user hits Cancel</p>
+            </aside>
+          </section>
+
+          <section>
+            <h3>Negative Case: <code>else</code></h3>
+
+            <p>Syntax:</p>
+
+            <pre><code data-trim class="javascript">
+              if ( /* condition */ ){
+                /* code that runs when condition is true */
+              } else {
+                /* code that runs when condition is false */
+              }
+            </code></pre>
+          </section>
+
+          <section id="conditionals-example-slide-2">
+            <h3>Negative Case: <code>else</code></h3>
+
+            <pre><code data-trim class="javascript">
+              const pizzaTopping = prompt("What do you like on your pizza: 🍕");
+
+              if (pizzaTopping !== "pineapples") {
+                alert("Yum! I love pizza with " + pizzaTopping);
+              } else {
+                alert("Eeew how could you?");
+              }
+            </code></pre>
+
+            <div style="display: inline-block">
+              <button type="button" class="run-button">Run</button>
+            </div>
+
+            <div class="additional-note fragment">
+              <p><code>!==</code> is the strict inequality operator. It does the opposite of <code>===</code></p>
+
+              <pre><code data-trim class="javascript">
+                console.log(5 !== 5);            // ==> false
+                console.log("Alice" !== "Bob");  // ==> true
+                console.log("20" !== 20);        // ==> true
+              </code></pre>
+            </div>
+          </section>
+
+          <section id="conditionals-example-slide-3">
+            <h3>Conditionals with more than two branches</h3>
+
+            <pre><code data-trim class="javascript">
+              const input = prompt("Ask me about what the names of some coding languages mean");
+
+              if (input === "html") {
+                alert("HTML stands for HyperText Markup Language");
+              } else if (input === "css") {
+                alert("CSS stands for Cascading Style Sheets");
+              } else if (input === "javascript") {
+                alert("Javascript is just Javascript");
+              } else {
+                alert("I don't know the language " + input);
+              }
+            </code></pre>
+
+            <div style="display: inline-block">
+              <button type="button" class="run-button">Run</button>
+          </section>
+
+          <section>
+            <h3>Some more operators</h3>
+
+            <p>All of these can be used as conditions for <code>if</code> statements</p>
+
+            <pre><code data-trim class="javascript"><script type="text/template">
+              // Comparison - Greater Than: >
+              console.log(10 > 8);      // ==> true
+              console.log(8 > 8);       // ==> false
+
+              // Comparison - Greater Than or Equal: >=
+              console.log(9 >= 9);      // ==> true
+              console.log(3 >= 9);      // ==> false
+
+              // Comparison - Less Than: <
+              console.log(5 < 3);       // ==> false
+
+              // Comparison - Less Than or Equal: <=
+              console.log(3 <= 3);      // ==> true
+            </script></code></pre>
+          </section>
+        </section>
+
+        <section>
+          <section data-auto-animate data-autoslide="2000">
+            <p>Language Basics:</p>
+            <h2>Functions</h2>
+          </section>
+
+          <section data-auto-animate>
+            <h2>Functions</h2>
+            <p><small>MDN: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions">Functions</a></small></p>
+
+            <ul>
+              <li>Reusable sub-routines that are stored with a name</li>
+              <li class="fragment" data-fragment-index="0">Javascript comes with many built-in functions</li>
+            </ul>
+
+            <p class="fragment" data-fragment-index="1">Syntax for calling a function:</p>
+
+            <pre class="fragment" data-fragment-index="1"><code data-trim class="javascript">
+              name_of_the_function( /* 0 - n comma-separated arguments */ );
+            </code></pre>
+
+            <div class="additional-note fragment" data-fragment-index="2">
+              <p>Some functions that we already saw:</p>
+              <pre><code data-trim class="javascript">
+                alert(message);
+                console.log(value);
+                prompt(question);
+              </code></pre>
+            </div>
+          </section>
+
+          <section>
+            <h3>Return values</h3>
+            <p>Functions may return a value, which we can then process further</p>
+
+            <pre><code data-trim class="javascript">
+              let answer = prompt("Question");
+            </code></pre>
+          </section>
+
+          <section data-auto-animate>
+            <h3>Making our own functions</h3>
+            <p>Function declaration syntax:</p>
+
+            <pre><code data-trim class="javascript" data-line-numbers="1-3 | 1">
+              function myFunction(firstArgument, secondArgument) {
+                /* function logic */
+              }
+            </code></pre>
+          </section>
+
+          <section data-auto-animate>
+            <h3>Making our own functions</h3>
+
+            <pre><code data-trim class="javascript" data-line-numbers="1-4 | 3" data-id="function-return">
+              function multiply(num1, num2) {
+                let result = num1 * num2;
+                return result;
+              }
+            </code></pre>
+
+            <p class="fragment">The <code>return</code> statement passes on a value to the caller.<br>The function stops at this point.</p>
+
+            <pre class="fragment"><code data-trim class="javascript" data-line-numbers>
+              console.log(multiply(3, 5));  // ==> 15
+
+              const product = multiply(4, 4);
+              console.log(product);         // ==> 16
+            </code></pre>
+          </section>
+
+          <section data-auto-animate>
+            <h3>Making our own functions</h3>
+
+            <pre><code data-trim class="javascript" data-line-numbers="3" data-id="function-return">
+              function multiply(num1, num2) {
+                let result = num1 * num2;
+                return result;
+              }
+            </code></pre>
+
+            <p>All other variables declared inside the function are discarded.</p>
+
+            <pre><code data-trim class="javascript" data-line-numbers>
+              console.log(multiply(6, 3));  // ==> 18
+              console.log(result);          // ==> ReferenceError: result is not defined
+              console.log(num1);            // ==> ReferenceError: num1 is not defined
+              console.log(num2);            // ==> ReferenceError: num2 is not defined
+            </code></pre>
+          </section>
+
+          <section data-auto-animate>
+            <h3>Making our own functions</h3>
+
+            <p>The <code>return</code> statement is optional. Both of these examples are valid and return nothing:</p>
+
+            <pre><code data-trim class="javascript">
+              // Assuming someOtherFunction() exists
+              function myFunction1() {
+                someOtherFunction();
+
+                return;
+              }
+
+              function myFunction2() {
+                someOtherFunction();
+              }
+            </code></pre>
+            <pre><code data-trim class="javascript">
+              console.log(myFunction1());  // ==> undefined
+            </code></pre>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>Document Object Model</h2>
+            <p>Javascript's interface for interacting with HTML</p>
+            <small>MDN: <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction">Document Object Model</a></small>
+          </section>
+
+          <section>
+            <div class="r-stack">
+              <div style="width: 100%">
+                <h3>Query Selector</h3>
+                <small>MDN: <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector">Document.querySelector()</a></small>
+
+                <p>Select an HTML element using <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors">CSS-selectors</a> in Javascript</p>
+
+                <div class="columns align-start justify-center" style="width:100%">
+                  <div style="flex-grow: 1">
+                    <code style="font-size: .75em">query-selectors.html</code>
+                    <pre><code data-trim class="html">
+                      &lt;!DOCTYPE html>
+                      &lt;html>
+                        &lt;head>
+                          &lt;title>Query Seletctors&lt;/title>
+                          &lt;script src="query-selectors.js" defer>
+                          &lt;/script>
+                        &lt;/head>
+                        &lt;body>
+                          &lt;h1>Query Selectors&lt;/h1>
+                        &lt;/body>
+                      &lt;/html>
+                    </code></pre>
+                  </div>
+
+                  <div style="flex-grow: 1">
+                    <code style="font-size: .75em">query-selectors.js</code>
+                    <pre><code data-trim class="javascript">
+                      let heading = document.querySelector("h1");
+
+                      heading.innerHTML = "Changed";
+
+                      console.log(heading);
+                    </code></pre>
+                  </div>
+                </div>
+                <p class="fragment" style="font-size: .8em">
+                  <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/innerHTML"><code><em>Element</em>.innerHTML</code></a> lets us access and change the element's content.
+                </p>
+              </div>
+              <video data-src="images/query-selector.mp4" controls loop data-autoplay class="fragment r-frame"></video>
+            </div>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <div class="r-stack">
+              <h2>Putting all of it together</h2>
+
+              <pre class="fragment"><code data-trim class="html" style="max-height:unset" data-line-numbers="1-18 | 2,17 | 3,18">
+                &lt;script>
+                  function changeImage() {
+                    const imgElement = document.querySelector("#catImage");
+
+                    if (imgElement.attributes.src.value === "images/cat1.jpg") {
+                      imgElement.attributes.src.value = "images/cat2.jpg";
+                    } else if (imgElement.attributes.src.value === "images/cat2.jpg") {
+                      imgElement.attributes.src.value = "images/cat3.jpg";
+                    } else {
+                      imgElement.attributes.src.value = "images/cat1.jpg";
+                    }
+                  }
+                &lt;/script>
+
+                &lt;!-- ... -->
+
+                &lt;button type="button" onClick="changeImage()">Change Image&lt;/button>
+                &lt;img src="images/cat1.jpg" id="catImage" alt="Cat"/>
+              </code></pre>
+
+              <preview-window window-title="Query Selectors and Events"
+                              icon-class="fa-globe-europe"
+                              address="file:///javascript.html"
+                              style="width: 700px; height: 700px" class="fragment">
+                <iframe data-src="class-resources/query-selectors-02/query-selectors-02.html"></iframe>
+              </preview-window>
+            </div>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>Debugging Code</h2>
+
+            <img data-src="images/debugger.png" alt="Debugger" class="fragment"/>
+          </section>
+
+          <section>
+            <h3>Meet the Debugger</h3>
+
+
+            <p>Two ways of starting the debugger:</p>
+
+            <div class="columns align-start justify-space-around">
+              <div>
+                <h5>Breakpoints</h5>
+
+                <img data-src="images/breakpoint.png" alt="Breakpoint in the debugger" style="margin-top: unset";/>
+              </div>
+
+              <div>
+                <h5>The <code>debugger</code> keyword</h5>
+
+                <pre style="margin-left:unset;margin-right:unset;width:100%"><code data-trim class="javascript">debugger;</code></pre>
+              </div>
+            </div>
+
+            <p class="fragment">allows you to pause any script and execute it step by step.</p>
+          </section>
+        </section>
+
+        <section>
+          <section data-auto-animate data-autoslide="2000">
+            <p>Language Basics:</p>
+            <h2>Loops</h2>
+          </section>
+
+          <section data-auto-animate>
+            <h2>Loops</h2>
+            <p>Two commonly used types:</p>
+            <ul>
+              <li class="fragment"><code>while</code></li>
+              <li class="fragment"><code>for</code></li>
+            </ul>
+          </section>
+
+          <section>
+            <h3><code>while</code></h3>
+            <p><small>MDN: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/while">while</a></small></p>
+
+            <p>Syntax:</p>
+
+            <pre><code data-trim class="javascript">
+              while ( /* condition */ ) {
+                /* code to run repeatedly while condition is true */
+              }
+            </code></pre>
+
+            <div class="additional-note fragment">
+              <p>The syntax of <code>while</code>-loops is similar to that of <code>if</code>-statements:</p>
+
+              <pre><code data-trim class="javascript">
+                if ( /* condition */ ) {
+                  /* code to run if condition is true */
+                }
+              </code></pre>
+            </div>
+          </section>
+
+          <section>
+            <h3><code>while</code></h3>
+
+            <pre><code data-trim class="javascript"><script type="text/template">
+              let sum = 0;
+              let number = 1;
+
+              while (number <= 100) {
+                sum += number;
+                number++;
+              }
+
+              console.log(sum);      // ==> 5050
+            </script></code></pre>
+
+            <div class="additional-note fragment columns justify-center">
+              <div style="flex-grow: 1">
+                <pre><code data-trim class="javascript">sum += number;</code></pre>
+                <p>is equivalent to</p>
+                <pre><code data-trim class="javascript">sum = sum + number;</code></pre>
+              </div>
+
+              <div style="flex-grow: 1">
+                <pre><code data-trim class="javascript">number++;</code></pre>
+                <p>is equivalent to</p>
+                <pre><code data-trim class="javascript">number = number + 1;</code></pre>
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <h3>The <code>break</code> keyword</h3>
+
+            <p>Stops the execution of a loop regardless of the condition</p>
+
+            <pre><code data-trim class="javscript"><script type="text/template">
+              let number = 0;
+
+              while (number < 10) {
+                number++;
+
+                if (number >= 5) {
+                  break;
+                }
+              }
+
+              console.log(number);    // ==> 5
+            </script></code></pre>
+          </section>
+
+          <section>
+            <h3><code>for</code></h3>
+            <p><small>MDN: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for">for</a></small></p>
+
+            <p>Syntax:</p>
+
+            <pre><code data-trim class="javascript">
+              for ( /* initialization */; /* condition */; /* final expression */) {
+                /* code to be run while condition is true */
+              }
+            </code></pre>
+          </section>
+
+          <section>
+            <h3><code>for</code></h3>
+
+            <pre><code data-trim class="javascript"><script type="text/template">
+              function factorial(number) {
+                let product = 1;
+
+                for (let i = 1; i <= number; i++) {
+                  product *= i;
+                }
+
+                return product;
+              }
+
+              console.log(factorial(5));   // ==> 120
+            </script></code></pre>
+          </section>
+
+          <section>
+            <h4>Every <code>for</code> loop can be rewritten as a <code>while</code> loop</h4>
+
+            <div class="columns justify-center">
+              <div style="flex-grow: 1">
+                <pre><code data-trim class="javascript"><script type="text/template">
+                  for (let i = 1; i <= number; i++) {
+                    product *= i;
+                  }
+                </script></code></pre>
+              </div>
+              <div style="flex-grow: 1">
+                <pre><code data-trim class="javascript"><script type="text/template">
+                  let i = 1;
+                  while (i <= number) {
+                    product *= i;
+                    i++;
+                  }
+                </script></code></pre>
+              </div>
+            </div>
+          </section>
+        </section>
+
+        <section>
+          <section data-auto-animate data-autoslide="2000">
+            <p>Language Basics:</p>
+            <h2>Arrays</h2>
+          </section>
+
+          <section data-auto-animate>
+            <h2>Arrays</h2>
+
+            <p><small>MDN: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></small></p>
+
+            <ul>
+              <li>Variable type that holds multiple values</li>
+              <li class="fragment">Useful when handling a larger, possibly even unknown amount of similar objects</li>
+            </ul>
+          </section>
+
+          <section>
+            <h3>Array initialization</h3>
+
+            <p style="font-size: .75em">Empty array</p>
+            <pre><code data-trim class="javascript">
+              let myArray = [];
+            </code></pre>
+
+            <p style="font-size: .75em">Non-empty array</p>
+            <pre><code data-trim class="javascript">
+              let myArray = ["first value", "second value", "third value"];
+            </code></pre>
+
+            <div class="additional-note fragment">
+              <p>Arrays aren't primitive types, therefore the <code>typeof</code> operator returns "object".<br>
+                To check whether a variable is an array, use <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/isArray">Array.isArray()</a></code>.</p>
+
+              <pre><code data-trim class="javascript">
+                let myArray = [1, 2, 3];
+                console.log(typeof myArray);         // ==> "object"
+                console.log(Array.isArray(myArray)); // ==> true
+              </code></pre>
+            </div>
+          </section>
+
+          <section>
+            <h3>Accessing array elements</h3>
+
+            <pre><code data-trim class="javascript">
+              let zooAnimals = ["giraffe", "zebra", "lion"];
+
+              // Array indexes start at 0
+              console.log(myArray[0]);  // ==> "giraffe"
+              console.log(myArray[1]);  // ==> "zebra"
+              console.log(myArray[2]);  // ==> "lion"
+
+              myArray[0] = "tortoise";
+
+              console.log(myArray[0]);  // ==> "tortoise"
+            </code></pre>
+          </section>
+
+          <section>
+            <h3>Adding and removing elements</h3>
+
+            <p><small>MDN: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push">push</a> and <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/pop">pop</a></small></p>
+
+            <pre><code data-trim class="javascript">
+              let cakeIngredients = ["eggs", "flour", "sugar"];
+
+              cakeIngredients.push("chocolate");
+
+              console.log(cakeIngredients);    // ==> ["eggs", "flour", "sugar", "chocolate"]
+
+              let ingredient = cakeIngredients.pop();
+
+              console.log(ingredient);         // ==> "chocolate";
+              console.log(cakeIngredients);    // ==> ["eggs", "flour", "sugar"];
+            </code></pre>
+          </section>
+
+          <section>
+            <h3>Iterating through arrays</h3>
+
+            <pre><code data-trim class="javascript"><script type="text/template">
+              let myArray = ["foo", "bar", "baz"];
+
+              for (let i = 0; i < myArray.length; i++) {
+                console.log(myArray[i]);
+              }
+
+              // Alternatively:
+
+              for (let element of myArray) {
+                console.log(element);
+              }
+            </script></code></pre>
+
+            <div class="additional-note">
+              <p>Output in both cases:</p>
+
+              <pre><code data-trim class="plaintext"><script type="text/template">
+                "foo"
+                "bar"
+                "baz"
+              </script></code></pre>
+            </div>
+          </section>
+
+          <section>
+            <div class="r-stack">
+              <div>
+                <h3>A practical example</h3>
+
+                <div class="columns align-start justify-center" style="width:100%">
+                  <div>
+                    <code style="font-size: .75em">arrays.html</code>
+                    <pre><code data-trim class="html">
+                      &lt;!DOCTYPE html>
+                      &lt;html lang="en">
+                      &lt;head>
+                        &lt;title>Arrays&lt;/title>
+                        &lt;script src="arrays.js" defer>&lt;/script>
+                      &lt;/head>
+                      &lt;body>
+                        &lt;a href="#">Regular link&lt;/a>
+                        &lt;a href="https://google.com">External link&lt;/a>
+                        &lt;a href="otherpage.html">Regular link&lt;/a>
+                        &lt;a href="https://bing.com">External link&lt;/a>
+                      &lt;/body>
+                      &lt;/html>
+                    </code></pre>
+                  </div>
+
+                  <div>
+                    <code style="font-size: .75em">arrays.js</code>
+                    <pre><code data-trim class="javascript">
+                      const externalAnchors =
+                        document.querySelectorAll('a[href^="https://"]');
+
+                      for (let anchor of externalAnchors) {
+                        anchor.target = "_blank";
+                      }
+                    </code></pre>
+                  </div>
+                </div>
+              </div>
+
+              <preview-window window-title="Arrays"
+                              icon-class="fa-globe-europe"
+                              address="file:///arrays.html"
+                              style="width: 700px; height: 700px" class="fragment">
+                <iframe data-src="class-resources/arrays/arrays.html"></iframe>
+              </preview-window>
+            </div>
+          </section>
+        </section>
+
+        <section data-visibility="uncounted">
+          <h2>Questions / Feedback?</h2>
+        </section>
+      </div>
+    </div>
+  </body>
+</html>

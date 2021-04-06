@@ -1,4 +1,4 @@
-// Font-Awesome 
+// Font-Awesome
 @import 'font-awesome';
 @import 'font-awesome-fonts';
 
@@ -10,10 +10,15 @@
 // Layout directives
 @import 'layout/columns';
 @import 'layout/customStyles';
+@import 'layout/rows';
+@import 'layout/run-button';
 
 // Web components
 @import 'components/preview-window';
+@import 'components/tic-tac-toe-game';
 
 // Lesson specific style sheets
 @import 'lessons/01-getting-started';
 @import 'lessons/02-introduction-to-frontend';
+@import 'lessons/04-introduction-to-javascript';
+

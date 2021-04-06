@@ -7,6 +7,7 @@ import Markdown from 'reveal.js/plugin/markdown/markdown.esm';
 import Notes from 'reveal.js/plugin/notes/notes.esm';
 import { CustomHtmlElement } from './components/custom-html-element';
 import { PreviewWindowElement } from './components/preview-window/preview-window';
+import { TicTacToeGameElement } from './components/tic-tac-toe-game/tic-tac-toe-game';
 
 let deck = new Reveal({
   plugins: [Highlight, Markdown, Notes]
@@ -20,4 +21,7 @@ deck.initialize({
   totalTime: 9000 // 2.5 hours
 });
 
+window.deck = deck;
+
 CustomHtmlElement.register(PreviewWindowElement);
+CustomHtmlElement.register(TicTacToeGameElement);

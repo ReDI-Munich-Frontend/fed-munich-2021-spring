@@ -13,44 +13,44 @@ export class CustomHtmlElement extends HTMLElement {
    * @returns {string}
    */
   static get template() { }
-  
+
   /**
    * @abstract
    * @returns {string}
    */
   static get style() { }
-  
+
   /**
    * @abstract
    * @returns {string}
    */
   static get elementTagName() { }
-  
+
   /**
    * Register a CustomHtmlElement with the DOM's CustomElementRegistry
-   * @param {CustomHtmlElement} element 
+   * @param {CustomHtmlElement} element
    * @param {ElementDefinitionOptions} options
    * @returns {void}
    */
   static register(element, options) {
     customElements.define(element.elementTagName, element, options);
   }
-  
+
   constructor() {
     super();
     this[isResolved] = false;
     this[observedAttributes] = {};
   }
-  
+
   /**
    * @returns {void}
    */
   connectedCallback() {
     this.attachShadow({mode: 'open'});
     this.shadowRoot.innerHTML = `<style>${this.constructor.style}</style>${this.constructor.template}`;
-    
+
     this[resolveSelectors]();
-    
+
     for(const attribute of Object.keys(this[observedAttributes])) {
       let value = undefined;
       if (this.attributes.getNamedItem(attribute) && this[isResolved]) {
@@ -59,10 +59,10 @@ export class CustomHtmlElement extends HTMLElement {
       this[observedAttributes][attribute](undefined, value);
     }
   }
-  
+
   /**
    * Select an element from the template by id
-   * @param {string} selector 
+   * @param {string} selector
    * @returns {HTMLElement | PendingSelection}
    */
   select(selector) {
@@ -72,7 +72,7 @@ export class CustomHtmlElement extends HTMLElement {
       return this.shadowRoot.querySelector(selector);
     }
   }
-  
+
   /**
    * @returns {void}
    */
@@ -84,20 +84,20 @@ export class CustomHtmlElement extends HTMLElement {
     }
     this[isResolved] = true;
   }
-  
+
   /**
-   * @param {string} name 
-   * @param {function(string, string): void} callback 
+   * @param {string} name
+   * @param {function(string, string): void} callback
    */
   observeAttribute(name, callback) {
     if (!this.constructor.observedAttributes || !this.constructor.observedAttributes.includes(name)) {
       console.warn(`Attribute ${name} is not an observed attribute of ${this.constructor.name}`);
       return;
     }
-    
+
     this[observedAttributes][name] = callback;
   }
-  
+
   attributeChangedCallback(name, oldValue, newValue) {
     if (this[observedAttributes][name] && this[isResolved]) {
       this[observedAttributes][name](oldValue, newValue);

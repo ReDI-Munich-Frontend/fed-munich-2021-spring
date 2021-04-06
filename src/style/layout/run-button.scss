@@ -1,0 +1,39 @@
+.run-button {
+  background: #00cc00;
+  color: white;
+  border: none;
+  font-size: .75em;
+  border-radius: .8em;
+  height: 1.6em;
+  padding-left: 1em;
+  padding-right: .8em;
+  cursor: pointer;
+
+  display:flex;
+  align-items: center;
+
+  transition-property: background-color, color;
+  transition: 0.4s ease-in-out;
+
+  &::after {
+    display: inline-block;
+    width: .5196em; // sqrt( 0.6 ** 2 - 0.3 ** 2)
+    height: .6em;
+    background: white;
+    clip-path: polygon(0 0, 100% 50%, 0 100%);
+    margin-left: .4em;
+    content: '';
+    transition-property: background-color;
+    transition: 0.4s ease-in-out;
+  }
+
+  &[disabled] {
+    color: #a2a2a2;
+    background-color: #666666;
+    cursor: default;
+
+    &::after {
+      background: #a2a2a2;
+    }
+  }
+}

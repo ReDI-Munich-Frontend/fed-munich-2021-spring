@@ -66,6 +66,11 @@ module.exports = {
                 attribute: 'data-src',
                 type: 'src',
               },
+              {
+                tag: 'video',
+                attribute: 'data-src',
+                type: 'src',
+              },
             ]
           }
         }
@@ -87,7 +92,11 @@ module.exports = {
         use: ['style-loader', 'css-loader', sassLoader]
       },
       {
-        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        test: /\.raw\.svg$/i,
+        use: ['raw-loader']
+      },
+      {
+        test: /(?<!\.raw)\.(png|svg|jpg|jpeg|gif|mp4)$/i,
         type: 'asset/resource'
       }
     ]
