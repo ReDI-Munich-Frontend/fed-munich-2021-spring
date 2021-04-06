@@ -506,11 +506,11 @@
                 console.log("5" === 5);    // ==> false
               </code></pre>
 
-              <p>By contrast, the loose equality operator <code>==</code> only checks values, not types</p>
+              <p>By contrast, the loose equality operator <code>==</code> allows for implicit type conversion before comparing values</p>
 
               <pre><code data-trim class="javascript">
                 console.log(5 == 5);       // ==> true
-                console.log("5" == 5);     // ==> true  (different types, but same value)
+                console.log("5" == 5);     // ==> true  (different types, but same value after type conversion)
                 console.log("3" == 5);     // ==> false (different types and values)
               </code></pre>
             </div>
