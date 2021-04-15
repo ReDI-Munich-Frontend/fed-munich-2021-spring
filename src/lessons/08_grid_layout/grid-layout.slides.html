@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <title>Grid Layout</title>
+      <meta name="date" content="2021-04-15">
+      <meta name="description" content="
+         - Introduction to CSS Grid Layout
+         - Terminology
+         - Part 1: Parent Properties
+         - Part 2: Child Properties
+         - Device Adaptation
+         ">
+   </head>
+   <body>
+      <div class="reveal">
+         <div class="slides" id="grid-layout">
+            <section>
+               <h1 class="r-fit-text">Introduction to CSS Grid Layout</h1>
+               <p>Redi School Munich - Spring 2021</p>
+            </section>
+            <section>
+               <h2>Recap</h2>
+               <p>Flexbox</p>
+               <p class="fragment">💭 What do you remember?</p>
+            </section>
+            <section>
+               <h2>CSS Grid</h2>
+               <img data-src="./images/grid-intro.png">
+            </section>
+            <section>
+               <h3>Why do we need another layouting system?</h3>
+               <p class="fragment">First, we started with tables, floats, positioning and inline-block</p>
+               <p class="fragment">That was quite hacky & lacked functionality 🐱‍💻</p>
+               <p class="fragment">Then we were given Flexbox</p>
+               <p class="fragment">Much better, but for 1D layouts</p>
+               <p class="fragment">Finally, Grid gives us the necessary flexibility to work on a 2D level</p>
+            </section>
+            <section>
+               <h3>Agenda of Today</h3>
+               <ol>
+                  <li>Terminology</li>
+                  <li>Properties</li>
+                  <ul>
+                     <li>Part 1: Parent Properties</li>
+                     <li>Part 2: Child Properties</li>
+                  </ul>
+                  <li>Device Adaptation</li>
+               </ol>
+            </section>
+            <section>
+               <h1>Terminology</h1>
+            </section>
+            <section>
+               <h3>Container</h3>
+               <p>Parent of all grid items</p>
+               <pre>
+                <div class="grid-container grid-1">
+                    <div class="grid-item">Item 1</div>
+                    <div class="grid-item">Item 2</div>
+                    <div class="grid-item">Item 3</div>
+                    <div class="grid-item">Item 4</div>
+                    <div class="grid-item">Item 5</div>
+                </div></pre>
+            </section>
+            <section>
+               <h3>Items</h3>
+               <p>Children of grid container</p>
+               <pre>
+                <div class="grid-container grid-2">
+                    <div class="grid-item">Item 1</div>
+                    <div class="grid-item">Item 2</div>
+                    <div class="grid-item">Item 3</div>
+                    <div class="grid-item">Item 4</div>
+                    <div class="grid-item">Item 5</div>
+                </div></pre>
+            </section>
+            <section>
+               <h3>Grid Line</h3>
+               <p>Dividing lines that structure grid</p>
+               <p>Vertical or horizontal</p>
+               <pre>
+                <div class="grid-container grid-3">
+                    <div class="grid-item">Item 1</div>
+                    <div class="grid-item">Item 2</div>
+                    <div class="grid-item">Item 3</div>
+                    <div class="grid-item">Item 4</div>
+                    <div class="grid-item">Item 5</div>
+                </div></pre>
+            </section>
+            <section>
+               <h3>Grid Cell</h3>
+               <p>Single grid unit</p>
+               <p>Space between adjacent rows and adjacent columns</p>
+               <pre><div class="grid-container grid-4">
+                  <div class="grid-item">Item 1</div>
+                  <div class="grid-item">Item 2</div>
+                  <div class="grid-item">Item 3</div>
+                  <div class="grid-item">Item 4</div>
+                  <div class="grid-item">Item 5</div>
+              </div></pre>
+            </section>
+            <section>
+               <h3>Grid Track</h3>
+               <p>Space between adjacent grid lines</p>
+               <p>Represent columns & rows of grid</p>
+               <div class="grid-container grid-5">
+                  <div class="grid-item">Item 1</div>
+                  <div class="grid-item">Item 2</div>
+                  <div class="grid-item">Item 3</div>
+                  <div class="grid-item">Item 4</div>
+                  <div class="grid-item">Item 5</div>
+               </div>
+            </section>
+            <section>
+               <h3>Grid Area</h3>
+               <p>Space surrounded by 4 grid lines</p>
+               <p>Can contain any number of cells</p>
+               <pre><div class="grid-container grid-6">
+  <div class="grid-item">Item 1</div>
+  <div class="grid-item">Item 2</div>
+  <div class="grid-item">Item 3</div>
+  <div class="grid-item">Item 4</div>
+  <div class="grid-item">Item 5</div>
+</div></pre>
+            </section>
+            <section>
+               <h1>Properties</h1>
+               <h3 class="fragment">Part 1: Parent Properties</h3>
+            </section>
+            <section>
+               <h3>Layout Definition</h3>
+               <code>display</code>
+               <br>
+               <p><b>Values</b></p>
+               <ul>
+                  <li>grid: block-level</li>
+                  <li>inline-grid: inline-level</li>
+               </ul>
+            </section>
+            <section>
+               <h4>Example</h4>
+               <pre>
+                    <code class="formattedCode html" data-trim>
+                    <div class="grid-container">
+                      <div class="grid-item">Item 1</div>
+                      <div class="grid-item">Item 2</div>
+                      <div class="grid-item">Item 3</div>
+                      <div class="grid-item">Item 4</div>
+                      <div class="grid-item">Item 5</div>
+                    </div>
+            </code>
+            <code class="formattedCode css" data-trim>
+              .grid-container {
+                display: grid;
+              }
+            </code><br>
+                <div class="grid-container">
+                    <div class="grid-item">Item 1</div>
+                    <div class="grid-item">Item 2</div>
+                    <div class="grid-item">Item 3</div>
+                    <div class="grid-item">Item 4</div>
+                    <div class="grid-item">Item 5</div>
+                </div></pre>
+            </section>
+            <section>
+               <h3>Size of Columns & Rows</h3>
+               <code>grid-template-columns, grid-template-rows</code>
+               <br>
+               <p><b>Values</b></p>
+               <ul>
+                  <li>&lt;track-size&gt;: size of column/row (px, %, auto, fr)</li>
+                  <li>&lt;line-name&gt;: custom name (optional)</li>
+               </ul>
+            </section>
+            <section>
+               <h4>Example</h4>
+               <pre>
+                <code class="formattedCode html" data-trim>
+                <div class="grid-container">
+                  <div class="grid-item">Item 1</div>
+                  <div class="grid-item">Item 2</div>
+                  <div class="grid-item">Item 3</div>
+                  <div class="grid-item">Item 4</div>
+                  <div class="grid-item">Item 5</div>
+                </div>
+        </code>
+        <code class="formattedCode css" data-trim>
+          .grid-container {
+            grid-template-columns: 100px 25% auto;
+            grid-template-rows: 40px 100px;
+          }
+        </code>
+                <div class="fragment grid-container grid-7">
+                    <div class="grid-item">Item 1</div>
+                    <div class="grid-item">Item 2</div>
+                    <div class="grid-item">Item 3</div>
+                    <div class="grid-item">Item 4</div>
+                    <div class="grid-item">Item 5</div>
+                </div></pre>
+            </section>
+            <section>
+               <h4>Example</h4>
+               <pre>
+              <code class="formattedCode html" data-trim>
+              <div class="grid-container">
+                <div class="grid-item">Item 1</div>
+                <div class="grid-item">Item 2</div>
+                <div class="grid-item">Item 3</div>
+                <div class="grid-item">Item 4</div>
+                <div class="grid-item">Item 5</div>
+              </div>
+      </code>
+      <code class="formattedCode css" data-trim>
+        .grid-container {
+          grid-template-columns: [c1] 100px [c2] 25% [c3] auto [c4];
+          grid-template-rows: [r1] 40px [r2] 100px [r3];
+        }
+      </code>
+                <div class="fragment grid-container grid-8">
+                    <div class="grid-item">Item 1</div>
+                    <div class="grid-item">Item 2</div>
+                    <div class="grid-item">Item 3</div>
+                    <div class="grid-item">Item 4</div>
+                    <div class="grid-item">Item 5</div>
+                </div></pre>
+            </section>
+            <section>
+               <h3>Grid Structure</h3>
+               <code>grid-template-areas</code>
+               <br>
+               <p><b>Values</b></p>
+               <ul>
+                  <li>&lt;grid-area-name&gt;: area name specified by grid-area</li>
+                  <li>. : empty cell</li>
+                  <li>none: no areas defined</li>
+               </ul>
+            </section>
+            <section>
+               <h4>Example</h4>
+               <pre><code class="formattedCode html" data-trim>
+                <div class="grid-container">
+                  <div class="grid-item-1">Item 1</div>
+                  <div class="grid-item-2">Item 2</div>
+                  <div class="grid-item-3">Item 3</div>
+                </div>
+        </code></pre>
+            </section>
+            <section>
+               <h4>Example continued</h4>
+               <pre><code class="formattedCode css" data-trim>
+                  .grid-container {
+                    grid-template-columns: 25% 50% auto 100px;
+                    grid-template-rows: auto 70px;
+                    grid-template-areas: 
+                      "header header header header"
+                      "main main . sidebar"
+                  }
+                  .grid-item-1 {
+                    grid-area: main;
+                  }
+                  .grid-item-2 {
+                    grid-area: sidebar;
+                  }
+                  .grid-item-3 {
+                    grid-area: footer;
+                  }
+                </code><br><div class="fragment grid-container grid-9">
+                    <div class="grid-item-1">Item 1</div>
+                    <div class="grid-item-2">Item 2</div>
+                    <div class="grid-item-3">Item 3</div>
+                </div></pre>
+            </section>
+            <section>
+               <h3>All-in-one</h3>
+               <code>grid-template</code>
+               <br>
+               <p><b>Values</b></p>
+               <ul>
+                  <li>none: sets properties to initial values</li>
+                  <li>&lt;grid-template-rows&gt; / &lt;grid-template-columns&gt;: specific values, sets grid-template-areas to none
+                  </li>
+               </ul>
+               <pre><code data-trim>
+                  grid-template: none | &lt;grid-template-rows&gt; / &lt;grid-template-columns&gt;;
+                </code></pre>
+            </section>
+            <section>
+               <h4>Example</h4>
+               <pre><code class="formattedCode html" data-trim>
+                  <div class="grid-container">
+                    <div class="grid-item-1">Item 1</div>
+                    <div class="grid-item-2">Item 2</div>
+                    <div class="grid-item-3">Item 3</div>
+                  </div>
+            </code>
+            </pre>
+            </section>
+            <section>
+               <h4>Example continued</h4>
+               <pre><code class="formattedCode css" data-trim>
+                  .grid-container {
+                    /* grid-template-columns: 25% 50% auto 100px; */
+                    /* grid-template-rows: auto 70px; */
+                    /* grid-template-areas: "header header header header"
+                      "main main . sidebar" */
+                    grid-template: 
+                    "header header header header" auto
+                    "main main . sidebar" 70px / 25% 50% auto 100px;
+                  }
+                  .grid-item-1 {
+                    grid-area: main;
+                  }
+                  .grid-item-2 {
+                    grid-area: sidebar;
+                  }
+                  .grid-item-3 {
+                    grid-area: footer;
+                  }
+                </code>
+                <br><div class="fragment grid-container grid-10">
+                    <div class="grid-item-1">Item 1</div>
+                    <div class="grid-item-2">Item 2</div>
+                    <div class="grid-item-3">Item 3</div>
+                </div></pre>
+            </section>
+            <section>
+               <h3>Grid Line Size</h3>
+               <code>column-gap, row-gap</code>
+               <br>
+               <p><b>Values</b></p>
+               <ul>
+                  <li>&lt;line-size&gt;: size of column/row (px, %, auto, fr)</li>
+               </ul>
+               <p>Only created between tracks!</p>
+            </section>
+            <section>
+               <h4>Example</h4>
+               <pre>
+              <code class="formattedCode html" data-trim>
+              <div class="grid-container">
+                <div class="grid-item">Item 1</div>
+                <div class="grid-item">Item 2</div>
+                <div class="grid-item">Item 3</div>
+                <div class="grid-item">Item 4</div>
+                <div class="grid-item">Item 5</div>
+              </div>
+      </code>
+      <code class="formattedCode css" data-trim>
+        .grid-container {
+          grid-template-columns: auto auto auto;
+          column-gap: 10px;
+          row-gap: 15px;
+        }
+      </code><br><div class="fragment grid-container grid-11">
+        <div class="grid-item">Item 1</div>
+        <div class="grid-item">Item 2</div>
+        <div class="grid-item">Item 3</div>
+        <div class="grid-item">Item 4</div>
+        <div class="grid-item">Item 5</div>
+    </div></pre>
+            </section>
+            <section>
+               <h3>Grid Line Size - Shorthand</h3>
+               <code>gap</code>
+               <br>
+               <p><b>Values</b></p>
+               <ul>
+                  <li>&lt;line-size&gt;: size of column/row (px, %, auto, fr)</li>
+               </ul>
+               <pre><code class="formattedCode css" data-trim>
+                .container {
+                  gap: row-gap column-gap;
+                }</code></pre>
+               <p class="fragment">If no row-gap is specified, it’s set to value of column-gap</p>
+            </section>
+            <section>
+               <h4>Example</h4>
+               <pre>
+            <code class="formattedCode html" data-trim>
+            <div class="grid-container">
+              <div class="grid-item">Item 1</div>
+              <div class="grid-item">Item 2</div>
+              <div class="grid-item">Item 3</div>
+              <div class="grid-item">Item 4</div>
+              <div class="grid-item">Item 5</div>
+            </div>
+    </code>
+    <code class="formattedCode css" data-trim>
+      .grid-container {
+        grid-template-columns: auto auto auto;
+        /* column-gap: 10px; */
+        /* row-gap: 15px; */
+        gap: 15px 10px;
+      }
+    </code><br><div class="fragment grid-container grid-12">
+      <div class="grid-item">Item 1</div>
+      <div class="grid-item">Item 2</div>
+      <div class="grid-item">Item 3</div>
+      <div class="grid-item">Item 4</div>
+      <div class="grid-item">Item 5</div>
+  </div></pre>
+            </section>
+            <section>
+               <h3>Content Placement in Cell</h3>
+               <br>
+               <p><b>Properties</b></p>
+               <ul>
+                  <li class="fragment"><code>justify-items</code>: <span class="fragment">Align grid items along row axis</span>
+                  </li>
+                  <li class="fragment"><code>justify-self</code>: <span class="fragment">Align single grid item along row
+                     axis</span>
+                  </li>
+                  <li class="fragment"><code>align-items</code>: <span class="fragment">Align grid items along column
+                     axis</span>
+                  </li>
+                  <li class="fragment"><code>align-self</code>: <span class="fragment">Align single grid item along column
+                     axis</span>
+                  </li>
+               </ul>
+               <p class="fragment">Values: start | end | center | stretch</p>
+            </section>
+            <section>
+               <h4>Example</h4>
+               <pre>
+          <code class="formattedCode html" data-trim>
+          <div class="grid-container">
+            <div class="grid-item-1">Item 1</div>
+            <div class="grid-item-2">Item 2</div>
+            <div class="grid-item-3">Item 3</div>
+            <div class="grid-item-4">Item 4</div>
+            <div class="grid-item-5">Item 5</div>
+          </div>
+  </code></pre>
+            </section>
+            <section>
+               <h4>Example continued</h4>
+               <pre><code class="formattedCode css" data-trim>
+    .grid-container {
+      grid-template-columns: auto auto auto;
+      grid-template-rows: 80px 90px;
+      justify-items: end
+    }
+    .grid-item-1 {
+      justify-self: start;
+      align-self: center;
+    }
+  </code><br><div class="fragment grid-container grid-13">
+    <div class="grid-item-1">Item 1</div>
+    <div class="grid-item-2">Item 2</div>
+    <div class="grid-item-3">Item 3</div>
+    <div class="grid-item-4">Item 4</div>
+    <div class="grid-item-5">Item 5</div>
+</div></pre>
+            </section>
+            <section>
+               <h3>Content Placement in Container</h3>
+               <br>
+               <p><b>Properties</b></p>
+               <ul>
+                  <li class="fragment"><code>justify-content</code>: <span class="fragment">Align tracks along row axis</span>
+                  </li>
+                  <li class="fragment"><code>align-content</code>: <span class="fragment">Align tracks along column axis</span>
+                  </li>
+               </ul>
+               <p class="fragment">Values: start | end | center | stretch | space-around | space-between | space-evenly</p>
+            </section>
+            <section>
+               <h4>Example</h4>
+               <pre>
+                    <code class="formattedCode html" data-trim>
+                    <div class="grid-container">
+                      <div class="grid-item">Item 1</div>
+                      <div class="grid-item">Item 2</div>
+                      <div class="grid-item">Item 3</div>
+                      <div class="grid-item">Item 4</div>
+                      <div class="grid-item">Item 5</div>
+                    </div>
+            </code></pre>
+            </section>
+            <section>
+               <h4>Example continued</h4>
+               <pre>
+            <code class="formattedCode css" data-trim>
+              .grid-container {
+                grid-template-columns: auto auto auto;
+                grid-template-rows: 80px 90px;
+                justify-content: end
+              }
+  
+            </code><br><div class="fragment grid-container grid-14">
+              <div class="grid-item">Item 1</div>
+              <div class="grid-item">Item 2</div>
+              <div class="grid-item">Item 3</div>
+              <div class="grid-item">Item 4</div>
+              <div class="grid-item">Item 5</div>
+          </div></pre>
+            </section>
+            <section>
+               <h1>Properties</h1>
+               <h3>Part 1: Parent Properties</h3>
+               <h3 class="fragment">Part 2: Child Properties</h3>
+            </section>
+            <section>
+               <h3>Item Location</h3>
+               <code>grid-column-start, grid-column-end, grid-row-start, grid-row-end</code>
+               <br>
+               <p><b>Values</b></p>
+               <ul>
+                  <li>line: number or name of grid line</li>
+                  <li>span &lt;number&gt;: item spans across given number of tracks</li>
+                  <li>span &lt;name&gt;: item spans until given track</li>
+                  <li>auto: auto-placement</li>
+               </ul>
+               <p class="fragment">Item will span 1, if no grid-column-end/grid-row-end is declared. Items can overlap each other. Use z-index to control stacking order.</p>
+            </section>
+            <section>
+               <h4>Example</h4>
+               <pre>
+                <code class="formattedCode html" data-trim>
+                <div class="grid-container">
+                  <div class="grid-item-1">Item 1</div>
+                  <div class="grid-item-2">Item 2</div>
+                  <div class="grid-item-3">Item 3</div>
+                  <div class="grid-item-4">Item 4</div>
+                  <div class="grid-item-5">Item 5</div>
+                </div>
+        </code></pre>
+            </section>
+            <section>
+               <h4>Example continued</h4>
+               <pre>
+        <code class="formattedCode css" data-trim>
+          .grid-container {
+            grid-template-columns: [l1] 140px [l2] 150px [l3] auto [l4] 150px [l5] 140px [end];
+            grid-template-rows: [r1-start] 25% [r1-end r2-start] 100px [r2-end r3-start] auto [r3-end];
+          }
+
+          .grid-item-1 {
+            grid-column-start: 1;
+            grid-column-end: span l4;
+            grid-row-start: 2;
+            grid-row-end: span 1;
+          }
+        </code><br><div class="fragment grid-container grid-15">
+          <div class="grid-item-1">Item 1</div>
+          <div class="grid-item-2">Item 2</div>
+          <div class="grid-item-3">Item 3</div>
+          <div class="grid-item-4">Item 4</div>
+          <div class="grid-item-5">Item 5</div>
+      </div></pre>
+            </section>
+            <section>
+               <h3>Item Location - Shorthand</h3>
+               <code>grid-column, grid-row</code>
+               <br>
+               <pre><code class="formattedCode css" data-trim>
+                .item {
+                  grid-column: &lt;start-line&gt; / &lt;end-line&gt; | &lt;start-line&gt; / span &lt;value&gt;;
+                  grid-row: &lt;start-line&gt; / &lt;end-line&gt; | &lt;start-line&gt; / span &lt;value&gt;;
+                }
+              </code></pre>
+            </section>
+            <section>
+               <h4>Example</h4>
+               <pre>
+            <code class="formattedCode css" data-trim>
+                .grid-item-1 {
+                  /* grid-column-start: 1; */
+                  /* grid-column-end: span l4; */
+                  /* grid-row-start: 2; */
+                  /* grid-row-end: span 1; */
+                  grid-column: 1 / span l4;
+                  grid-row: 2 / span 1;
+                }
+      </code></pre>
+            </section>
+            <section>
+               <h3>Item Location - Even Shorter Shorthand</h3>
+               <code>grid-area</code>
+               <br>
+               <pre><code class="formattedCode css" data-trim>
+                  .item {
+                    grid-area: &lt;name&gt; | &lt;row-start&gt; / &lt;column-start&gt; / &lt;row-end&gt; / &lt;column-end&gt;;
+                  }
+            </code></pre>
+            </section>
+            <section>
+               <h4>Example</h4>
+               <pre>
+          <code class="formattedCode css" data-trim>
+            /* as shorthand */
+              .grid-item-1 {
+                /* grid-column: 1 / span l4; */
+                /* grid-row: 2 / span 1; */
+                grid-area: 2 / 1 / 2 / span l4;
+              }
+            /* for naming */
+            .grid-item-1 {
+              grid-area: main-content;
+            }
+    </code></pre>
+            </section>
+            <section>
+               <h3>In-Class Exercise</h3>
+               <p>In your group, use the documentation on <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout">CSS Grid</a> & the web to research on your property/function.</p>
+               <p>Tasks:</p>
+               <ul>
+                  <li>Create a README in which you explan the topic</li>
+                  <li>Create an html & css file (include group and topic name in file name) with 2 implementation examples</li>
+                  <li>Present your work in 5 min to the class</li>
+               </ul>
+            </section>
+            <section>
+               <h3>Exercise</h3>
+               <ol>
+                  <li>Group 1 - Properties: grid-auto-columns, grid-auto-rows (Look out for explicit & implicit grids)</li>
+                  <li>Group 2 - Property: grid-auto-flow</li>
+                  <li>Group 3 - Propery: grid</li>
+                  <li>Group 4 - Topic: How to declare lengths/sizes (px, rem, %, min-content, max-content, auto, fr), Function: minmax()
+                  </li>
+                  <li>Group 5 - Function: repeat()</li>
+               </ol>
+            </section>
+            <section>
+               <h1>Device Adaptation</h1>
+            </section>
+            <section>
+               <h3>Media Queries</h3>
+               <pre><code class="formattedCode html" data-trim>
+                  <div class="grid-container">
+                    <div class="grid-item-1">Item 1</div>
+                    <div class="grid-item-2">Item 2</div>
+                    <div class="grid-item-3">Item 3</div>
+                    <div class="grid-item-4">Item 4</div>
+                    <div class="grid-item-5">Item 5</div>
+                  </div></code></pre>
+            </section>
+            <section>
+               <h3>Media Queries</h3>
+               <pre><code class="formattedCode css" data-trim>
+              .grid-container{
+                display: grid;
+                grid-template-columns: 250px 3fr 2fr;
+               }
+               .grid-item-1 {
+                grid-column: 1 / 4;
+               }
+               .grid-item-2 {
+                grid-row: 2 / 4;
+               }
+
+               @media only screen and (max-width: 1000px){
+                 .grid-container{
+                  grid-template-columns: 1fr 1fr;
+                 } 
+                 .grid-item-1 {
+                  grid-column: 1 / 3;
+                  grid-row: 2 / 3;
+                 } 
+                 .grid-item-2 {
+                  grid-row: 1 / 1;
+                 }
+               }
+              </code><br>
+                <div class="grid-container grid-16">
+                    <div class="grid-item-1">Item 1</div>
+                    <div class="grid-item-2">Item 2</div>
+                    <div class="grid-item-3">Item 3</div>
+                    <div class="grid-item-4">Item 4</div>
+                    <div class="grid-item-5">Item 5</div>
+                </div>
+                </pre>
+            </section>
+            <section>
+               <h3>Some Best Practices</h3>
+               <ul>
+                  <li>Use grid with flexbox, not instead of it</li>
+                  <li>Take advantage of negative line numbers</li>
+                  <li>Name your grid lines</li>
+               </ul>
+            </section>
+            <section>
+               <h3>Homework</h3>
+               <p>The "ReDI News" team wants to setup an online version of their newspaper. They ask you the help them with this task. As they would like to reach as many readers as possible, the page should be easily readable on a laptop and phone screen.</p>
+            </section>
+            <section>
+               <h3>Homework</h3>
+               <p>The team would like you to create a website, the start page, which comprises the following content:
+               <ul>
+                  <li>a header with the name of the Newspaper.</li>
+                  <li>one section for a preview of the featured article of the day</li>
+                  <li>three sections for the previews of three secondary articles of the day</li>
+                  <li>a navigation bar</li>
+                  <li>a footer</li>
+               </ul>
+               They also give you the freedom to add additional sections which you would like to include.</p>
+            </section>
+            <section>
+               <h3>Homework</h3>
+               <ol>
+                  <li>Create a mockup for the laptop version</li>
+                  <li>Implement your page design with CSS Grid</li>
+                  <li>Think about how you need to change your page design to be better viewable on a mobile phone. Create a second mockup</li>
+                  <li>Adapt your existing code such that it implements your new design for mobile devices.</li>
+               </ol>
+            </section>
+            <section data-visibility="uncounted">
+               <h3>Questions / Feedback?</h3>
+            </section>
+         </div>
+      </div>
+   </body>
+</html>
