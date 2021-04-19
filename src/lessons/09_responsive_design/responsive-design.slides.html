@@ -161,7 +161,8 @@
             </pre>
             <p class="fragment">We list the resolution of the image</p>
             <p class="fragment">
-              But this is not enough, we need to give more information to the browser
+              But this is not enough, we need to give more information to the
+              browser
             </p>
           </section>
           <section>
@@ -177,7 +178,8 @@
             </pre>
             <p class="fragment">Media condition is similar to media queries</p>
             <p class="fragment">
-              If the viewport is 480 pixels wide or smaller, the image will be 100% of the viewport width
+              If the viewport is 480 pixels wide or smaller, the image will be
+              100% of the viewport width
             </p>
           </section>
           <section>
@@ -193,20 +195,106 @@
                 </script>
               </code>
             </pre>
-            <p class="fragment">Contains a series of source child elements followed by the required img element</p>
             <p class="fragment">
-              The media attribute tells the browser that this source should only be used if the viewport is larger than or equal to what we specify
+              Contains a series of source child elements followed by the
+              required img element
+            </p>
+            <p class="fragment">
+              The media attribute tells the browser that this source should only
+              be used if the viewport is larger than or equal to what we specify
             </p>
           </section>
+          <section>
+            <h3>Media Queries</h3>
+            <p class="fragment">
+              They allow us to target the certain conditions and apply CSS when
+              those rules match
+            </p>
+            <p class="fragment italic">viewport is larger than 320px</p>
+            <p class="fragment italic">the device is a touchscreen</p>
+          </section>
+          <section>
+            <h3>Media Queries</h3>
+            <div class="r-stack">
+              <pre class="fragment">
+                <code class="formattedCode css" data-trim>
+                  @media media-type and (media-feature-rule) {
+                    /* CSS rules go here */
+                  }
+                </code>
+              </pre>
+              <pre class="fragment">
+                <code class="formattedCode css" data-trim>
+                  /* When the browser is at least 600px and above */
+                  @media screen and (min-width: 600px) {
+                    .element {
+                      /* Apply some styles */
+                    }
+                  }
+                </code>
+              </pre>
+            </div>
+          </section>
+        </section>
+        <section>
+          <h3>Media Queries</h3>
+          <img src="./images/mediaquery.jpeg" alt="">
+          <section>
+              <p class="fragment"><code>@media</code> Is a css rule that let us target different conditions</p>
+          </section>
+          <section>
+            <p class="fragment">Media type is what we are targeting, the most common being <code>screen</code></p>
+            <p class="fragment">Other values include <code>all</code> and <code>print</code></p>
+          </section>
+          <section>
+            <p class="fragment">Media features test a single specific feature of the target device, most common are <code>min-width</code> and <code>max-width</code></p>
+            <p class="fragment">Other values include <code>orientation</code> or <code>hover</code></p>
+            <a class="fragment small" href="https://www.w3.org/TR/mediaqueries-4/#mq-features">More on media query features</a>
+          </section>
+          <section>
+            <p class="fragment">The operator let us combine different media features to make a more specific rule</p>
+            <p class="fragment">We can use <code>and</code>, <code>not</code> and <code>or</code></p>
+          </section>
+        </section>
+        <section>
+          <h2>Mobile First</h2>
+          <p class="fragment">Until now we have only focused on doing things for desktop</p>
+          <p class="fragment italic">Mobile first design is a design strategy that says when you create a website or app, you should start sketching and prototyping the smallest screen first and work your way up to larger screens. Essentially, it’s about delivering the right user experience to the right device.</p>
+        </section>
+        
+        <section>
+          <h3>Let's see it in action</h3>
+          <img src="./images/showtime.gif" />
         </section>
 
+        <section>
+          <h3>The viewport meta tag</h3>
+          <p>The browser's viewport is the area of the window in which web content can be seen</p>
+          <pre class="fragment">
+            <code class="formattedCode" data-trim>
+              <script type="text/template">
+                <meta name="viewport" content="width=device-width, initial-scale=1">
+              </script>
+            </code>
+          </pre>
+          <p class="fragment">device-width is the width of the screen in CSS pixels at a scale of 100%.</p>
+          <p class="fragment">The initial-scale property controls the zoom level when the page is first loaded</p>
+        </section>
+
+        <section>
+          <h3>Today we learned</h3>
+          <ul>
+            <li class="fragment">We should build mobile first responsive designs</li>
+            <li class="fragment">Implement a responsive images solution</li>
+            <li class="fragment">Implement a responsive images solution</li>
+          </ul>
+        </section>
 
         <section>
           <h2>Homework</h2>
           <p class="fragment">
-            No homework today (yey!) – but wait for that 👀
+            Take the previous homework and make all necessary changes so it is responsive in every size
           </p>
-          <p class="fragment">Mixed homework will be given on Thursday 👍</p>
         </section>
 
         <section>

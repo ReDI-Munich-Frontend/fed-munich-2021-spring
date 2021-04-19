@@ -1,0 +1,1 @@
+[Use cases for responsive Images](http://usecases.responsiveimages.org/)
