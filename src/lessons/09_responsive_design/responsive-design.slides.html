@@ -98,9 +98,6 @@
               </li>
               <li class="fragment">Relative units</li>
             </ul>
-            <p class="small">
-              https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images
-            </p>
           </section>
           <section>
             <h2>Flexible Media</h2>
@@ -130,9 +127,12 @@
                 }
               </code>
             </pre>
+            <a class="small fragment" href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images">
+              More on Responsive images
+            </a>
           </section>
           <section>
-            <h3>Density is a resolution switching case</h3>
+            <h3>Srcset</h3>
             <pre class="fragment">
               <code>
                 <script type="text/template">
@@ -140,14 +140,18 @@
                 </script>
               </code>
             </pre>
-            <p class="fragment">srcset gives the browser a choice</p>
-            <p class="fragment">
-              Each item in the list contains the path to an image and the
-              density of that image provided as a multiple (e.g., 1x, 2x, 3x…).
-            </p>
-            <p class="fragment">
-              Great for fixed width images, not ideal otherwise
-            </p>
+            <ul>
+
+              <li class="fragment">srcset gives the browser a choice</li>
+              <li class="fragment">
+                Each item in the list contains the path to an image and the
+                density of that image provided as a multiple (e.g., 1x, 2x, 3x…).
+              </li>
+              <li class="fragment">
+                Great for fixed width images, not ideal otherwise
+              </li>
+              <li class="fragment">Density is a resolution switching case</li>
+            </ul>
           </section>
           <section>
             <h3>Width descriptors</h3>
@@ -159,11 +163,13 @@
                 </script>
               </code>
             </pre>
-            <p class="fragment">We list the resolution of the image</p>
-            <p class="fragment">
-              But this is not enough, we need to give more information to the
-              browser
-            </p>
+            <ul>
+              <li class="fragment">We list the resolution of the image</li>
+              <li class="fragment">
+                But this might not be enough, we need to give more information to the
+                browser
+              </li>
+            </ul>
           </section>
           <section>
             <h3>The sizes attribute</h3>
@@ -176,11 +182,13 @@
                 </script>
               </code>
             </pre>
-            <p class="fragment">Media condition is similar to media queries</p>
-            <p class="fragment">
-              If the viewport is 480 pixels wide or smaller, the image will be
-              100% of the viewport width
-            </p>
+            <ul>
+              <li class="fragment">Media condition is similar to media queries</li>
+              <li class="fragment">
+                If the viewport is 480 pixels wide or smaller, the image will be
+                100% of the viewport width
+              </li>
+            </ul>
           </section>
           <section>
             <h3>The picture element</h3>
@@ -195,14 +203,16 @@
                 </script>
               </code>
             </pre>
-            <p class="fragment">
-              Contains a series of source child elements followed by the
-              required img element
-            </p>
-            <p class="fragment">
-              The media attribute tells the browser that this source should only
-              be used if the viewport is larger than or equal to what we specify
-            </p>
+            <ul>
+              <li class="fragment">
+                Contains a series of source child elements followed by the
+                required img element
+              </li>
+              <li class="fragment">
+                The media attribute tells the browser that this source should only
+                be used if the viewport is larger than or equal to what we specify
+              </li>
+            </ul>
           </section>
           <section>
             <h3>Media Queries</h3>
@@ -282,10 +292,10 @@
         </section>
 
         <section>
-          <h3>Today we learned</h3>
+          <h3>Key takeaways</h3>
           <ul>
-            <li class="fragment">We should build mobile first responsive designs</li>
-            <li class="fragment">Implement a responsive images solution</li>
+            <li class="fragment">Design the mobile website first and work your way up to the desktop version.</li>
+            <li class="fragment">Stay fluid; use some @media queries to restyle things as needed.</li>
             <li class="fragment">Implement a responsive images solution</li>
           </ul>
         </section>
