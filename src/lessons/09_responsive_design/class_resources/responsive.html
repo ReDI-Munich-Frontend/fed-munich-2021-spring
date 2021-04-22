@@ -4,153 +4,106 @@
     <meta charset="utf-8" />
     <title>Responsive Web Design</title>
     <meta name="viewport" content="width=device-width" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat&display=swap"
+      rel="stylesheet"
+    />
     <style>
       * {
         box-sizing: border-box;
       }
 
-      body {
-        width: 90%;
-        margin: 2em auto;
-        font: 1em/1.3 Arial, Helvetica, sans-serif;
+      h1,
+      h2,
+      p {
+        margin: 0;
       }
 
-      a:link,
-      a:visited {
-        color: rgb(196, 196, 196);
+      h1,
+      h2 {
+        font-family: "Anton";
+        font-weight: 900;
+        line-height: 1;
+      }
+
+      body {
+        margin: 0 auto;
+        font-family: "Montserrat", Arial, Helvetica, sans-serif;
+        font-size: 1.3125rem;
+        font-weight: 400;
+        line-height: 1.6;
+      }
+
+      h1 {
+        margin-bottom: 1em;
       }
 
       nav ul,
-      aside ul {
+      section ul {
         list-style: none;
         padding: 0;
       }
 
-      nav a:link,
-      nav a:visited {
-        background-color: rgba(207, 232, 220, 0.865);
-        border: 2px solid rgb(79, 185, 227);
+      a:link,
+      a:visited {
         text-decoration: none;
         display: block;
         padding: 10px;
-        color: #333;
+        color: #555b6e;
         font-weight: bold;
       }
 
-      nav a:hover {
-        background-color: rgba(217, 207, 232, 0.7);
+      a:hover {
+        background-color: #bee3db;
       }
-
-      .related {
-        background-color: rgba(163, 215, 235, 0.214);
-        border: 1px solid rgb(60, 159, 198);
-        padding: 10px;
-      }
-
-      .sidebar {
-        background-color: rgba(181, 170, 203, 0.5);
-        padding: 10px;
-      }
-
-      article {
-        margin-bottom: 1em;
-      }
-
-      img {
-          max-width: 100%;
-      }
-
-      /* @media screen and (min-width: 630px) {
-        article {
-            display: grid;
-            grid-template-columns: 3fr 1fr;
-            column-gap: 20px;
-        }
-
-        nav ul {
-            display: flex;
-        }
-
-        nav li {
-            flex: 1;
-        }
-    }
-
-    @media screen and (min-width: 1024px) {
-        main {
-            display: grid;
-            grid-template-columns: 3fr 1fr;
-            column-gap: 20px;
-        }
-
-        article {
-            margin-bottom: 0;
-        }
-
-        footer {
-            border-top: 1px solid #ccc;
-            margin-top: 2em;
-        }
-    } */
     </style>
   </head>
 
   <body>
     <div class="wrapper">
-      <header>
-        <nav>
-          <ul>
-            <li><a href="">About</a></li>
-            <li><a href="">Contact</a></li>
-            <li><a href="">Meet the team</a></li>
-            <li><a href="">Blog</a></li>
-          </ul>
-        </nav>
-      </header>
       <main>
         <article>
-          <div class="content">
-            <h1>Tyrannosaurus!</h1>
+          <header>
+            <h1>Tyrannosaurus are awesome!</h1>
+            <p>The king of the tyrant lizards</p>
             <p>
-              Tyrannosaurus[nb 1] is a genus of coelurosaurian theropod
-              dinosaur. The species Tyrannosaurus rex (rex meaning "king" in
-              Latin), often called T. rex or colloquially T-Rex, is one of the
-              best represented of the large theropods. Tyrannosaurus lived
-              throughout what is now western North America, on what was then an
-              island continent known as Laramidia. Tyrannosaurus had a much
-              wider range than other tyrannosaurids. Fossils are found in a
-              variety of rock formations dating to the Maastrichtian age of the
-              Upper Cretaceous period, 68 to 66 million years ago. It was the
-              last known member of the tyrannosaurids and among the last
-              non-avian dinosaurs to exist before the Cretaceous–Paleogene
-              extinction event.
+              Find out how these dinosaurs lived, what made them so vicious, and
+              what we’re still learning about them today.
+            </p>
+          </header>
+          <div class="container">
+            <p>
+              Tyrannosaurus rex, whose name means “king of the tyrant lizards,”
+              was built to rule. This dinosaur’s muscular body stretched as long
+              as 40 feet—about the size of a school bus—from its snout to the
+              tip of its powerful tail. Weighing up to eight tons, T. rex
+              stomped headfirst across its territory on two strong legs. These
+              dinosaurs likely preyed on living animals and scavenged
+              carcasses—and sometimes they even ate one another.
             </p>
 
             <p>
-              Like other tyrannosaurids, Tyrannosaurus was a bipedal carnivore
-              with a massive skull balanced by a long, heavy tail. Relative to
-              its large and powerful hind limbs, the forelimbs of Tyrannosaurus
-              were short but unusually powerful for their size, and they had two
-              clawed digits. The most complete specimen measures up to 12.3
-              meters (40 feet) in length, though T. rex could grow to lengths of
-              over 12.3 m (40 ft), up to 3.96 m (13 ft) tall at the hips, and
-              according to most modern estimates 8.4 metric tons (9.3 short
-              tons) to 14 metric tons (15.4 short tons) in weight. Although
-              other theropods rivaled or exceeded Tyrannosaurus rex in size, it
-              is still among the largest known land predators and is estimated
-              to have exerted the strongest bite force among all terrestrial
-              animals.
+              The head of a T. rex was the real stuff of nightmares. This fierce
+              carnivore was optimally built for crunching through its meals,
+              with a stiff skull that allowed it to channel all the force of its
+              muscles into one bite—delivering up to six tons of pressure. This
+              dinosaur used its 60 serrated teeth, each about eight inches long,
+              to pierce and grip flesh, throwing prey into the air and
+              swallowing it whole. To keep itself from overheating while
+              crushing prey with its mighty jaws, the giant animal had vents in
+              its head to help its brain stay cool, similar to those found in
+              alligators.
             </p>
 
             <p>
-              By far the largest carnivore in its environment, Tyrannosaurus rex
-              was most likely an apex predator, preying upon hadrosaurs,
-              juvenile armored herbivores like ceratopsians and ankylosaurs, and
-              possibly sauropods. Some experts have suggested the dinosaur was
-              primarily a scavenger. The question of whether Tyrannosaurus was
-              an apex predator or a pure scavenger was among the longest debates
-              in paleontology. Most paleontologists today accept that
-              Tyrannosaurus was both an active predator and a scavenger.
+              Tyrannosaurus rex was also adept at finding its prey thanks to a
+              keen sense of smell. While scientists have known for a while that
+              this dinosaur devoted large portions of its brain to processing
+              smell, studies have recently revealed that T. rex had almost as
+              many genes encoding its olfactory receptors as a house cat does
+              today. This powerful snout also likely helped T. rex find mates
+              and detect other predators.
             </p>
 
             <p>
@@ -164,32 +117,32 @@
           <aside class="related">
             <p>
               More Tyrannosaurus information on
-              <a href="https://en.wikipedia.org/wiki/Tyrannosaurus"
-                >Tyrannosaurus</a
-              >
+              <a href="https://en.wikipedia.org/wiki/Tyrannosaurus">Tyrannosaurus</a>
             </p>
           </aside>
         </article>
-        <aside class="sidebar">
-          <h2>More dino content</h2>
-          <ul>
-            <li>
-              <a href="https://en.wikipedia.org/wiki/Gorgosaurus"
-                >Gorgosaurus</a
-              >
-            </li>
-            <li>
-              <a href="https://en.wikipedia.org/wiki/Albertosaurus"
-                >Albertosaurus</a
-              >
-            </li>
-            <li>
-              <a href="https://en.wikipedia.org/wiki/Tarbosaurus"
-                >Tarbosaurus</a
-              >
-            </li>
-          </ul>
-        </aside>
+        <section class="more">
+          <div class="container">
+            <h2>More dino content</h2>
+            <ul>
+              <li>
+                <a href="https://en.wikipedia.org/wiki/Gorgosaurus"
+                  >Gorgosaurus</a
+                >
+              </li>
+              <li>
+                <a href="https://en.wikipedia.org/wiki/Albertosaurus"
+                  >Albertosaurus</a
+                >
+              </li>
+              <li>
+                <a href="https://en.wikipedia.org/wiki/Tarbosaurus"
+                  >Tarbosaurus</a
+                >
+              </li>
+            </ul>
+          </div>
+        </section>
       </main>
 
       <footer><p>&copy;2021</p></footer>
