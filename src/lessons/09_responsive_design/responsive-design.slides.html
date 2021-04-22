@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>CSS and HTML + (incl. Flexbox) (part 2)</title>
+    <meta name="date" content="2021-04-13" />
+    <meta
+      name="description"
+      content="
+      - Recap Thursday April 1st
+      - CSS box model
+      - Flexbox
+    "
+    />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides" id="introduction-to-frontend">
+        <section>
+          <h1 class="r-fit-text">Responsive Design</h1>
+          <p>Redi School Munich - Spring 2021</p>
+        </section>
+        <section>
+          <h2>Recap</h2>
+          <ul>
+            <li>Flexbox</li>
+            <li>Grid</li>
+          </ul>
+        </section>
+        <section>
+          <section>
+            <h2>Once upon a time...</h2>
+            <p class="fragment">
+              There weren't many devices, websites were designed for computers
+              only
+            </p>
+          </section>
+          <section>
+            <div class="r-stack">
+              <img class="fragment max-img" src="./images/phone3.jpeg" />
+              <img class="fragment max-img" src="./images/phone4.jpeg" />
+              <img class="fragment max-img" src="./images/tablet1.jpeg" />
+              <img class="fragment max-img" src="./images/phone2.jpeg" />
+              <img class="fragment max-img" src="./images/phone1.jpeg" />
+              <h1 class="fragment bg-text">AND SO MANY MORE!</h1>
+            </div>
+          </section>
+          <section>
+            <p class="fragment">Something had to change!</p>
+            <p class="fragment">
+              People started to create another website for mobile screens
+            </p>
+            <img class="fragment" src="./images/idea.gif" width="500" />
+          </section>
+          <section>
+            <p>But it wasn't!</p>
+            <p class="fragment">
+              After lots of trial and errors and many other "great" ideas
+            </p>
+            <h3 class="fragment">Responsive Web Design</h3>
+            <p class="fragment">came to life!</p>
+            <img class="fragment" src="./images/alive.gif" />
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>What is Responsive Web Design?</h2>
+            <p class="fragment">
+              Is an approach to web design that lets our website adapt to
+              different screen and window sizes
+            </p>
+          </section>
+          <section>
+            <p>Mobile traffic makes up for more than 51% of all traffic</p>
+            <h4 class="fragment">
+              If your site is not responsive, it is not gonna make it
+            </h4>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>The pillars of RWD</h2>
+            <ul>
+              <li class="fragment">Flexible Grid Layouts</li>
+              <li class="fragment">Flexible Media</li>
+              <li class="fragment">Media Queries</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Flexible Grid Layouts</h2>
+            <ul>
+              <li class="fragment">
+                We don't target every single device, we let it flow
+              </li>
+              <li class="fragment">Flexbox and Grid</li>
+              <li class="fragment">
+                Capable of dynamically resizing to any width
+              </li>
+              <li class="fragment">Relative units</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Flexible Media</h2>
+            <ul>
+              <li class="fragment">
+                Images, videos, iframes need to adapt as well
+              </li>
+              <li class="fragment">
+                <code>max-width</code> and <code>srcset</code>
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h3>Flexible Images, the problem</h3>
+            <ul>
+              <li class="fragment">Different images for different devices</li>
+              <li class="fragment">
+                Larger images in smaller screens is not ideal
+              </li>
+              <li class="fragment">High resolution screens</li>
+              <li class="fragment">Art direction, resolution switching</li>
+            </ul>
+            <pre class="fragment">
+              <code>
+                img {
+                  max-width: 100%;
+                }
+              </code>
+            </pre>
+            <a class="small fragment" href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images">
+              More on Responsive images
+            </a>
+          </section>
+          <section>
+            <h3>Srcset</h3>
+            <pre class="fragment">
+              <code>
+                <script type="text/template">
+                  <img src="cat.jpg" alt="cat" srcset="cat.jpg, cat-2X.jpg 2x">
+                </script>
+              </code>
+            </pre>
+            <ul>
+
+              <li class="fragment">srcset gives the browser a choice</li>
+              <li class="fragment">
+                Each item in the list contains the path to an image and the
+                density of that image provided as a multiple (e.g., 1x, 2x, 3x…).
+              </li>
+              <li class="fragment">
+                Great for fixed width images, not ideal otherwise
+              </li>
+              <li class="fragment">Density is a resolution switching case</li>
+            </ul>
+          </section>
+          <section>
+            <h3>Width descriptors</h3>
+            <pre class="fragment">
+              <code class="formattedCode" data-trim>
+                <script type="text/template">
+                  <img src="cat.jpg" alt="cat" 
+                  srcset="cat-160.jpg 160w, cat-320.jpg 320w, cat-640.jpg 640w, cat-1280.jpg 1280w">
+                </script>
+              </code>
+            </pre>
+            <ul>
+              <li class="fragment">We list the resolution of the image</li>
+              <li class="fragment">
+                But this might not be enough, we need to give more information to the
+                browser
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h3>The sizes attribute</h3>
+            <pre class="fragment">
+              <code class="formattedCode" data-trim>
+                <script type="text/template">
+                  <img src="cat.jpg" alt="cat"
+                  srcset="cat-160.jpg 160w, cat-320.jpg 320w, cat-640.jpg 640w, cat-1280.jpg 1280w"
+                  sizes="(max-width: 480px) 100vw, (max-width: 900px) 33vw, 254px">
+                </script>
+              </code>
+            </pre>
+            <ul>
+              <li class="fragment">Media condition is similar to media queries</li>
+              <li class="fragment">
+                If the viewport is 480 pixels wide or smaller, the image will be
+                100% of the viewport width
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h3>The picture element</h3>
+            <pre class="fragment">
+              <code class="formattedCode" data-trim>
+                <script type="text/template">
+                  <picture>
+                    <source media="(min-width: 900px)" srcset="cat-vertical.jpg">
+                    <source media="(min-width: 750px)" srcset="cat-horizontal.jpg">
+                    <img src="cat.jpg" alt="cat">
+                  </picture>
+                </script>
+              </code>
+            </pre>
+            <ul>
+              <li class="fragment">
+                Contains a series of source child elements followed by the
+                required img element
+              </li>
+              <li class="fragment">
+                The media attribute tells the browser that this source should only
+                be used if the viewport is larger than or equal to what we specify
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h3>Media Queries</h3>
+            <p class="fragment">
+              They allow us to target the certain conditions and apply CSS when
+              those rules match
+            </p>
+            <p class="fragment italic">viewport is larger than 320px</p>
+            <p class="fragment italic">the device is a touchscreen</p>
+          </section>
+          <section>
+            <h3>Media Queries</h3>
+            <div class="r-stack">
+              <pre class="fragment">
+                <code class="formattedCode css" data-trim>
+                  @media media-type and (media-feature-rule) {
+                    /* CSS rules go here */
+                  }
+                </code>
+              </pre>
+              <pre class="fragment">
+                <code class="formattedCode css" data-trim>
+                  /* When the browser is at least 600px and above */
+                  @media screen and (min-width: 600px) {
+                    .element {
+                      /* Apply some styles */
+                    }
+                  }
+                </code>
+              </pre>
+            </div>
+          </section>
+        </section>
+        <section>
+          <h3>Media Queries</h3>
+          <img src="./images/mediaquery.jpeg" alt="">
+          <section>
+              <p class="fragment"><code>@media</code> Is a css rule that let us target different conditions</p>
+          </section>
+          <section>
+            <p class="fragment">Media type is what we are targeting, the most common being <code>screen</code></p>
+            <p class="fragment">Other values include <code>all</code> and <code>print</code></p>
+          </section>
+          <section>
+            <p class="fragment">Media features test a single specific feature of the target device, most common are <code>min-width</code> and <code>max-width</code></p>
+            <p class="fragment">Other values include <code>orientation</code> or <code>hover</code></p>
+            <a class="fragment small" href="https://www.w3.org/TR/mediaqueries-4/#mq-features">More on media query features</a>
+          </section>
+          <section>
+            <p class="fragment">The operator let us combine different media features to make a more specific rule</p>
+            <p class="fragment">We can use <code>and</code>, <code>not</code> and <code>or</code></p>
+          </section>
+        </section>
+        <section>
+          <h2>Mobile First</h2>
+          <p class="fragment">Until now we have only focused on doing things for desktop</p>
+          <p class="fragment italic">Mobile first design is a design strategy that says when you create a website or app, you should start sketching and prototyping the smallest screen first and work your way up to larger screens. Essentially, it’s about delivering the right user experience to the right device.</p>
+        </section>
+        
+        <section>
+          <h3>Let's see it in action</h3>
+          <img src="./images/showtime.gif" />
+        </section>
+
+        <section>
+          <h3>The viewport meta tag</h3>
+          <p>The browser's viewport is the area of the window in which web content can be seen</p>
+          <pre class="fragment">
+            <code class="formattedCode" data-trim>
+              <script type="text/template">
+                <meta name="viewport" content="width=device-width, initial-scale=1">
+              </script>
+            </code>
+          </pre>
+          <p class="fragment">device-width is the width of the screen in CSS pixels at a scale of 100%.</p>
+          <p class="fragment">The initial-scale property controls the zoom level when the page is first loaded</p>
+        </section>
+
+        <section>
+          <h3>Key takeaways</h3>
+          <ul>
+            <li class="fragment">Design the mobile website first and work your way up to the desktop version.</li>
+            <li class="fragment">Stay fluid; use some @media queries to restyle things as needed.</li>
+            <li class="fragment">Implement a responsive images solution</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Homework</h2>
+          <p class="fragment">
+            Take the previous homework and make all necessary changes so it is responsive in every size
+          </p>
+        </section>
+
+        <section>
+          <h1>Questions?</h1>
+          <img data-src="./images/questions.gif" alt="" />
+        </section>
+      </div>
+    </div>
+  </body>
+</html>
