@@ -231,7 +231,7 @@
               <li>
                 <span class="fragment">✅</span> Loops, loops and more loops!
               </li>
-              <li><span class="fragment">✅</span> Arrays?</li>
+              <li><span class="fragment">✅</span> Arrays and Objects</li>
             </ul>
 
             <aside class="notes">
@@ -564,6 +564,28 @@
             </ul>
           </section>
 
+          <section data-auto-animate>
+            <h2>Objects</h2>
+
+            <p>
+              <small
+                >MDN:
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object"
+                  >Object</a
+                ></small
+              >
+            </p>
+
+            <ul>
+              <li>Variable type that holds a collection of data</li>
+              <li class="fragment">
+                Useful when handling a larger, possibly even unknown amount of
+                similar objects
+              </li>
+            </ul>
+          </section>
+
           <section>
             <h3>Array initialization</h3>
 
@@ -728,6 +750,42 @@
               </preview-window>
             </div>
           </section>
+
+          <section>
+            <h3>Object initialization</h3>
+
+            <p style="font-size: 0.75em">Empty object</p>
+            <pre><code data-trim class="javascript">
+              let myObject = {};
+            </code></pre>
+
+            <p style="font-size: 0.75em">Non-empty array</p>
+            <pre><code data-trim class="javascript">
+              let myObject = {
+                name: 'Zac',
+                age: 33,
+                likesCoding: true
+              };
+            </code></pre>
+
+            <div class="additional-note fragment">
+              <p>
+                Objects aren't also primitive types, therefore the
+                <code>typeof</code> operator returns "object". >.
+              </p>
+
+              <pre><code data-trim class="javascript">
+                let myObject = {
+                  name: 'Joao',
+                  age: 92,
+                  likesCoding: true
+                };
+
+                console.log(myObject.name);         // ==> "Joao"
+                console.log(typeof myObject === 'object'); // ==> true
+              </code></pre>
+            </div>
+          </section>
         </section>
 
         <section>
@@ -782,7 +840,7 @@
           </div>
 
           <aside class="notes">
-            On recap:
+            On wrapping up:
 
             <ul>
               <li>
@@ -793,6 +851,15 @@
               </li>
             </ul>
           </aside>
+        </section>
+
+        <section>
+          <h3>Homework!</h3>
+
+          <p>
+            Let's evolve the twitter application we created together.
+            <small>(I'll send you it soon!)</small>
+          </p>
         </section>
 
         <section data-visibility="uncounted">
