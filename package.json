@@ -1,6 +1,10 @@
 {
   "name": "fed-munich-2021-spring",
   "version": "1.0.0",
+  "engines": {
+    "node": "14",
+    "npm": "7"
+  },
   "description": "Slides and material for the Frontend-Development course at ReDI School Munich, Spring 2021",
   "scripts": {
     "build": "webpack --config webpack.prod.js",
