@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Javascript: Dom manipulations part 2</title>
+  <meta name="date" content="2021-04-26" />
+  <meta name="description" content="
+      - A lot of recap + more topics around:
+      - Variables
+      - Conditionals
+      - Functions
+      - Arrays
+      - Loops
+      - DOM manipulation
+    " />
+</head>
+
+<body>
+  <div class="reveal">
+    <div class="slides" id="javascript-recap-dom">
+      <section>
+        <p>Hey! 👋🏼</p>
+        <h1 class="r-fit-text">Javascript: DOM Manipulation Pt.2</h1>
+        <p>Redi School Munich - Spring 2021</p>
+      </section>
+
+      <section class="initial">
+        <section data-auto-animate data-timing="10">
+          <h2>Recap</h2>
+        </section>
+
+        <section>
+          <h2>Document Object Model</h2>
+          <p>Javascript's interface for interacting with HTML</p>
+          <small>MDN:
+            <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction">Document
+              Object Model</a></small>
+          <ul>
+            <li class="fragment">getElementById()<br>
+              <code class="fragment formattedCode" data-trim>document.getElementById('main')</code>
+            </li>
+            <li class="fragment">querySelector()<br>
+              <code class="fragment formattedCode" data-trim>document.querySelector('li')</code>
+              <code class="fragment formattedCode" data-trim>document.querySelector('.someclass')</code>
+            </li>
+            <li class="fragment">innerHTML<br>
+              <code class="fragment formattedCode" data-trim>document.querySelector('li').innerHTML = 'Email <a
+                  href="mom@gmail.com">Mom</a>.';;</code>
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h2>Some more on DOM</h2>
+          <ul>
+            <li class="fragment">textContent<br>
+              <code class="fragment formattedCode" data-trim>document.querySelector('li').textContent</code>
+            </li>
+            <li class="fragment">createElement()<br>
+              <code class="fragment formattedCode" data-trim>const newParagraph = document.createElement('p')</code>
+            </li>
+            <li class="fragment">appendChild()<br>
+              <code class="fragment formattedCode" data-trim>firstHeading.appendChild(newParagraph)</code>
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>In-class exercise!</h3>
+
+          <p><small>45 minutes!</small> 🕘</p>
+
+          <ul>
+            <li>
+              Display 10 movie titles according to an array of nominees from this years Oscar!
+            </li>
+            <li>
+              If an item is more than 5 stars, a highlight should be shown (maybe a background or a star should appear –
+              up to you!)
+            </li>
+            <li>
+              Use <strong>functions</strong>, <strong>conditionals</strong> and
+              <strong>loops</strong> and whatever you feel like you have learned over the past classes
+            </li>
+          </ul>
+
+          <hr />
+
+          <div class="fragment" style="color: rgb(165, 140, 1)">
+            <p>
+              <small>✨ Make usage of the following (if there's time enough):</small>
+            </p>
+            <ul>
+              <li>- Make usage of grid / flexbox (if possible)</li>
+            </ul>
+          </div>
+        </section>
+
+        <section>
+          <h3>More DOM Manipulation!</h3>
+          <p>This time with CSS styles</p>
+        </section>
+        <section>
+          <h3>The basic of style manipulation</h3>
+          <code class="fragment formattedCode" data-trim>
+            elem.style
+          </code>
+        </section>
+        <section>
+          <h3>Modify classes</h3>
+          <code class="fragment formattedCode" data-trim>
+            elem.classList.add('MyClass');
+            elem.classList.remove('MyClass');
+          </code>
+        </section>
+
+        <section>
+          <h3>Your semester project</h3>
+
+          <small>
+            <a href="https://de.redi-school.org/dd-projects">Previous submissions</a></small>
+          <p>Spend some thought on the website you would like to create!</p>
+          <p>🤔💡</p>
+        </section>
+
+        <section>
+          <h3>Homework!</h3>
+
+          <p>
+            Further advance your movie application.
+            Add three buttons for the jury to highlight nominees, winners, and to clear the highlights.
+            Nominees could for example be highlighted by blue boxes while winners would be highlighted by enlarging the
+            corresponding card and color it in gold.
+            Other than that be creative!
+          </p>
+        </section>
+
+        <section data-visibility="uncounted">
+          <h1>Any Questions or Feedback?</h1>
+        </section>
+    </div>
+  </div>
+</body>
+
+</html>
