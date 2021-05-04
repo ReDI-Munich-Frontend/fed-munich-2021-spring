@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Javascript: Algorithms and APIs</title>
+    <meta name="date" content="2021-05-04">
+    <meta name="description" content="
+      - Algorithm programming
+      - Working with REST APIs
+    ">
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <h1 class="r-fit-text">Algorithms and APIs</h1>
+          <p>Redi School Munich - Spring 2021</p>
+        </section>
+
+        <section>
+          <section>
+            <h2>Final project planning</h2>
+          </section>
+
+          <section>
+            <h3>Final project planning</h3>
+
+            <ul>
+              <li></li>
+            </ul>
+          </section>
+        </section>
+
+        <section>
+          <h2>Algorithm programming</h2>
+        </section>
+
+        <section>
+          <section>
+            <h2>Working with APIs</h2>
+          </section>
+
+          <section>
+            <h3>What is an API?</h3>
+
+            <ul>
+              <li>API stands for Application Programming Interface</li>
+              <li>A set of functions that programs publish for other programs to use</li>
+              <li>Any communication between two different programs works through APIs!</li>
+            </ul>
+          </section>
+
+          <section>
+            <h3>APIs in the context of Web Development</h3>
+
+            <ul>
+              <li>A way of exchanging information with a backend server</li>
+              <li>Most commonly used: REST APIs</li>
+            </ul>
+
+            <img data-src="images/rest-api.png" class="fragment r-frame" alt="REST Api"/>
+          </section>
+
+          <section>
+            <video data-src="images/api-requests.mp4" controls loop data-autoplay></video>
+          </section>
+
+          <section>
+            <h2><code>fetch</code></h2>
+
+            <p><small>MDN: <a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API">Fetch API</a></small></p>
+
+            Syntax:
+            <pre><code data-trim class="javascript">
+              fetch('https://some-url.com')
+                .then(response => {
+                  // we can work with the API response now.
+                });
+            </code></pre>
+          </section>
+
+          <section id="api-example-slide">
+            <h3>Example</h3>
+
+            <pre><code data-trim class="javascript">
+              fetch('https://randomuser.me/api/?nat=us&randomapi')
+                .then(response => response.json())
+                .then(data => {
+                  const person = data.results[0];
+                  alert('Got a random user named ' + person.name.first + ' ' + person.name.last);
+                });
+            </code></pre>
+
+            <div style="display: inline-block">
+              <button type="button" class="run-button">Run</button>
+            </div>
+          </section>
+        </section>
+      </div>
+    </div>
+  </body>
+</html>
