@@ -18,21 +18,8 @@
         </section>
 
         <section>
-          <section>
-            <h2>Final project planning</h2>
-          </section>
-
-          <section>
-            <h3>Final project planning</h3>
-
-            <ul>
-              <li></li>
-            </ul>
-          </section>
-        </section>
-
-        <section>
           <h2>Algorithm programming</h2>
+          <p>▶ Demo</p>
         </section>
 
         <section>
@@ -94,6 +81,59 @@
             <div style="display: inline-block">
               <button type="button" class="run-button">Run</button>
             </div>
+          </section>
+
+          <section>
+            <h3>Why the strange syntax with <code>.then</code>?</h3>
+
+            <ul>
+              <li>API-Requests take time</li>
+              <li>This syntax allows to define a behaviour for once the request finishes, without blocking the rest of the application.</li>
+            </ul>
+
+            <div class="additional-note fragment">
+              <div class="columns justify-center">
+                <div style="flex-grow: 1">
+                  <pre><code data-trim class="javascript">
+                    fetch('https://google.com')
+                      .then(response => {
+                        console.log('Got response');
+                      });
+
+                    console.log('After fetch');
+                  </code></pre>
+                </div>
+
+                <div style="flex-grow: 1">
+                  <p>Output:</p>
+                  <pre><code data-trim class="plaintext">
+                    After fetch
+                    Got response
+                  </code></pre>
+                </div>
+              </div>
+            </div>
+
+            <p class="fragment">This syntax is called <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>.</p>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>Final Projects</h2>
+          </section>
+
+          <section>
+            <h3>Final Projects</h3>
+
+            <ul>
+              <li class="fragment">Think of a topic for your final project.<br>
+              <small>For example a weather application, an online shop concept, a personal portfolio etc.</small></li>
+              <li class="fragment">Consider that your project should make use of all three technologies we learned so far: HTML, CSS and Javascript.</li>
+              <li class="fragment">You may search for <a href="https://duckduckgo.com/?t=ffab&q=free+apis+to+use&ia=web">Free APIs</a> for inspiration</li>
+              <li class="fragment">Draw a wireframe of how you want your website to look like.<br>
+              <small>A drawing with pen & paper is sufficient. The wireframe should include all elements that the final result is supposed to have, and show their arrangement.</small></li>
+            </ul>
           </section>
         </section>
       </div>
