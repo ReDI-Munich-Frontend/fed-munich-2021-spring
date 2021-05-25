@@ -1,0 +1,81 @@
+html, body {
+  margin: 0;
+  font-family: sans-serif;
+  background-color: #ffe2e7;
+}
+
+main {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.room-type {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.2em;
+}
+
+.room-type input {
+  /* No display: none to keep the radio buttons focusable with the tab key */
+  position: absolute;
+  left: -100px;
+  top: -100px;
+}
+
+.room-type label {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  border: 1px solid lightgrey;
+  border-radius: .8em;
+  padding: .8em .4em;
+  background: white;
+
+  opacity: .55;
+  transition: opacity ease-in-out .25s, box-shadow ease-in-out .25s;
+
+  cursor: pointer;
+}
+
+.room-type h4 {
+  margin: 0;
+}
+
+.room-type input[type="radio"]:checked + label {
+  opacity: 1;
+  box-shadow: 0 0 8px rgba(127, 0, 0, 0.5);
+  border: 1px solid transparent;
+}
+
+.room-type input[type="radio"]:focus + label {
+  box-shadow: 0 0 14px rgba(127, 0, 0, 0.6);
+}
+
+.room-type label:hover {
+  opacity: 1;
+}
+
+.room-type label div {
+  width: 100%;
+  text-align: center;
+}
+
+.room-type img {
+  max-width: 100%;
+  max-height: 200px;
+  display: block;
+  margin-top: .8em;
+}
+
+.input-group {
+  max-width: 300px;
+  display: flex;
+  justify-content: space-between;
+}
+
+button {
+  margin-top: 1.5em;
+}
+
