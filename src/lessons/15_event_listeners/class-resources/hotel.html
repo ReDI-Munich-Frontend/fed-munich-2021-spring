@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hotel Booking Page</title>
+  <link rel="stylesheet" href="hotel.css"/>
+  <script src="hotel.js" defer></script>
+</head>
+<body>
+  <main>
+    <h1>Hotel Booking</h1>
+
+    <form id="hotel-booking-form">
+
+      <section id="room-type-section">
+        <h3>Choose your room type</h3>
+
+        <div class="room-type">
+          <input type="radio" id="broom-closet-radio" name="roomType" value="broom-closet"/>
+          <label for="broom-closet-radio">
+            <div>
+              <h4>Broom Closet</h4>
+              <em>Price: 10€</em>
+            </div>
+            <img src="images/broom-closet.jpg" alt="Broom Closet"/>
+          </label>
+
+          <input type="radio" id="standard-room-radio" name="roomType" value="standard-room" checked/>
+          <label for="standard-room-radio">
+            <div>
+              <h4>Standard Room</h4>
+              <em>Price: 100€</em>
+            </div>
+            <img src="images/hotel-room.jpeg" alt="Hotel Room"/>
+          </label>
+
+          <input type="radio" id="superior-luxury-suite-radio" name="roomType" value="superior-luxury-suite"/>
+          <label for="superior-luxury-suite-radio">
+            <div>
+              <h4>Superior Royal Luxury Suite</h4>
+              <em>Price: 1000€</em>
+            </div>
+            <img src="images/luxury-room.jpg" alt="Luxury Room"/>
+          </label>
+        </div>
+      </section>
+
+      <section id="arrival-departure-section">
+        <h3>Choose your arrival and departure date</h3>
+
+        <div class="input-group">
+          <label for="arrival-input">Arrival date</label>
+          <input type="date" id="arrival-input" name="arrival" required/>
+        </div>
+
+        <div class="input-group">
+          <label for="departure-input">Departure date</label>
+          <input type="date" id="departure-input" name="departure" required/>
+        </div>
+      </section>
+
+      <section id="persons-section">
+        <h3>How many guests?</h3>
+
+        <div class="input-group">
+          <label for="guests-input">Guests</label>
+          <input type="number" id="guests-input" min="1" name="guests" required/>
+        </div>
+      </section>
+
+      <button type="submit">Book now</button>
+    </form>
+  </main>
+</body>
+</html>
