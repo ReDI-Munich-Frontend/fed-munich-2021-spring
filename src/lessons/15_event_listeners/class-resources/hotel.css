@@ -79,3 +79,6 @@ button {
   margin-top: 1.5em;
 }
 
+input:invalid {
+  border: 2px solid red;
+}

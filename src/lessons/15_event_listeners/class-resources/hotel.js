@@ -5,6 +5,9 @@ hotelBookingForm.arrival.min = now.toISOString().substring(0, 10);
 hotelBookingForm.departure.min = now.toISOString().substring(0, 10);
 
 checkDepartureValidity();
+hotelBookingForm.arrival.addEventListener('blur', () => {
+  checkDepartureValidity();
+});
 hotelBookingForm.departure.addEventListener('blur', () => {
   checkDepartureValidity();
 });
