@@ -1,8 +1,4 @@
-function init() {
-  return new Promise((resolve) => { resolve(); });
-}
-
-function doAfter(time, fn) {
+function after(time, fn) {
   return () => new Promise((resolve) => {
     setTimeout(() => {
       resolve(fn());
@@ -12,16 +8,36 @@ function doAfter(time, fn) {
 
 const container = document.querySelector('#slideshow-content');
 
-init()
-.then(doAfter(1000, () => {
-  container.textContent = 'slide 1';
-}))
-.then(doAfter(1000, () => {
-  container.textContent = 'slide 2';
-}))
-.then(doAfter(1000, () => {
-  container.textContent = 'slide 3';
-}))
-.then(doAfter(1000, () => {
-  container.textContent = 'slide 4';
-}));
+Promise.resolve()
+  .then(after(1000, () => {
+    container.textContent = 'slide 1';
+  }))
+  .then(after(1000, () => {
+    container.textContent = 'slide 2';
+  }))
+  .then(after(1000, () => {
+    container.textContent = 'slide 3';
+  }))
+  .then(after(1000, () => {
+    container.textContent = 'slide 4';
+  }));
+
+/*
+ * Without promises:
+ *
+ * setTimeout(() => {
+ *   container.textContent = 'slide1';
+ *
+ *   setTimeout(() => {
+ *     container.textContent = 'slide2';
+ *
+ *     setTimeout(() => {
+ *       container.textContent = 'slide3';
+ *
+ *       setTimeout(() => {
+ *         container.textContent = 'slide 4';
+ *       }, 1000);
+ *     }, 1000);
+ *   }, 1000);
+ * }, 1000);
+ */

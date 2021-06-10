@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Gallery</title>
+  <style>
+    #main {
+      max-width: 1500px;
+      margin: 0 auto;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    #loading-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+
+      background: rgba(0, 0, 0, 0.8);
+      color: lightgrey;
+
+      display: none;
+      justify-content: center;
+      align-items: center;
+      font-size: 2.5em;
+    }
+
+    #gallery {
+      display: grid;
+      gap: 10px;
+
+      grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+    }
+
+    #gallery img {
+      justify-self: center;
+      align-self: center;
+    }
+
+  </style>
+  <script src="image-gallery.js" defer></script>
+</head>
+
+<body>
+  <section id="main">
+    <h1>Bridge collection</h1>
+
+    <p>Enable network throttling in the developer tools to see the effect.</p>
+
+    <div id="gallery">
+      <img src="images/bridge1.jpg" alt="A bridge">
+      <img src="images/bridge2.jpg" alt="A bridge">
+      <img src="images/bridge3.jpg" alt="A bridge">
+      <img src="images/bridge4.jpg" alt="A bridge">
+      <img src="images/bridge5.jpg" alt="A bridge">
+      <img src="images/bridge6.jpg" alt="A bridge">
+      <img src="images/bridge7.jpg" alt="A bridge">
+      <img src="images/bridge8.jpg" alt="A bridge">
+      <img src="images/bridge9.jpg" alt="A bridge">
+      <img src="images/bridge10.jpg" alt="A bridge">
+    </div>
+  </section>
+
+  <div id="loading-overlay">
+    <span>Loading...</span>
+  </div>
+
+</body>
+
+</html>
