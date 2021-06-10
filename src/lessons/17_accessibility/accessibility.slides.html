@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Accessibility</title>
+    <meta name="date" content="2021-06-04" />
+    <meta
+      name="description"
+      content="
+      - About disabilities
+      - What is Accessibility
+      - What can we do
+      - Accessibility Standards
+    "
+    />
+  </head>
+
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <p>Hey! 👋🏼</p>
+          <h1 class="r-fit-text">Accessibility</h1>
+          <p>Redi School Munich - Spring 2021</p>
+        </section>
+        <section>
+          <h2>Disabilities</h2>
+          <p class="fragment">
+            An illness, injury, or condition that makes it difficult for someone
+            to do the things that other people do
+          </p>
+          <ul>
+            <li class="fragment">Impairements</li>
+            <li class="fragment">Participation Restriction</li>
+            <li class="fragment">Activity limitations</li>
+          </ul>
+        </section>
+        <section>
+          <h2>Disabilities</h2>
+          <img
+            class="fragment"
+            height="550"
+            src="./images/disabilities.png"
+            alt=""
+          />
+        </section>
+        <section>
+          <h2>Disabilities</h2>
+          <p class="fragment">
+            Mismatch between a person’s abilities and their environment
+          </p>
+          <p class="fragment">Inaccessible environments create disabilities</p>
+        </section>
+        <section>
+          <h3 class="fragment">
+            Being accessible is about making your website available for anyone
+            no matter how they have to use it
+          </h3>
+        </section>
+        <section>
+          <h2>WHY?</h2>
+          <h3 class="fragment">Because is the right thing to do!</h3>
+        </section>
+        <section>
+          <h2>The perfect user</h2>
+          <ul>
+            <li class="fragment">Two hands and 10 fingers</li>
+            <li class="fragment">Perfect vision</li>
+            <li class="fragment">No injuries, pain or illnesses</li>
+            <li class="fragment">
+              Always in a perfect enviroment (no noise, glare and good lighting)
+            </li>
+          </ul>
+        </section>
+        <section>
+          <img src="./images/real.gif" alt="" />
+        </section>
+        <section>
+          <h3>Each of us experiences life in a different way</h3>
+        </section>
+        <section>
+          <h3>Accessibility is often forgotten or disregarded</h3>
+        </section>
+        <section>
+          <h2>What can we do?</h2>
+        </section>
+        <section>
+          <h2>Semantic and structured HTML</h2>
+          <p class="fragment">Use the right tag in the right place</p>
+          <p class="fragment">
+            A good HTML is crucial for assistive technologies
+          </p>
+          <p class="fragment">Headings need to be in the right order</p>
+          <p class="fragment">Keep a logical order of elements in your code</p>
+        </section>
+        <section>
+          <h2>Alternative text</h2>
+          <p class="fragment">
+            All images need an alt attribute but some of them might not need any
+            text
+          </p>
+        </section>
+        <section>
+          <h2>Focus</h2>
+          <img height="500" src="./images/focus.png" alt="" />
+        </section>
+        <section>
+          <h2>Focus</h2>
+          <pre>
+            <code class="fragment formattedCode" data-trim>
+                input:focus {
+                  outline-color: red;
+                  outline-style: dashed;
+                  outline-width: medium;
+                  outline-offset: 2px;
+                }
+          </code>
+          </pre>
+          <img class="fragment" height="100" src="./images/focus2.png" alt="" />
+        </section>
+        <section>
+          <h2>Color and Contrast</h2>
+          <ul>
+            <li class="fragment">
+              Color can convey your brand identity, help users understand
+              information and much more
+            </li>
+            <li class="fragment">Not everyone perceives color the same way</li>
+            <li class="fragment">
+              Contrast tends to be the difference between the foreground and the
+              background
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h2>Text</h2>
+          <ul>
+            <li class="fragment">Use simple language</li>
+            <li class="fragment">Breakdown big paragraphs</li>
+            <li class="fragment">
+              Provide definitions for unusual words and for abbreviations
+            </li>
+            <li class="fragment">Be as literal as possible</li>
+          </ul>
+        </section>
+        <section>
+          <h2>Media</h2>
+          <ul>
+            <li class="fragment">Don't autoplay videos</li>
+            <li class="fragment">Provide captions and transcriptions</li>
+            <li class="fragment">Give more control to the user</li>
+          </ul>
+        </section>
+        <section>
+          <h2>Testing</h2>
+          <ul>
+            <li class="fragment">
+              Automated tools can only find around 25% of issues
+            </li>
+            <li class="fragment">
+              Google lighthouse, axe coconut and many other tools
+            </li>
+            <li class="fragment">Try a screen reader</li>
+            <li class="fragment">Deactivate your mouse</li>
+          </ul>
+        </section>
+        <section>
+          <h3>Web Accessibility Standards (WCAG)</h3>
+          <ul>
+            <li class="fragment">It divides in 4 principles</li>
+            <li class="fragment">Under each principle there are guidelines</li>
+            <li class="fragment">Each guideline has success criterias</li>
+            <li class="fragment">
+              There are 3 levels of conformance (A, AA, AAA)
+            </li>
+          </ul>
+          <p class="fragment">
+            To be WCAG AA compliant, you need to satisfy all success criteria of
+            levels A and AA. For AAA, you’ll satisfy all criteria for all three
+            WCAG levels.
+          </p>
+          <p>
+            <small
+              ><a href="https://www.w3.org/WAI/standards-guidelines/wcag/#intro"
+                >WCAG Standards</a
+              ></small
+            >
+          </p>
+        </section>
+        <section>
+          <h2>WCAG Principles: Percievable</h2>
+          <p>Can users perceive the content?</p>
+          <p>
+            It includes things like color, alternative text, captions, content
+            order, etc
+          </p>
+        </section>
+        <section>
+          <h2>WCAG Principles: Operable</h2>
+          <p>Can users use UI components and navigate the content?</p>
+          <p>
+            It includes things like proper keyboard access, no time limits,
+            reduced motion, focus order and more
+          </p>
+        </section>
+        <section>
+          <h2>WCAG Principles: Understandable</h2>
+          <p>
+            Can users understand the content? Can users understand the interface
+            and is it consistent enough to avoid confusion?
+          </p>
+          <p>
+            It includes things like simple language, consistent navigation,
+            proper labels and instructions, and more
+          </p>
+        </section>
+        <section>
+          <h2>WCAG Principles: Robust</h2>
+          <p>
+            Can the content be consumed by a wide variety of user agents
+            (browsers)?
+          </p>
+          <p>
+            It includes things like compatibility, status messages, valid HTML
+            and more
+          </p>
+        </section>
+        <section>
+          <h1>DEMOS</h1>
+        </section>
+        <section>
+          <h3>Homework!</h3>
+          <p>Work on your project</p>
+          <ul>
+            <li class="fragment">Is your HTML semantic?</li>
+            <li class="fragment">Are you using headings correctly?</li>
+            <li class="fragment">Is there enough contrast?</li>
+            <li class="fragment">
+              Run your project through one of the tools we used and fix any
+              issue you find
+            </li>
+          </ul>
+          <p class="fragment">Think about questions for the next session</p>
+        </section>
+        <section data-visibility="uncounted">
+          <h2>Questions or Feedback?</h2>
+          <img src="./images/questions.gif" alt="" />
+        </section>
+      </div>
+    </div>
+  </body>
+</html>
