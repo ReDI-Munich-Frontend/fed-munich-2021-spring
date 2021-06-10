@@ -5,7 +5,7 @@ function fetchAndRetry(url, tries) {
   return new Promise(async (resolve, reject) => {
     // It has to try at least once to succeed
     if (tries <= 0) {
-      reject("retryTimes must be greater than 0");
+      reject("tries must be greater than 0");
       return;
     }
 
