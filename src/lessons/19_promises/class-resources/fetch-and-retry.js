@@ -1,7 +1,7 @@
 /**
  * This function behaves exactly like fetch(...), except that in case of failed requests, it automatically retries the request a given number of times.
  */
-function fetchAndRetry(url, tries) {
+function fetchAndRetry(tries, ...fetchArgs) {
   return new Promise(async (resolve, reject) => {
     // It has to try at least once to succeed
     if (tries <= 0) {
@@ -14,18 +14,18 @@ function fetchAndRetry(url, tries) {
 
     while (!done) {
       // Without 'await', the while loop will continue before the fetch call completes.
-      await fetch(url)
-        .then((arg) => {
+      await fetch(...fetchArgs)
+        .then((response) => {
           done = true;
           // Once done, let the caller handle the response
-          resolve(arg);
+          resolve(response);
         })
-        .catch((arg) => {
+        .catch((error) => {
           triesDone++;
 
           if (triesDone >= tries) {
             // Once the maximum number of tries is reached, let the caller handle the error
-            reject(arg);
+            reject(error);
             done = true;
           }
         });
