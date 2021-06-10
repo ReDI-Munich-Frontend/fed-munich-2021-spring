@@ -1,0 +1,212 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Promises</title>
+    <meta name="date" content="2021-06-10">
+    <meta name="description" content="
+      - Callback functions
+      - Promises
+      - Example: Error handling with APIs
+    ">
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <p>Welcome back!</p>
+          <h1>Promises</h1>
+          <p>Redi School Munich - Spring 2021</p>
+        </section>
+
+        <section>
+          <section data-auto-animate>
+            <h2>Functions are variables!</h2>
+          </section>
+
+          <section data-auto-animate>
+            <h2>Functions are variables!</h2>
+
+            <pre><code data-trim class="javascript">
+              function foo() {
+                // do something magic
+              }
+
+              console.log(typeof foo); // ==> "function"
+            </code></pre>
+          </section>
+
+          <section data-auto-animate>
+            <h2>Functions are variables!</h2>
+
+            <pre><code data-trim class="javascript">
+              function foo(message) {
+                alert(message);
+              }
+
+              const bar = foo;
+
+              bar("It works!");
+            </code></pre>
+
+            <div style="display: inline-block">
+              <!-- cheating a bit :D -->
+              <button type="button" class="run-button" onclick="alert('It works!')">Run</button>
+            </div>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>Types of functions</h2>
+          </section>
+
+          <section>
+            <h3>Types of functions</h3>
+
+            <ul>
+              <li>Named functions
+                <pre style="width: 100%"><code data-trim class="javascript">
+                  function foo() { /* ... */ }
+                </code></pre>
+              </li>
+
+              <li>Anonymous functions
+                <pre style="width: 100%"><code data-trim class="javascript">
+                  function () { /* ... */ }
+                </code></pre>
+              </li>
+
+              <li>Arrow functions
+                <pre style="width: 100%"><code data-trim class="javascript">
+                  () => { /* ... */ }
+                </code></pre>
+              </li>
+            </ul>
+          </section>
+
+          <section>
+            <h3>Arrow functions</h3>
+
+            <p>Syntax:</p>
+
+            <pre><code data-trim class="javascript">
+              const fn1 = (arg1, arg2) => {
+                alert("Inside fn1");
+                return arg1 + arg2;
+              };
+            </code></pre>
+
+            <div class="fragment">
+              If the function consists just of a <code>return</code> statement, it can be shortened:
+
+              <pre><code data-trim class="javascript">
+                const fn1 = (arg1, arg2) => {
+                  return arg1 + arg2;
+                };
+
+                // These two are equivalent
+
+                const fn2 = (arg1, arg2) => arg1 + arg2;
+              </code></pre>
+            </div>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2><code>setTimeout</code></h2>
+            <p>
+              <small>MDN: <a href="https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout">setTimeout</a></small>
+            </p>
+          </section>
+
+          <section>
+            <h3><code>setTimeout</code></h3>
+            <p>executes a function after a given number of milliseconds.</p>
+
+            <pre><code data-trim class="javascript">
+              function saySomething() {
+                alert("Hello world");
+              }
+
+              setTimeout(1000, saySomething); // ==> Shows "Hello world" after a second
+            </code></pre>
+
+            <div class="additional-note fragment">
+              <p>Note that the function isn't called here; instead passed on just like a variable.</p>
+
+              <pre><code data-trim class="javascript">
+                // Do not:
+                setTimeout(1000, saySomething());
+              </code></pre>
+            </div>
+          </section>
+        </section>
+
+        <section>
+          <section data-auto-animate>
+            <h3>Other examples where callback functions are needed</h3>
+            <h4>Sorting arrays by custom metrics</h4>
+
+            <pre><code data-trim class="javascript">
+              const words = ["street", "cat", "animals", "tree"];
+
+              // sorting by word length
+              words.sort((a, b) => a.length - b.length);
+
+              console.log(words); // ==> ["cat", "tree", "street", "animals"];
+            </code></pre>
+          </section>
+
+          <section data-auto-animate>
+            <h3>Other examples where callback functions are needed</h3>
+            <h4>Filtering arrays by custom metrics</h4>
+
+            <pre><code data-trim class="javascript">
+              const mountains = ["Wallberg", "Seekarspitz", "Bärenkopf", "Setzberg"];
+
+              // filtering all mountains that end in "berg"
+              console.log(
+                mountains.filter(a => a.endsWith("berg")) // ==> ["Wallberg", "Setzberg"];
+              );
+            </code></pre>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>Writing our own functions that take callback arguments</h2>
+          </section>
+
+          <section>
+            <h3>An example</h3>
+
+            <pre><code data-trim class="javascript">
+              function repeat(times, fn) {
+                if (times &lt;= 0) {
+                  return;
+                }
+
+                for (let i = 0; i &lt; times; i++) {
+                  fn(); // Calling the passed function
+                }
+              }
+            </code></pre>
+
+            <p class="fragment"><small>Can you guess what this function does?</small></p>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>Promises</h2>
+
+            <p><small>MDN: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises">Using promises</a></small></p>
+          </section>
+        </section>
+      </div>
+    </div>
+  </body>
+</html>
