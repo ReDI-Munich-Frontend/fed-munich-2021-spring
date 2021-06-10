@@ -8,7 +8,6 @@
     <meta name="description" content="
       - Callback functions
       - Promises
-      - Example: Error handling with APIs
     ">
   </head>
   <body>
@@ -131,7 +130,7 @@
                 alert("Hello world");
               }
 
-              setTimeout(1000, saySomething); // ==> Shows "Hello world" after a second
+              setTimeout(saySomething, 1000); // ==> Shows "Hello world" after a second
             </code></pre>
 
             <div class="additional-note fragment">
@@ -139,7 +138,7 @@
 
               <pre><code data-trim class="javascript">
                 // Do not:
-                setTimeout(1000, saySomething());
+                setTimeout(saySomething(), 1000);
               </code></pre>
             </div>
           </section>
@@ -204,6 +203,204 @@
             <h2>Promises</h2>
 
             <p><small>MDN: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises">Using promises</a></small></p>
+
+            <p>An object representing an asynchronous process and the eventual completion or failure of such.</p>
+          </section>
+
+          <section>
+            <h3>States of a promise</h3>
+
+            <p>A Promise has three states:</p>
+
+            <ul>
+              <li>After creation, it has the <em>pending</em> state.</li>
+              <li>On success, it changes to the state <em>fulfilled</em>.</li>
+              <li>On failure, it changes to the state <em>rejected</em>.</li>
+            </ul>
+          </section>
+
+          <section>
+            <h3>Using promises</h3>
+
+            <p>Most promises we use on a daily basis are pre-made ones.</p>
+
+            <pre><code data-trim class="javascript">
+              functionThatReturnsPromise()
+                .then(/* function to call when fulfilled */)
+                .catch(/* function to call when rejected */);
+            </code></pre>
+          </section>
+
+          <section>
+            <h3>Promise chaining</h3>
+
+            <p>The result of each <code>then</code> and <code>catch</code> call is another Promise.</p>
+
+            <pre><code data-trim class="javascript">
+              functionThatReturnsPromise1()
+                .then((returnValueOfPromise1) => functionThatReturnsPromise2())
+                .then((returnValueOfPromise2) => functionThatReturnsPromise3());
+            </code></pre>
+          </section>
+
+          <section>
+            <h3>Let's revisit <code>fetch</code></h3>
+
+            <pre><code data-trim class="javascript">
+              fetch("https://jsonplaceholder.typicode.com/posts/1")
+                .then(response => response.json())
+                .then(data => {
+                  alert(data["body"]);
+                });
+            </code></pre>
+
+            <ul>
+              <li class="fragment"><code>fetch("...")</code> returns a Promise</li>
+              <li class="fragment"><code>response.json()</code> returns another Promise</li>
+              <li class="fragment">We listen to the promise returned by <code>response.json()</code> in the last <code>then</code> call.</li>
+            </ul>
+          </section>
+
+          <section>
+            <h3>Error handling with <code>fetch</code></h3>
+
+            <p>If we catch errors at the end of the chain, we catch all errors that occur during any point of the chain.</p>
+
+            <pre><code data-trim class="javascript">
+              fetch("https://jsonplaceholder.typicode.com/posts/1")
+                .then(response => response.json())
+                .then(data => {
+                  alert(data["body"]);
+                })
+                .catch(() => {
+                  console.log("Something went wrong.");
+                });
+            </code></pre>
+          </section>
+
+          <section>
+            <h3>Error handling with <code>fetch</code></h3>
+
+            <p>We can also catch errors between individual steps:</p>
+
+            <pre><code data-trim class="javascript">
+              fetch("https://jsonplaceholder.typicode.com/posts/1")
+                .catch(() => {
+                  console.log("Could not fetch resource");
+                })
+                .then(response => response.json())
+                .catch(() => {
+                  console.log("Resource is not in json format");
+                })
+                .then(data => {
+                  alert(data["body"]);
+                });
+            </code></pre>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>Constructing Promises</h2>
+
+            <p>Syntax of the Promise constructor:</p>
+
+            <pre><code data-trim class="javascript">
+              new Promise((resolve, reject) => {
+                // Promise logic comes here.
+              });
+            </code></pre>
+
+            <ul>
+              <li class="fragment"><code>resolve</code> and <code>reject</code> are functions.</li>
+              <li class="fragment">Calling <code>resolve()</code> fulfils the promise.</li>
+              <li class="fragment">Calling <code>reject()</code> rejects the promise.</li>
+              <li class="fragment">Any argument passed into these methods will be available by the promise handler.</li>
+            </ul>
+          </section>
+
+          <section>
+            <h4>An example</h4>
+
+            <pre><code data-trim class="javascript">
+              function wait(milliseconds) {
+                return new Promise((resolve, reject) => {
+                  setTimeout(resolve, milliseconds);
+                });
+              }
+
+              wait(2000).then(() => {
+                console.log('2 seconds passed');
+              });
+            </code></pre>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>Promise composition</h2>
+
+            <p>In addition to creating promises manually, we can compose multiple existing promises together into a single one</p>
+
+            <ul>
+              <li class="fragment"><code>Promises.all</code> takes an array of Promises and resolves, once all others resolve.</li>
+              <li class="fragment"><code>Promises.race</code> takes an array of Promises and resolves, once any other resolves.</li>
+            </ul>
+          </section>
+
+          <section>
+            <h3>Example</h3>
+
+            <pre><code data-trim class="javascript">
+              const promise1 = fetch("https://demo.url/resource1");
+              const promise2 = fetch("https://demo.url/resource2");
+              const promise3 = fetch("https://demo.url/resource3");
+
+              const composition = Promises.all([promise1, promise2, promise3]);
+
+              composition.then(() => {
+                console.log("All resources finished loading");
+              })
+            </code></pre>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2><code>async</code> and <code>await</code></h2>
+            <ul>
+              <li>Promise chains can be turned more readable with the keywords <code>async</code> and <code>await</code></li>
+              <li>Functions marked with the <code>async</code> keyword automatically wrap their return value in a promise.</li>
+              <li><code>await</code> waits for the completion for a promise before moving on.</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2>Example with <code>fetch</code></h2>
+
+            <pre><code data-trim class="javascript">
+              function fetchResource() {
+                return fetch("https://demo.url/resource")
+                  .then(result => result.json())
+                  .then(data => doSomethingWith(data));
+              }
+
+              fetchResource()
+                .then(returnValue => { console.log(returnValue) });
+            </code></pre>
+
+            <p><small>can be rewritten as</small></p>
+
+            <pre><code data-trim class="javascript">
+              async function fetchResource() {
+                const result = await fetch("https://demo.url/resource");
+                const data = await result.json();
+                return doSomethingWith(data);
+              }
+
+              fetchResource()
+                .then(returnValue => { console.log(returnValue) });
+            </code></pre>
           </section>
         </section>
       </div>
