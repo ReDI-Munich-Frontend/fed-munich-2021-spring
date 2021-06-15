@@ -1,0 +1,1 @@
+function changeImage(){const t=document.querySelector("#catImage");"images/cat1.jpg"===t.attributes.src.value?t.attributes.src.value="images/cat2.jpg":"images/cat2.jpg"===t.attributes.src.value?t.attributes.src.value="images/cat3.jpg":t.attributes.src.value="images/cat1.jpg"}

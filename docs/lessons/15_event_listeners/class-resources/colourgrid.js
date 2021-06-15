@@ -1,0 +1,1 @@
+const colourGrid=document.querySelector("#colourgrid");for(let o=0;o<64;o++){const o=document.createElement("div");colourGrid.appendChild(o),o.style.backgroundColor="rgb(255, 0, 0)",o.addEventListener("mouseover",(o=>{o.target.style.backgroundColor=randomColour()}))}function randomColour(){function o(){return Math.floor(256*Math.random())}return`rgb(${o()}, ${o()}, ${o()})`}

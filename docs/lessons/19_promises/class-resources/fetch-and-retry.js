@@ -1,0 +1,1 @@
+function fetchAndRetry(t,...e){return new Promise((async(r,n)=>{if(t<=0)return void n("tries must be greater than 0");let a=0,c=!1;for(;!c;)await fetch(...e).then((t=>{c=!0,r(t)})).catch((e=>{a++,a>=t&&(n(e),c=!0)}))}))}

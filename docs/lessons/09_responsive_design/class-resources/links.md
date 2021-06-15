@@ -1,0 +1,7 @@
+- [Responsive Web Design Basics](https://web.dev/responsive-web-design-basics/)
+- [Use cases for responsive Images](http://usecases.responsiveimages.org/)
+- [Guide to responsive images](https://www.freecodecamp.org/news/a-guide-to-responsive-images-with-ready-to-use-templates-c400bd65c433/)
+- [Responsive Images 101](https://cloudfour.com/thinks/responsive-images-101-definitions/)
+- [Responsive Images the Simple Way](https://cloudfour.com/thinks/responsive-images-the-simple-way/)
+- [Responsive Images in CSS](https://css-tricks.com/responsive-images-css/)
+- [A Complete Guide to CSS Media Queries](https://css-tricks.com/a-complete-guide-to-css-media-queries/)

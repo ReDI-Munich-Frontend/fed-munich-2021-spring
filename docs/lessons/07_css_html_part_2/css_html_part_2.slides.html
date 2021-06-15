@@ -1,0 +1,103 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>CSS and HTML + (incl. Flexbox) (part 2)</title><meta name="date" content="2021-04-13"><meta name="description" content="
+      - Recap Thursday April 1st
+      - CSS box model
+      - Flexbox
+    "><script defer="defer" src="../../js/114.d4cc7d168fe21c5c10dc.js"></script></head><body><div class="reveal"><div class="slides" id="introduction-to-frontend"><section class="initial"><section data-auto-animate data-timing="10"><p>Welcome to</p><h1 class="r-fit-text">CSS and HTML 2</h1><p>ReDI School Munich - Spring 2021</p></section></section><section><section data-auto-animate data-timing="10"><p>Well...</p><h2>Let's recap!</h2><ul data-auto-animate data-timing="10"><li class="fragment">Selectors</li><li class="fragment">Selectors</li><li class="fragment">And Selectors...</li><img class="fragment" data-src="../../assets/f1952c88c0da80342d0e.gif"></ul></section></section><section><section data-auto-animate data-timing="10"><h3>We heard you! 👂🏼</h3></section><section data-auto-animate data-timing="10"><h3>We heard you! 👂🏼</h3><p>...and we still do!</p></section><section data-auto-animate data-timing="300"><h3>We heard you! 👂🏼</h3><h4>Topics: 👍</h4><ul><li class="fragment">Variables in Javascript</li><li class="fragment">Box model / Selectors</li><li class="fragment">Inline / External CSS</li><li class="fragment">Links, basic HTML attributes</li></ul><aside class="notes"></aside></section><section data-auto-animate data-timing="300"><h3>We heard you! 👂🏼</h3><h4>Topics: 👎</h4><ul><li class="fragment">Loops</li><li class="fragment">Box model</li><li class="fragment">Box model</li><li class="fragment">Box model</li><li class="fragment">Layout HTML tags</li><li class="fragment">Box model</li><li class="fragment">Flexbox</li><li class="fragment">Selectors</li><li class="fragment">Combinators</li><li class="fragment">Box model</li></ul><aside class="notes"></aside></section></section><section><section><h2>Block Boxes</h2><ul><li class="fragment">Take up the entire space of the container</li><li class="fragment">Breaks into a new line</li><li class="fragment"><b>width</b> and <b>height</b> properties will be respected</li><li class="fragment">Padding, margin and order will push others away</li><li class="fragment">&lt;h1&gt;, &lt;p&gt; are block elements</li></ul></section><section><h2>Inline Boxes</h2><ul><li class="fragment">Take only the space they need</li><li class="fragment"><b>width</b> and <b>height</b> don't apply</li><li class="fragment">Breaks into a new line</li><li class="fragment">Vertical margin, border and padding apply but dont move other boxes</li><li class="fragment">Horizontal margin, border and padding will apply and move other boxes</li><li class="fragment">&lt;a&gt;, &lt;span&gt; are inline elements</li><li class="fragment">They cannot contain other block elements</li></ul></section><section><h2>Let's take a look!</h2></section><section><h2>How do we change it?</h2><p>In order to change the type of the box we use the <span class="highlight">display</span> property</p><pre class="fragment">
+              <code class="formattedCode css">
+                  .block {
+                    display: block
+                  }
+                  .inline {
+                    display: inline
+                  }
+              </code>
+            </pre><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/display" class="small">More on display property</a></section><section><h2>Using width and height</h2><p>These properties apply only to the content!</p><p class="fragment">width + padding + border = actual width of an element</p><p class="fragment">height + padding + border = actual height of an element</p><p class="fragment">DEMO!</p></section><section><h2>Box Sizing</h2><pre class="fragment">
+              <code class="formattedCode css">
+                  .border-box {
+                    box-sizing: border-box;
+                  }
+
+                  .content-box {
+                    box-sizing: content-box;
+                  }
+              </code>
+            </pre></section></section><section><section><h2>More HTML</h2><img data-src="../../assets/c5fcdb44740053fb9928.png" class="r-stretch"></section><section><h2>&lt;header&gt;</h2><ul><li class="fragment">Identifies the content that precedes the primary content of the page</li><li class="fragment">It can contain other elements as navigation, search, branding...</li><li class="fragment">It can be used as well as a header for the article tag</li></ul></section><section><h2>&lt;nav&gt;</h2><ul><li class="fragment">Represents a section that contains navigation elements</li><li class="fragment">There might be several navs but they should be properly described</li><li class="fragment">Is best reserved for the primary navigation areas</li></ul><pre>
+              <code class="fragment formattedCode html">
+                <script type="text/template">
+                <nav>
+                  <a href="/home">Home</a>
+                  <a href="/details">Details</a>
+                  <a href="/aboutUs">About Us</a>
+                </nav>
+              </script>
+            </code>
+            </pre></section><section><h2>&lt;aside&gt;</h2><ul><li class="fragment">Used for content that is not very important</li><li class="fragment">Identifies content related to the primary content</li><li class="fragment">Related links, advertisements...</li></ul><pre>
+              <code class="fragment formattedCode">
+                <script type="text/template">
+                  <aside>
+                    <!-- Website sidebar: Advertising, Post Index, Login Forms -->
+                  </aside>
+              </script>
+            </code>
+            </pre></section><section><h2>&lt;article&gt;</h2><ul><li class="fragment">Identifies a self contained pice of information that it could be distributed to other websites as a unit</li><li class="fragment">Each article should have a heading as a child</li><li class="fragment">There can be multiple articles in one document</li><li class="fragment">Forum or blog post, magazine article...</li></ul><pre>
+              <code class="fragment formattedCode">
+                <script type="text/template">
+                  <article>
+                    <h2>My First Blog Post!</h2>
+                    <p>.....</p>
+                  </article>
+              </script>
+            </code>
+            </pre></section><section><h2>&lt;section&gt;</h2><ul><li class="fragment">Represents a generic content</li><li class="fragment">It groups together related elements</li><li class="fragment">Should have a heading as a child</li><li class="fragment">There can be multiple sections in one document</li></ul><pre>
+              <code class="fragment formattedCode">
+                <script type="text/template">
+                  <section>
+                    <h2>Heading</h2>
+                    <p>Bunch of awesome content</p>
+                  </section>
+              </script>
+            </code>
+            </pre></section><section><h2>&lt;footer&gt;</h2><ul><li class="fragment">Represents the footer of a page, section or article</li><li class="fragment">Is placed at the bottom of its parent element</li><li class="fragment">Copyright, author, nav elements</li></ul><pre>
+              <code class="fragment formattedCode">
+                <script type="text/template">
+                  <footer>
+                    Copyright 2021.
+                    <a href="/careers">Work with us!</a>
+                  </footer>
+              </script>
+            </code>
+            </pre></section><section><h2>&lt;main&gt;</h2><ul><li class="fragment">Includes content that is unique to the page</li><li class="fragment">It can be used only once per page</li><li class="fragment">It should not have elements such as footer, header, main navigation</li></ul></section></section><section><section><h2>&lt;form&gt;</h2><ul><li class="fragment">Contains interactive controls for submitting</li><li class="fragment">It can contain other elements such as &lt;input&gt;, &lt;select&gt;, &lt;option&gt;</li></ul><p class="fragment"><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form" class="small">More on form element</a></p></section><section><h2>&lt;input&gt;</h2><ul><li class="fragment">Is used to gather data from the user</li><li class="fragment">How it works will be dependant of their attribute<span class="highlight">type</span></li><li class="fragment">Every input should have an associated <span class="highlight">label</span></li></ul><pre>
+              <code class="fragment formattedCode">
+                <script type="text/template">
+                  <label for="username">Username</label>
+                  <input type="text" name="username" id="username">
+                  <label for="quantity">Quantity</label>
+                  <input type="number" name="quantity" id="quantity">
+              </script>
+            </code>
+            </pre><p class="fragment"><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input" class="small">More on input element</a></p></section><section><h2>&lt;button&gt;</h2><ul><li class="fragment">Represents a clickable element</li><li class="fragment">It generally indicates that an action can by done by pressing it</li><li class="fragment">If the button is not for submitting a form we need to set their <span class="highlight">type</span> to <span class="highlight">button</span></li></ul><pre>
+              <code class="fragment formattedCode">
+                <script type="text/template">
+                  <button>Submit!</button>
+                  <button type="button">It does submit</button>
+              </script>
+            </code>
+            </pre><p class="fragment"><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button" class="small">More on button element</a></p></section><section><h2>&lt;select&gt;</h2><ul><li class="fragment">It provides a menu of options</li><li class="fragment">Each option has a value represented by the <span class="highlight">&lt;select&gt;</span> tag</li></ul><pre>
+              <code class="fragment formattedCode">
+                <script type="text/template">
+                  <select name="housepets">
+                    <option value="cat">Cat</option>
+                    <option value="dog">Dog</option>
+                    <option value="llama">Llama</option>
+                  </select>
+              </script>
+            </code>
+            </pre><p class="fragment"><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select" class="small">More on select element</a></p></section><section><h2>&lt;textarea&gt;</h2><ul><li class="fragment">Represents a multiline text control</li><li class="fragment">Useful when we want to capture large amounts of text from the user</li></ul><pre>
+              <code class="fragment formattedCode html">
+                <script type="text/template">
+                  <textarea name="textarea" rows="10" cols="50">
+                    Write something here
+                  </textarea>
+              </script>
+            </code>
+            </pre><p class="fragment"><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea" class="small">More on textarea element</a></p></section></section><section><h1>demo!</h1></section><section><h2>In-class exercise</h2><ul><li class="fragment">3 form elements</li><li class="fragment">3 layout tags</li><li class="fragment">Apply box model concept for all of them (margins + paddings)</li></ul></section><section><section><h2>&lt;flexbox&gt;</h2></section><section><h2>flexbox</h2><ul><li class="fragment">NO FLOATS!</li><li class="fragment">Responsive and mobile friendly</li><li class="fragment">Positioning child elements is MUCH easier (sorry for the in-class exercise)</li><li class="fragment">Flex container's margins do not collapse with the margins of its contents</li><li class="fragment">Order of elements can easily be changed without editing the source HTML</li></ul></section><section><h2>flexbox box model concept</h2><ul><li class="fragment">The ability to alter item width and height to best fit in its containers available free space</li><li class="fragment">Flexbox is direction-agnostic</li><li class="fragment">Built for small-scale layouts whereas Grid specs are for more large scale ones</li></ul><br><a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">🔗 A guide to flexbox</a></section><section><img data-src="../../assets/59f552395fed0170352c.png" alt=""></section><section><img data-src="../../assets/339f076bdf0674b557ef.png" alt=""></section><section><h2>demo!</h2></section></section><section><h2>Homework</h2><p class="fragment">No homework today (yey!) – but wait for that 👀</p><p class="fragment">Mixed homework will be given on Thursday 👍</p></section><section><h1>Questions?</h1><img data-src="../../assets/1b433689942044a97c76.gif" alt=""></section></div></div></body></html>

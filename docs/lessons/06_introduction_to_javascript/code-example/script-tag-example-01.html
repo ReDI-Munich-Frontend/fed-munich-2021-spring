@@ -1,0 +1,22 @@
+<!doctype html><html><head><title>Javascript</title><script>// this is to prevent an alert popping up while leaving the slide
+    let visible = true;
+    let executed = false;
+
+    addEventListener('message', event => {
+      switch (event.data) {
+        case 'slide:start':
+          visible = true;
+          break;
+        case 'slide:stop':
+          visible = false;
+          executed = false;
+          break;
+      }
+    });
+
+    function simulatePageLoad() {
+      if (visible && !executed) {
+        executed = true;
+        alert('Hello World!');
+      }
+    }</script><script defer="defer" src="../../../js/179.31d6cfe0d16ae931b73c.js"></script></head><body><h1>Javascript</h1></body></html>

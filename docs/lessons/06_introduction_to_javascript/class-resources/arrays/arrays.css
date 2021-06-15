@@ -1,0 +1,11 @@
+a {
+  display: block;
+}
+
+a[target="_blank"]::after {
+  content: '(target = _blank)';
+  font-size: .85em;
+  color: black;
+  font-family: monospace;
+  margin-left: 1em;
+}

@@ -1,0 +1,6 @@
+<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Document</title><script defer="defer" src="../../../js/179.31d6cfe0d16ae931b73c.js"></script></head><body><label for="nameInput">Name</label> <input id="nameInput"> <button type="button" id="submitBtn">Submit</button><p>Your name is <span id="name"></span></p><script>document.getElementById('submitBtn').addEventListener('click', (e) => {
+            const input = document.getElementById('nameInput').value;
+            // {USE_PROFILES: {html: false}}
+            // const cleanInput = DOMPurify.sanitize(input.value);
+            document.getElementById('name').innerHTML = input
+        })</script></body></html>

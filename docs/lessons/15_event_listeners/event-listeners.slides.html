@@ -1,0 +1,46 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Event Listeners</title><meta name="date" content="2021-05-25"><meta name="description" content="
+      - Event listeners
+      - Custom validation
+    "><script defer="defer" src="../../js/114.d4cc7d168fe21c5c10dc.js"></script><script defer="defer" src="../../js/986.b2e5d0ec0c7ff1033e21.js"></script></head><body><div class="reveal"><div class="slides"><section><p>Hey! 👋🏼</p><h1 class="r-fit-text">Event Listeners</h1><p>Redi School Munich - Spring 2021</p></section><section><section><h2>Event Listeners</h2></section><section><h3>The event system</h3><p><small>MDN: <a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events">Events</a></small></p><ul><li>HTML Elements can fire events based on user interaction</li><li>Programs can listen to these events and perform actions based on them</li></ul></section><section><h3>An example</h3><pre><code class="html" data-trim>
+              <button type="button" id="theButton">Click me!</button>
+            </code></pre><pre><code class="javascript" data-trim>
+              document.querySelector("#theButton").addEventListener("click", () => {
+                console.log("Button was clicked");
+              });
+            </code></pre></section><section><h3>Listening to events</h3><p class="fragment" data-fragment-index="0">Either with an HTML <code>on<em>[event]</em></code>attribute:</p><pre class="fragment" data-fragment-index="0"><code class="html" data-trim>
+              <button type="button" onclick="doSomething()">Click me!</button>
+            </code></pre><p class="fragment" data-fragment-index="1">Or with the <code>addEventListener</code> function:</p><pre class="fragment" data-fragment-index="1"><code class="javascript" data-trim>
+              element.addEventListener("click", () => { doSomething(); });
+            </code></pre><div class="additional-note fragment" data-fragment-index="2"><p>The following syntax also works, but isn't recommended, because it would overwrite event listeners previously added the same way:</p><pre><code class="javascript" data-trim>
+                element.onclick = function() {
+                  doSomething();
+                };
+              </code></pre></div></section><section><h3>Some common event names</h3><ul><li><code>click</code> fires, when an element is clicked on</li><li><code>dblclick</code> fires, when an element is clicked on twice in quick succession</li><li><code>mouseover</code> fires, whenever the pointer moves over an element</li><li><code>focus</code> fires, when an element is focused using the tab key</li><li><code>blur</code> fires, when leaving an input field</li><li><code>keydown</code> fires, whenever a keyboard key is being pressed</li></ul></section></section><section><section><h2>The Event Object</h2><p>The event handler receives an object called the <em>event object</em>, containing metadata about the event that was fired.</p><p>This object contains information based on the type of event. For example, keyboard events have a <code>key</code> attribute containing the key that was pressed.</p></section><section id="event-object-slide"><h3>Example: Reading out the key that was pressed</h3><pre><code class="javascript" data-trim>
+              myInput.addEventListener("keydown", (event) => {
+                myParagraph.textContent = "Caught keydown event with key " + event.key;
+              });
+            </code></pre><input id="event-object-slide-input" placeholder="Type something"><p id="event-object-slide-paragraph"></p></section></section><section><section><h2>Custom form validation</h2><p>Javascript can't possibly know all ways of validating any given set of data. That's why the <code>setCustomValidity</code> method exists.</p></section><section><h3>Usage</h3><ul><li><code>setCustomValidity</code> is a method that exists on every input element</li><li>When called with any non-empty string, the input field is considered <em>invalid</em></li></ul><p>Example</p><pre><code class="html" data-trim>
+              <input>
+            </code></pre><pre><code class="javascript" data-trim>
+              const myInput = document.querySelector("input");
+              myInput.setCustomValidity("You can't do this!");
+              // The passed string is the message displayed to the user
+            </code></pre></section><section><h3>Usage</h3><ul>When called with an empty-string, the field is considered <em>valid</em> again.</ul><pre><code class="html" data-trim>
+              <input>
+            </code></pre><pre><code class="javascript" data-trim>
+              const myInput = document.querySelector("input");
+              myInput.setCustomValidity(""); // Valid again
+            </code></pre></section><section><h3>Example</h3><p>We can combine this method with the <code>blur</code> event to create our own validation logic</p><pre><code class="html" data-trim>
+              <input>
+            </code></pre><pre><code class="javscript" data-trim>
+              const myInput = document.querySelector("input");
+              myInput.addEventListener("blur", (event) => {
+                const valid = checkCustomPreconditions();
+
+                if (!valid) {
+                  event.target.setCustomValidity("Custom Preconditions failed");
+                } else {
+                  event.target.setCustomValidity("");
+                }
+              });
+            </code></pre></section></section><section><h2>Questions / Feedback?</h2></section></div></div></body></html>

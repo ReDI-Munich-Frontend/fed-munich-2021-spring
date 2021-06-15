@@ -1,0 +1,76 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Form Validation + Recap Dom manipulations</title><meta name="date" content="2021-05-20"><meta name="description" content="
+      - Recap of DOM manipulation
+      - Form validation
+    "><script defer="defer" src="../../js/114.d4cc7d168fe21c5c10dc.js"></script></head><body><div class="reveal"><div class="slides" id="javascript-recap-dom"><section><p>Hey! 👋🏼</p><h1 class="r-fit-text">Form Validation + Recap Dom manipulations</h1><p>Redi School Munich - Spring 2021</p></section><section class="initial"><section><h2>Recap on DOM Manipulation</h2><a href="www.kahoot.it">Kahoot!</a></section></section><section><section><h3>Recap: Forms & related concepts</h3></section><section><h2>&lt;form&gt;</h2><ul><li class="fragment">Contains interactive controls for submitting</li><li class="fragment">It can contain other elements such as &lt;input&gt;, &lt;select&gt;, &lt;option&gt;</li></ul><p class="fragment"><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form" class="small">More on form element</a></p></section><section><h2>&lt;input&gt;</h2><ul><li class="fragment">Is used to gather data from the user</li><li class="fragment">How it works will be dependant of their attribute<span class="highlight">type</span></li><li class="fragment">Every input should have an associated <span class="highlight">label</span></li></ul><pre>
+                          <code class="fragment formattedCode" data-trim>
+                            <script type="text/template">
+                              <label for="username">Username</label>
+                              <input type="text" name="username" id="username">
+                              <label for="quantity">Quantity</label>
+                              <input type="number" name="quantity" id="quantity">
+                              <label for="email">E-Mail</label>
+                              <input type="email" name="email" id="email">
+                          </script>
+                        </code>
+                        </pre><p class="fragment"><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input" class="small">More on input element</a></p></section><section><h2>&lt;select&gt;</h2><ul><li class="fragment">It provides a menu of options</li><li class="fragment">Each option has a value represented by the <span class="highlight">&lt;select&gt;</span> tag</li></ul><pre>
+                          <code class="fragment formattedCode" data-trim>
+                            <script type="text/template">
+                              <select name="housepets">
+                                <option value="cat">Cat</option>
+                                <option value="dog">Dog</option>
+                                <option value="llama">Llama</option>
+                              </select>
+                          </script>
+                        </code>
+                        </pre><p class="fragment"><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select" class="small">More on select element</a></p></section><section><h2>&lt;form&gt;</h2><ul><li class="fragment">Contains interactive controls for submitting</li><li class="fragment">It can contain other elements such as &lt;input&gt;, &lt;select&gt;, &lt;option&gt;</li></ul><p class="fragment"><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form" class="small">More on form element</a></p></section></section><section><h3>In-class exercise!</h3><p><small>30 minutes! 🕘</small></p><ul><li>Create a reservation form for a restaurant 🍝</li><li>Ask for first and last name, e-mail, and number of guests</li><li>Make use of labels, text inputs, a submit button and whatever you feel like you have learned so far</li><li>Include a paragraph which indicates the booking status. The text should change from "Not booked" to "Booking for XY guests confirmed" on submission of the form. The guest number should be taken from the form input.</li><li>Share your form with your class mates! (2 of you)</li></ul></section><section><section><h3>Form validation</h3></section><section><h2>Why?</h2><ul><li class="fragment">All required form controls are filled out</li><li class="fragment">Data has correct format</li><li class="fragment">Called client-side form validation</li></ul></section><section><h2>Why?</h2><ul><li class="fragment">We want to get the right data, in the right format</li><li class="fragment">We want to protect our users' data</li><li class="fragment">We want to protect ourselves</li></ul></section><section><h2>Options</h2><ul><li class="fragment">"This field is required" (You can't leave this field blank).</li><li class="fragment">"Please enter your phone number in the format xxx-xxxx" (A specific data format is required for it to be considered valid).</li><li class="fragment">"Please enter a valid email address" (the data you entered is not in the right format).</li><li class="fragment">"Your password needs to be between 8 and 30 characters long and contain one uppercase letter, one symbol, and a number." (A very specific data format is required for your data).</li></ul></section><section><h2>Built-in form validation</h2><ul><li class="fragment"><span class="highlight">required</span>: Specifies whether a form field needs to be filled in before the form can be submitted</li><li class="fragment"><span class="highlight">minlength & maxlength</span>: Specifies the minimum and maximum length of textual data (strings)</li><li class="fragment"><span class="highlight">min & max</span>: Specifies the minimum and maximum values of numerical input types</li><li class="fragment"><span class="highlight">type</span>: Specifies whether the data needs to be a number, an email address, or some other specific preset type</li><li class="fragment"><span class="highlight">pattern</span>: Specifies a regular expression that defines a pattern the entered data needs to follow</li></ul></section><section><h2>Example</h2><pre>
+                  <code class="formattedCode html" data-trim>
+                    <form>
+                      <label for="choose">Would you prefer a banana or cherry?</label>
+                      <input id="choose" name="i_like">
+                      <button>Submit</button>
+                    </form>
+          </code></pre><code class="formattedCode html" data-trim><form><label for="choose">Would you prefer a banana or cherry?</label> <input id="choose" name="i_like"> <button>Submit</button></form></code></section><section><h2>Example continued</h2><pre>
+                  <code class="formattedCode html" data-trim>
+                    <form>
+                      <label for="choose">Would you prefer a banana or cherry?</label>
+                      <input id="choose" name="i_like" required>
+                      <button>Submit</button>
+                    </form>
+          </code></pre><code class="formattedCode html" data-trim><form><label for="choose">Would you prefer a banana or cherry?</label> <input id="choose" name="i_like" required> <button>Submit</button></form></code></section><section><h2>Example continued</h2><pre>
+                  <code class="formattedCode html" data-trim>
+                    <form>
+                      <label for="choose">Would you prefer a banana or cherry?</label>
+                      <input id="choose" name="i_like" required minlength="6" maxlength="6">
+                      <button>Submit</button>
+                    </form>
+          </code></pre><code class="formattedCode html" data-trim><form><label for="choose">Would you prefer a banana or cherry?</label> <input id="choose" name="i_like" required minlength="6" maxlength="6"> <button>Submit</button></form></code></section><section><h2>Example continued</h2><pre>
+                  <code class="formattedCode html" data-trim>
+                    <form>
+                      <label for="choose">Would you prefer a banana or cherry?</label>
+                      <input type="number" id="number" name="amount" value="1" min="1" max="10">
+                      <button>Submit</button>
+                    </form>
+          </code></pre><code class="formattedCode html" data-trim><form><label for="choose">Would you prefer a banana or cherry?</label> <input type="number" id="number" name="amount" value="1" min="1" max="10"> <button>Submit</button></form></code></section><section><h2>Example continued</h2><pre>
+                  <code class="formattedCode html" data-trim>
+                    <form>
+                      <label for="choose">Would you prefer a banana or cherry?</label>
+                      <input id="choose" name="i_like" required pattern="[Bb]anana|[Cc]herry">
+                      <button>Submit</button>
+                    </form>
+          </code></pre><code class="formattedCode html" data-trim><form><label for="choose">Would you prefer a banana or cherry?</label> <input id="choose" name="i_like" required pattern="[Bb]anana|[Cc]herry"> <button>Submit</button></form></code></section><section><h2>Styling based on validity with CSS pseudo-classes</h2><code class="formattedCode html" data-trim><style>.pseudo_example:invalid {
+                border: 2px dashed red;
+              }
+
+              .pseudo_example:valid {
+                border: 2px solid green;
+              }</style><form><label for="choose">Would you prefer a banana or cherry? (required)</label> <input class="pseudo_example" id="choose" name="i_like" required> <button>Submit</button></form></code><pre>
+                    <code class="formattedCode css" data-trim>
+                    input:invalid {
+                      border: 2px dashed red;
+                    }
+                    
+                    input:valid {
+                      border: 2px solid black;
+                    }
+                  </code>
+                    </pre></section><section><h2>More CSS pseudo-classes</h2><ul><li class="fragment"><span class="highlight">:optional</span> Selects input elements with no "required" attribute specified</li><li class="fragment"><span class="highlight">:required</span> Selects input elements with the "required" attribute specified</li><li class="fragment">Or display custom error messages!</li></ul></section></section><section><h3>In-class exercise!</h3><p><small>30 minutes!</small> 🕘</p><ul><li>Enable validation of your restaurant reservation form!</li><li>Check that all fields are filled out</li><li>Check that the input for party size is a number</li><li>Verify that the mail adress that is entered is valid</li><li>Add a red solid border to invalid input fields</li></ul></section><section><h3>Homework!</h3><section><p>Implement this job application form or something similar for your project:</p><img src="../../assets/8b092ff2eba20cac1262.png" alt="form" style="width: 500px;"></section><section><ul><li>All fields except skills table are required</li><li>Email must be valid</li><li>Length of "About You" section is restricted</li><li>Name fileds can only contain strings</li><li>Phone number must be numers only</li><li>Date of birth must be valid</li></ul></section></section><section data-visibility="uncounted"><h1>Questions || Feedback?</h1></section></div></div></body></html>
