@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Security</title>
+    <meta name="date" content="2021-06-15" />
+    <meta
+      name="description"
+      content="
+      - Call stack
+      - Security
+      - CORS, XSS, CRSF, HTTPS
+    "
+    />
+  </head>
+
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <p>Hey! 👋🏼</p>
+          <h1 class="r-fit-text">Security</h1>
+          <p>Redi School Munich - Spring 2021</p>
+        </section>
+        <section>
+            <h2>Recap!</h2>
+            <ul>
+                <li class="fragment">Kahoot!</li>
+                <li class="fragment">Callbacks</li>
+                <li class="fragment">Promises</li>
+            </ul>
+        </section>
+        <section>
+            <h3>JavaScript is a single threaded language</h3>
+            <p class="fragment">Only one thing can be run at a time</p>
+            <p class="fragment">There is something called the call stack</p>
+        </section>
+        <section>
+            <h3>The callstack can only ever run one thing at a time</h3>
+        </section>
+        <section>
+            <h1>Security!</h1>
+            <img src="./images/hackerman.gif" alt="hackerman gif">
+        </section>
+        <section>
+          <h2>Security</h2>
+          <p class="fragment">Javascript is public!</p>
+          <p class="fragment">Generally we shouldn't rely on data coming from the client side</p>
+          <p class="fragment">Anything sensitive should be checked in the backend</p>
+        </section>
+        <section>
+            <h3>Cross Origin Resource Sharing (CORS)</h3>
+            <p class="fragment">Domain names are origins</p>
+            <p class="fragment">Two websites are not allowed to talk to each other by default</p>
+            <p class="fragment">You are only permitted to share data between the same domain name</p>
+        </section>
+        <section>
+            <h3>CORS Policy</h3>
+            <p class="fragment">This is configured on the server</p>
+            <p class="fragment">This website is allowed to talk with this other website</p>
+        </section>
+        <section>
+          <h3>Cross Site Scripting (XSS)</h3>
+          <p class="fragment">Around 40% of all cyberattacks are XSS</p>
+          <p class="fragment">
+            The attacker manipulates the HTML and JS to trigger malicious code
+          </p>
+        </section>
+        <section>
+          <h3>XSS - Vulnerable areas</h3>
+          <ul>
+            <li class="fragment">Inputs, text areas</li>
+            <li class="fragment">Any place where we show user inputs</li>
+            <li class="fragment">Query parameters</li>
+            <li class="fragment">Image uploads</li>
+          </ul>
+        </section>
+        <section>
+          <h3>XSS - What can we do?</h3>
+          <ul>
+            <li class="fragment">Sanitize user input</li>
+            <li class="fragment">Encode URL</li>
+            <li class="fragment">Use a Content Security Policy (CSP)</li>
+          </ul>
+        </section>
+        <section>
+          <h3>Cross-Site Request Forgery (CSRF)</h3>
+          <p class="fragment">The attacker tries to impersonate the user</p>
+          <p class="fragment">
+            It can include, changing email, password, steal information and more
+          </p>
+        </section>
+        <section>
+          <h3>CSRF - What can we do?</h3>
+          <ul>
+            <li class="fragment">Properly implement requests on the Backend</li>
+            <li class="fragment">Use a CRSF Token</li>
+            <li class="fragment">Captchas</li>
+          </ul>
+        </section>
+        <section>
+          <h3>Content Security Policy (CSP)</h3>
+          <p class="fragment">
+            Is an added layer of security that helps to detect and mitigate
+            certain types of attacks
+          </p>
+          <p class="fragment">
+            Configure the server to return Content-Security-Policy http header
+          </p>
+          <p class="fragment">Use the meta tag to configure the policy</p>
+          <pre class="fragment">
+              <code data-trim class="html">
+                <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; img-src 'self'; style-src 'self'; frame-ancestors 'self'; form-action 'self';">
+              </code>
+          </pre>
+          <p>
+            <small
+              ><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP">CSP</a>
+            </small>
+          </p>
+        </section>
+        <section>
+            <h2>Hypertext Transfer Protocol Secure (HTTPS)</h2>
+            <p class="fragment">HTTPS is basically an HTTP protocol with additional security.</p>
+            <p class="fragment">Uses SSL/TSL to secure the information sent to the server</p>
+            <p>
+                <small
+                  ><a href="https://www.hostinger.com/tutorials/what-is-ssl-tls-https">SSL/TSL</a>
+                </small>
+              </p>
+        </section>
+        <section>
+            <h2>And more...</h2>
+            <ul>
+                <li class="fragment">Keep error messages generic</li>
+                <li class="fragment">Remember everything that is stored in the browser is insecure </li>
+                <li class="fragment">Don't store sensitive data in the client side</li>
+                <li class="fragment">Check the third party libraries that you use</li>
+                <li class="fragment">Consider using textContent instead of innerHTML</li>
+                <li class="fragment">Avoid iframes</li>
+            </ul>
+        </section>
+        
+        <section data-visibility="uncounted">
+          <h2>Questions or Feedback?</h2>
+          <img src="./images/questions.gif" alt="" />
+        </section>
+      </div>
+    </div>
+  </body>
+</html>
