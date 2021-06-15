@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/dompurify@2.2.9/dist/purify.min.js"></script> -->
+</head>
+
+<body>
+    <label for="nameInput">Name</label>
+    <input type="text" id="nameInput">
+    <button type="button" id="submitBtn">Submit</button>
+    <p>Your name is <span id="name"></span></p>
+    <script>
+        document.getElementById('submitBtn').addEventListener('click', (e) => {
+            const input = document.getElementById('nameInput').value;
+            // {USE_PROFILES: {html: false}}
+            // const cleanInput = DOMPurify.sanitize(input.value);
+            document.getElementById('name').innerHTML = input
+        })
+    </script>
+</body>
+</html>
+<!-- <img width="100px" src="https://images.unsplash.com/photo-1552053831-71594a27632d"> -->
+<!-- <img width="100px" src="https://images.unsplash.com/photo-1552053831-71594a27632d" onLoad="alert('Hii!!')"> -->
+<!-- <img width="100px" src="null" onError="alert('Hacked!')" > -->
+<!-- <img width="100px" src="null" onError="var btn = document.createElement('button');btn.textContent = 'Click here for more!';btn.onclick=()=>alert('mwahahaha');document.body.append(btn)" > -->
+<!-- const cleanInput = sanitize(input.value, {
+    FORBID_ATTR: ["width", "height", "style"],
+    FORBID_TAGS: ["style"],
+  }); -->
